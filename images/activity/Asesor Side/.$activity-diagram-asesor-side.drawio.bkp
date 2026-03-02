@@ -1,0 +1,111 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/132.0.6834.210 Electron/34.3.3 Safari/537.36" version="26.1.1">
+  <diagram name="menambah-tugas-asesmen" id="JcgF65ICf_blsQtLpzph">
+    <mxGraphModel dx="435" dy="361" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-1" value="Sistem" style="swimlane;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="280" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-3" value="Menampilkan Daftar Sertifikasi" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-1">
+          <mxGeometry x="30" y="100" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-4" value="Menampilkan Halaman Rincian Sertifikasi" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-1">
+          <mxGeometry x="30" y="190" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-5" value="Menampilkan Halaman Rincian Tugas Asesmen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-1">
+          <mxGeometry x="30" y="280" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-20" value="" style="ellipse;shape=endState;fillColor=#000000;strokeColor=#ff0000" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-1">
+          <mxGeometry x="125" y="450" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-21" value="Menampilkan Informasi Tugas Berhasil Ditambahkan" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-1">
+          <mxGeometry x="30" y="370" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-29" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="ues3G67XSXQfQTyhrCJ8-1" source="ues3G67XSXQfQTyhrCJ8-21" target="ues3G67XSXQfQTyhrCJ8-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-20" y="405" as="sourcePoint" />
+            <mxPoint x="40" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-7" value="Admin" style="swimlane;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="280" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-8" value="Mengakses Halaman Daftar Sertifikasi" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-7">
+          <mxGeometry x="30" y="100" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-9" value="" style="ellipse;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-7">
+          <mxGeometry x="125" y="40" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-10" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="ues3G67XSXQfQTyhrCJ8-7" source="ues3G67XSXQfQTyhrCJ8-9" target="ues3G67XSXQfQTyhrCJ8-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="240" as="sourcePoint" />
+            <mxPoint x="270" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-11" value="Menekan Sertifikasi Tertentu" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-7">
+          <mxGeometry x="30" y="190" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-12" value="Menekan Tombol Menambah Tugas Asesmen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-7">
+          <mxGeometry x="30" y="280" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-19" value="Memasukkan Rincian Tugas Asesmen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ues3G67XSXQfQTyhrCJ8-7">
+          <mxGeometry x="30" y="370" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-13" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="1" source="ues3G67XSXQfQTyhrCJ8-8" target="ues3G67XSXQfQTyhrCJ8-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="150" as="sourcePoint" />
+            <mxPoint x="210" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-14" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="1" source="ues3G67XSXQfQTyhrCJ8-3" target="ues3G67XSXQfQTyhrCJ8-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="320" as="sourcePoint" />
+            <mxPoint x="430" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="480" y="240" />
+              <mxPoint x="200" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-15" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="1" source="ues3G67XSXQfQTyhrCJ8-11" target="ues3G67XSXQfQTyhrCJ8-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="205" as="sourcePoint" />
+            <mxPoint x="380" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=openThin;endFill=0;" edge="1" parent="1" source="ues3G67XSXQfQTyhrCJ8-4" target="ues3G67XSXQfQTyhrCJ8-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="480" y="330" />
+              <mxPoint x="200" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-17" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="1" source="ues3G67XSXQfQTyhrCJ8-12" target="ues3G67XSXQfQTyhrCJ8-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="295" as="sourcePoint" />
+            <mxPoint x="380" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-6" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="1" source="ues3G67XSXQfQTyhrCJ8-5" target="ues3G67XSXQfQTyhrCJ8-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="465" as="sourcePoint" />
+            <mxPoint x="480" y="430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="480" y="420" />
+              <mxPoint x="200" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ues3G67XSXQfQTyhrCJ8-22" value="" style="endArrow=openThin;html=1;rounded=0;endFill=0;" edge="1" parent="1" source="ues3G67XSXQfQTyhrCJ8-19" target="ues3G67XSXQfQTyhrCJ8-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="385" as="sourcePoint" />
+            <mxPoint x="380" y="385" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

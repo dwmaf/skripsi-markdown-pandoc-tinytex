@@ -1,0 +1,111 @@
+---
+bibliography: daftar-pustaka.bib
+link-citations: true
+booktabs: false
+geometry: "top=3cm, bottom=3cm, left=4cm, right=3cm"
+fontsize: 12pt
+linestretch: 1.5
+papersize: a4
+documentclass: report
+mainfont: "Times New Roman"
+header-includes:
+  - \usepackage{indentfirst}
+
+  # --- PAKET UNTUK SPASI (WAJIB ADA) ---
+  - \usepackage{setspace}
+  # --- SETTING PENOMORAN BAB (SUPAYA BAB I tapi GAMBAR 1.1) ---
+  - \renewcommand{\thechapter}{\Roman{chapter}}
+  - \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+  - \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+  - \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+  # --- SETTING BAHASA JUDUL DAFTAR ---
+  - \renewcommand{\contentsname}{DAFTAR ISI}
+  - \renewcommand{\listfigurename}{DAFTAR GAMBAR}
+  - \renewcommand{\listtablename}{DAFTAR TABEL}
+  - \renewcommand{\figurename}{Gambar}
+  - \renewcommand{\tablename}{Tabel}
+  - \renewcommand{\chaptername}{BAB}
+  # --- ALIGNMENT ---
+  - \setlength{\parindent}{1.27cm}
+  
+  # --- FORMAT JUDUL BAB & SUBBAB ---
+  - \usepackage{titlesec}
+  
+  # --- JARAK ANTAR PARAGRAF (BEFORE/AFTER) ---
+  # Ini membuat jarak antar paragraf menjadi 12pt (renggang).
+  # PENTING: Karena kamu pakai indent (menjorok), ini bikin teks jadi "Menjorok + Berjarak".
+  - \setlength{\parskip}{12pt}
+
+  # 1. Format Tampilan BAB (Heading 1)
+  # [display]      = Mode tumpuk ("BAB I" di baris atas, "PENDAHULUAN" di baris bawah)
+  # \singlespacing = MEMAKSA judul jadi spasi 1 (Single), meski dokumennya spasi 2
+  # {0pt}         = Jarak spasi antara tulisan "BAB I" dengan "PENDAHULUAN"
+  - \titleformat{\chapter}[display]{\normalfont\bfseries\centering\singlespacing\setlength{\parskip}{0pt}}{\MakeUppercase{\chaptertitlename} \thechapter}{0pt}{\MakeUppercase}
+  
+  # 2. Mengatur Jarak Spasi (Before/After)
+  # {0pt}  = Indentasi Kiri (biarkan 0)
+  # {12pt} = SPACING BEFORE (Jarak dari margin atas ke tulisan "BAB I")
+  # {0pt} = SPACING AFTER (Jarak dari Judul Bab ke teks paragraf pertama) -> Sesuaikan jika terlalu jauh/dekat
+  - \titlespacing*{\chapter}{0pt}{-30pt}{-12pt}
+
+  # 3. Format Sub-Bab (Heading 2)
+  # {12pt} = Spacing Before Sub-Bab
+  # {12pt} = Spacing After Sub-Bab
+  - \titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{}
+  - \titlespacing*{\section}{0pt}{2pt}{0pt}
+
+  # 4. Format Sub-Sub-Bab (Heading 3)
+  # {12pt} = Spacing Before Sub-Sub-Bab
+  # {12pt} = Spacing After Sub-Sub-Bab
+  - \titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{1em}{}
+  - \titlespacing*{\subsection}{0pt}{2pt}{0pt}
+
+  # --- FORMAT CAPTION GAMBAR & TABEL ---
+  - \usepackage{caption}
+  
+  # labelfont=bf membuat "Gambar 1.1" jadi Bold
+  # textfont=normalfont membuat "Keterangan Gambar" jadi reguler (tidak bold)
+  # labelsep=space memberikan spasi antara nomor dan keterangan
+  # justification=centering agar caption selalu di tengah
+  - \captionsetup[figure]{labelfont=bf, textfont=normalfont, labelsep=space, justification=centering}
+  - \captionsetup[table]{labelfont=bf, textfont={normalfont, stretch=1}, labelsep=space, justification=raggedright, singlelinecheck=false, skip=0pt, margin=0pt,indention=0pt}
+
+  # biar ga ada pemenggalan kata
+  - \tolerance=1
+  - \emergencystretch=\maxdimen
+  - \hyphenpenalty=10000
+  - \hbadness=10000
+
+  # --- (BIAR GAMBAR DIEM DI TEMPAT) ---
+  # H artinya Here
+  - \usepackage{float}
+  - \floatplacement{figure}{H}
+
+  # --- KONFIGURASI KHUSUS TABEL ---
+  # Memerlukan package etoolbox untuk menyuntikkan style ke dalam tabel
+  - \usepackage{longtable}
+  - \usepackage{etoolbox}
+  - \usepackage{array}
+  - \setlength{\LTcapwidth}{\textwidth}
+  - \setlength{\extrarowheight}{3pt} 
+
+  # Aturan: Setiap kali tabel (longtable) dimulai, lakukan:
+  # 1. singlespacing (Spasi 1.0)
+  # 2. fontsize{10}{12} (Ukuran font 10pt, jarak baris 12pt)
+  - \AtBeginEnvironment{longtable}{\singlespacing\fontsize{10}{12}\selectfont}
+
+  # Mengatur jarak SEBELUM dan SESUDAH tabel menjadi 0
+  - \setlength{\LTpre}{0pt}
+  - \setlength{\LTpost}{0pt}
+  
+  # 1. Buat variabel logika (Saklar) bernama \ifFrameImages, default mati (false)
+  - \newif\ifFrameImages
+  - \FrameImagesfalse
+
+  # 2. Simpan perintah asli insert gambar ke variabel \OldIncludegraphics
+  - \let\OldIncludegraphics\includegraphics
+
+  # 3. Timpa perintah insert gambar dengan logika baru:
+  #    "Jika saklar \ifFrameImages NYALA, maka kasih kotak (\fbox). Jika MATI, tampilkan biasa."
+  - \renewcommand{\includegraphics}[2][]{\ifFrameImages\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.5pt}\fbox{\OldIncludegraphics[#1]{#2}}\else\OldIncludegraphics[#1]{#2}\fi}
+---

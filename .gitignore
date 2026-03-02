@@ -1,0 +1,25 @@
+# File hasil render sementara (sampah LaTeX)
+*.aux
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Folder Output (Opsional, kalau kamu mau pdf-nya gak ikut di-track)
+*.pdf 
+
+# File Sistem/Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+*.exe
+*.msi
+*.zip
+*.rar
