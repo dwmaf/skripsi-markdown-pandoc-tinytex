@@ -24,4 +24,8 @@ Thumbs.db
 *.zip
 *.rar
 
-.bkp
+# File Backup Draw.io (Sampah)
+*.bkp
+*.drawio.bkp
+.$*
+~$*
