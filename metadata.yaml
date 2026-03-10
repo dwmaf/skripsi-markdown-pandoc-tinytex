@@ -10,6 +10,8 @@ documentclass: report
 mainfont: "Times New Roman"
 header-includes:
   - \usepackage{indentfirst}
+  - \usepackage{graphicx}
+  - \usepackage[table]{xcolor}
 
   # --- PAKET UNTUK SPASI (WAJIB ADA) ---
   - \usepackage{setspace}
@@ -84,6 +86,7 @@ header-includes:
   # --- KONFIGURASI KHUSUS TABEL ---
   # Memerlukan package etoolbox untuk menyuntikkan style ke dalam tabel
   - \usepackage{longtable}
+  - \usepackage{multirow}
   - \usepackage{etoolbox}
   - \usepackage{array}
   - \setlength{\LTcapwidth}{\textwidth}
