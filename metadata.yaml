@@ -12,6 +12,10 @@ header-includes:
   - \usepackage{indentfirst}
   - \usepackage{graphicx}
   - \usepackage[table]{xcolor}
+  - \usepackage{enumitem}
+
+  # Paksa semua list (Enumerate & Itemize) untuk tidak punya jarak tambahan di atas/bawah
+  - \setlist{nosep, leftmargin=1.27cm} 
 
   # --- PAKET UNTUK SPASI (WAJIB ADA) ---
   - \usepackage{setspace}
@@ -48,7 +52,7 @@ header-includes:
   # {0pt}  = Indentasi Kiri (biarkan 0)
   # {12pt} = SPACING BEFORE (Jarak dari margin atas ke tulisan "BAB I")
   # {0pt} = SPACING AFTER (Jarak dari Judul Bab ke teks paragraf pertama) -> Sesuaikan jika terlalu jauh/dekat
-  - \titlespacing*{\chapter}{0pt}{-30pt}{-12pt}
+  - \titlespacing*{\chapter}{0pt}{-30pt}{0pt}
 
   # 3. Format Sub-Bab (Heading 2)
   # {12pt} = Spacing Before Sub-Bab
