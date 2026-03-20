@@ -1,3 +1,16 @@
+\pagenumbering{roman}
+\begin{spacing}{1}
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
+\end{spacing}
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
 # PENDAHULUAN
 
 ## Latar Belakang

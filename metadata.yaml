@@ -48,6 +48,7 @@ header-includes:
   # {0pt}         = Jarak spasi antara tulisan "BAB I" dengan "PENDAHULUAN"
   - \titleformat{\chapter}[display]{\normalfont\bfseries\centering\singlespacing\setlength{\parskip}{0pt}}{\MakeUppercase{\chaptertitlename} \thechapter}{0pt}{\MakeUppercase}
   
+  
   # 2. Mengatur Jarak Spasi (Before/After)
   # {0pt}  = Indentasi Kiri (biarkan 0)
   # {12pt} = SPACING BEFORE (Jarak dari margin atas ke tulisan "BAB I")
@@ -101,6 +102,10 @@ header-includes:
   # 2. fontsize{10}{12} (Ukuran font 10pt, jarak baris 12pt)
   - \AtBeginEnvironment{longtable}{\singlespacing\fontsize{10}{12}\selectfont}
 
+  # --- KONFIGURASI KHUSUS DAFTAR PUSTAKA ---
+  # Maksa daftar pustaka (hasil generate citeproc) menggunakan spasi 1
+  - \AtBeginEnvironment{CSLReferences}{\singlespacing}
+
   # Mengatur jarak SEBELUM dan SESUDAH tabel menjadi 0
   - \setlength{\LTpre}{0pt}
   - \setlength{\LTpost}{0pt}
@@ -115,4 +120,64 @@ header-includes:
   # 3. Timpa perintah insert gambar dengan logika baru:
   #    "Jika saklar \ifFrameImages NYALA, maka kasih kotak (\fbox). Jika MATI, tampilkan biasa."
   - \renewcommand{\includegraphics}[2][]{\ifFrameImages\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.5pt}\fbox{\OldIncludegraphics[#1]{#2}}\else\OldIncludegraphics[#1]{#2}\fi}
+
+  # {1em} di posisi paling belakang berarti memberi jarak 1.5 enter ke elemen di bawahnya
+  - \titlespacing*{name=\chapter,numberless}{0pt}{-30pt}{1em}
+  - \usepackage[titles]{tocloft}
+  - \usepackage[nottoc]{tocbibind}
+  
+
+  # --- MENAMBAHKAN "BAB" DI DAFTAR ISI ---
+  - \renewcommand{\cftchappresnum}{BAB }
+  # Menambah lebar ruang angka agar "BAB I" tidak menabrak judul teksnya
+  - \addtolength{\cftchapnumwidth}{2em}
+  # - \usepackage{tocloft}
+  
+  # 1. Mengatur font judul TOCTITLE (Daftar Isi), LOT (Tabel), LOF (Gambar)
+  # Gaya: Bold (\bfseries), Center (\hfill), Uppercase (sudah dari renewcommand)
+  # - \renewcommand{\cfttoctitlefont}{\hfil\normalfont\bfseries}
+  # - \renewcommand{\cftaftertoctitle}{\hfil}
+  # - \renewcommand{\cftlottitlefont}{\hfill\normalfont\bfseries}
+  # - \renewcommand{\cftafterlottitle}{\hfill}
+  # - \renewcommand{\cftloftitlefont}{\hfill\normalfont\bfseries}
+  # - \renewcommand{\cftafterloftitle}{\hfill}
+
+  # 2. Mengatur jarak (Spacing) sebelum dan sesudah judul DAFTAR agar sama dengan BAB
+  # \titlespacing*{\chapter}{0pt}{-30pt}{0pt} tadi di atas, kita tiru di sini:
+  # - \setlength{\cftbeforetoctitleskip}{-30pt}
+  # - \setlength{\cftaftertoctitleskip}{12pt}
+  # - \setlength{\cftbeforelottitleskip}{-30pt}
+  # - \setlength{\cftafterlottitleskip}{12pt}
+  # - \setlength{\cftbeforeloftitleskip}{-30pt}
+  # - \setlength{\cftafterloftitleskip}{12pt}
+
+  # --- KONFIGURASI DAFTAR LAMPIRAN ---
+  - \newcommand{\listappendixname}{DAFTAR LAMPIRAN}
+  - \newlistof{lampiran}{app}{\listappendixname}
+  - \renewcommand{\cftlampiranleader}{\cftdotfill{\cftdotsep}}
+
+  # Mengatur agar titik-titik di daftar isi muncul
+  - \renewcommand{\cftdotsep}{1}
+  - \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+  - \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+  - \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+  - \renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+  # Memperkecil jarak antara titik terakhir ke nomor halaman
+  # Default pnumwidth biasanya 1.55em dan rmarg 2.55em
+  - \cftsetpnumwidth{1em}
+  - \cftsetrmarg{1.5em}
+
+  # Merapatkan jarak antar entri BAB di TOC:
+  - \setlength{\cftbeforechapskip}{3pt}
+  - \renewcommand{\cftchapafterpnum}{\vskip 3pt}
+  - \setlength{\cftbeforesecskip}{0pt}
+  - \setlength{\cftbeforesubsecskip}{0pt}
+  - \setlength{\cftbeforesubsubsecskip}{0pt}
+
+  # Level 0 = Chapter (#), Level 1 = Section (##)
+  # Level 2 = Subsection (###), Level 3 = Subsubsection (####)
+  - \setcounter{secnumdepth}{3}
+  - \setcounter{tocdepth}{3}
+  
+toc-depth: 4
 ---

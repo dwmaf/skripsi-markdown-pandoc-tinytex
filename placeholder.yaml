@@ -1,0 +1,6 @@
+  - \renewcommand{\cfttoctitlefont}{\hfill\normalfont\bfseries}
+  - \renewcommand{\cftaftertoctitle}{\hfill}
+  - \renewcommand{\cftlottitlefont}{\hfill\normalfont\bfseries}
+  - \renewcommand{\cftafterlottitle}{\hfill}
+  - \renewcommand{\cftloftitlefont}{\hfill\normalfont\bfseries}
+  - \renewcommand{\cftafterloftitle}{\hfill}
