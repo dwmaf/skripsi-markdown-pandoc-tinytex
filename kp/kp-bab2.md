@@ -1,5 +1,7 @@
 # TINJAUAN PUSTAKA
 
+## Studi Pustaka
+
 ##	Website 
 
 Website didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. Backend, atau yang sering dirujuk sebagai sisi *server* (*server-side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem . Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL) . Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau browser, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*) . Selain fungsionalitas konten, *backend* memegang peranan krusial dalam aspek keamanan aplikasi, karena seluruh proses validasi data akhir dan penyimpanan informasi sensitif harus dilakukan sepenuhnya di sisi server guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
@@ -166,7 +168,7 @@ Karakteristik atau properti yang mendeskripsikan suatu entitas. Digambarkan deng
 
 MySQL disebut perangkat lunak basis data *open-source* RDBMS. MySQL dikenal karena fleksibilitasnya yang dapat beroperasi di berbagai sistem operasi seperti Windows, Linux, dan Mac OS X, serta sering menjadi pilihan utama sebagai *backend* penyimpanan data untuk aplikasi berbasis web. Meskipun tersedia secara gratis, MySQL menawarkan fitur-fitur tingkat lanjut seperti kemampuan replikasi bawaan dan skalabilitas yang mumpuni menjadikannya solusi yang andal bagi organisasi maupun pengembang individu dalam menjaga ketersediaan data dan integritas sistem [@Hoffer2011].
 
-## Black Box Testing
+## *Black Box Testing*
 
 *Black box testing*, yang juga dikenal sebagai pengujian perilaku (*behavioral testing*), merupakan metode pengujian yang berfokus pada persyaratan fungsional perangkat lunak. Berbeda dengan *white box testing* yang membedah logika internal program, *black box testing* memungkinkan penguji untuk memperoleh serangkaian kondisi input yang sepenuhnya menguji semua persyaratan fungsional program tanpa perlu mengetahui struktur kode aplikasinya [@Pressman2015].
 

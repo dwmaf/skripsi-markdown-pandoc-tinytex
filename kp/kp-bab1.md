@@ -17,6 +17,10 @@
 
 Unit Penunjang Akademik Pengembangan Karir dan Kewirausahaan (UPA PK2) Universitas Tanjungpura (UNTAN) saat ini telah memiliki fasilitas berupa Anjungan (Kiosk) mandiri yang dilengkapi dengan printer. Namun, hingga saat ini perangkat tersebut belum dapat dimanfaatkan secara optimal oleh mahasiswa maupun staf magang karena belum tersedianya sistem yang dapat mengelola alur kerja pencetakan secara mandiri dan terintegrasi. Pelayanan percetakan masih bergantung pada metode konvensional, di mana mahasiswa mengirimkan dokumen melalui whatsapp kepada operator.
 
+![Anjungan UPA PK2 UNTAN](kp/images/tampak_depan-kisok.jpeg)
+
+![Anjungan UPA PK2 UNTAN](kp/images/tampak_dalam-kisok.jpeg)
+
 Metode konvensional ini tidak hanya tidak efisien, tetapi juga menyulitkan pihak pengelola, dalam hal ini Bapak Donny selaku pembina UPA PK2, untuk melakukan pengawasan terhadap penggunaan aset. Tanpa adanya sistem kontrol, pemantauan terhadap volume penggunaan kertas dan validasi terhadap dokumen yang dicetak menjadi sulit dilakukan. Hal ini menimbulkan risiko pemborosan sumber daya dan kurangnya transparansi dalam pencatatan aktivitas operasional harian.
 
 Pengembangan aplikasi Self Printing berbasis web hadir sebagai solusi untuk mengaktifkan fungsi anjungan tersebut sekaligus memberikan mekanisme kendali mutu. Melalui aplikasi ini, setiap dokumen yang diunggah oleh mahasiswa melalui perangkat mobile tidak akan langsung dicetak oleh mesin. Sistem didesain agar setiap permintaan cetak yang mencakup detail konfigurasi seperti ukuran kertas (A4/F4), mode warna, dan jumlah halaman harus melalui tahap verifikasi dan persetujuan oleh operator. Hal ini memastikan bahwa setiap lembar kertas yang keluar dari mesin telah terdata dan mendapatkan izin dari pengawas.
@@ -82,8 +86,8 @@ Berinteraksi dengan pihak terkait melalui sesi tanya jawab untuk memahami kebutu
 Proses perancangan bertujuan menghasilkan kerangka aplikasi yang sesuai dengan hasil analisis sebelumnya. Perancangan ini akan menggunakan UML (use case).
 3.	Implementasi
 Langkah implementasi melibatkan eksekusi rencana yang telah dirancang sebelumnya, menghasilkan sebuah website Self Printing di UPA PK2 UNTAN.
-4.	Testing
-Setelah implementasi selesai maka aka dilakukan testing terhadap website yang telah dbuat. Tujuan testing adalah untuk memastikan website bekerja sesuai dengan yang diharapkan.
+4.	Pengujian
+Setelah implementasi selesai maka aka dilakukan pengujian terhadap website yang telah dbuat. Tujuan pengujian adalah untuk memastikan website bekerja sesuai dengan yang diharapkan.
 
 ##	Rincian Pelaksanaan Kerja Praktek
 Waktu pelaksanaan kerja praktek adalah pada bulan Januari – Maret 2026.

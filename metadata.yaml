@@ -1,5 +1,6 @@
 ---
 bibliography: daftar-pustaka.bib
+csl: ieee.csl
 link-citations: true
 booktabs: false
 geometry: "top=3cm, bottom=3cm, left=4cm, right=3cm"
