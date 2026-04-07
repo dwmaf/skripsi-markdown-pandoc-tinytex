@@ -8,7 +8,7 @@ Website didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut da
 
 ## UPA PK2 UNTAN
 
-UPA PK2 UNTAN adalah.
+Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universitas Tanjungpura, yang secara resmi berdiri pada bulan Oktober 2024, merupakan unit strategis perguruan tinggi yang berfokus pada pengembangan karier dan pembinaan kewirausahaan bagi mahasiswa serta alumni. Unit ini memiliki peran fundamental dalam menjembatani dunia pendidikan dengan dunia usaha, industri (DUDI), dan pemerintahan guna mencetak lulusan yang adaptif, inovatif, dan berdaya saing tinggi di dunia kerja. Secara operasional, pusat layanan dan administrasi UPA PK2 UNTAN berlokasi di Gedung Konferensi Lantai 2, Jalan Jenderal Ahmad Yani, Bansir Laut, Kecamatan Pontianak Tenggara, Kota Pontianak, Kalimantan Barat 78124.
 
 ## *Web Self-Service*
 

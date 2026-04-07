@@ -17,9 +17,7 @@
 
 Unit Penunjang Akademik Pengembangan Karir dan Kewirausahaan (UPA PK2) Universitas Tanjungpura (UNTAN) saat ini telah memiliki fasilitas berupa Anjungan (Kiosk) mandiri yang dilengkapi dengan printer. Namun, hingga saat ini perangkat tersebut belum dapat dimanfaatkan secara optimal oleh mahasiswa maupun staf magang karena belum tersedianya sistem yang dapat mengelola alur kerja pencetakan secara mandiri dan terintegrasi. Pelayanan percetakan masih bergantung pada metode konvensional, di mana mahasiswa mengirimkan dokumen melalui whatsapp kepada operator.
 
-![Anjungan UPA PK2 UNTAN](kp/images/tampak_depan-kisok.jpeg)
-
-![Anjungan UPA PK2 UNTAN](kp/images/tampak_dalam-kisok.jpeg)
+<!-- ![Anjungan UPA PK2 UNTAN](kp/images/anjungan-tampak-depan-dan-dalam.png) -->
 
 Metode konvensional ini tidak hanya tidak efisien, tetapi juga menyulitkan pihak pengelola, dalam hal ini Bapak Donny selaku pembina UPA PK2, untuk melakukan pengawasan terhadap penggunaan aset. Tanpa adanya sistem kontrol, pemantauan terhadap volume penggunaan kertas dan validasi terhadap dokumen yang dicetak menjadi sulit dilakukan. Hal ini menimbulkan risiko pemborosan sumber daya dan kurangnya transparansi dalam pencatatan aktivitas operasional harian.
 
@@ -38,7 +36,6 @@ Berdasarkan latar belakang di atas, dibuatlah perumusan masalah yaitu:
 1. Bagaimana merancang arsitektur backend yang mampu menangani pengiriman data dokumen secara *asynchronous*?
 2. Bagaimana mengimplementasikan protokol WebSocket menggunakan Laravel Reverb untuk menghubungkan perangkat pengguna dan anjungan?
 3. Bagaimana mekanisme event broadcasting bekerja agar daftar antrian pada sis operator dapat diperbarui secara otomatis (real-time) saat terjadi pengunggahan file?
-
 
 ## Tujuan Kerja Praktek dan Target yang Akan Dicapai
 
@@ -77,16 +74,21 @@ b.	Penulis hanya bertanggung jawab pada logika backend (pengiriman sinyal/event)
 ## Metodologi Kerja Praktek
 
 1.	Analisis Kebutuhan
+
 Pada tahap ini, kebutuhan yang diperlukan oleh website diperoleh dengan cara berikut:
-a.	Observasi
-Observasi dilakukan dengan melakukan pengamatan langsung ke lokasi kerja praktek.
-b.	Wawancara
-Berinteraksi dengan pihak terkait melalui sesi tanya jawab untuk memahami kebutuhan yang spesifik dari website yang akan dibuat.
+a.	Observasi, dilakukan dengan melakukan pengamatan langsung ke lokasi kerja praktek.
+b.	Wawancara, berinteraksi dengan pihak terkait melalui sesi tanya jawab untuk memahami kebutuhan yang spesifik dari website yang akan dibuat.
+
 2.	Perancangan
+
 Proses perancangan bertujuan menghasilkan kerangka aplikasi yang sesuai dengan hasil analisis sebelumnya. Perancangan ini akan menggunakan UML (use case).
+
 3.	Implementasi
+
 Langkah implementasi melibatkan eksekusi rencana yang telah dirancang sebelumnya, menghasilkan sebuah website Self Printing di UPA PK2 UNTAN.
+
 4.	Pengujian
+
 Setelah implementasi selesai maka aka dilakukan pengujian terhadap website yang telah dbuat. Tujuan pengujian adalah untuk memastikan website bekerja sesuai dengan yang diharapkan.
 
 ##	Rincian Pelaksanaan Kerja Praktek
@@ -105,12 +107,12 @@ Adapun rincian pengerjaan kerja praktek adalah sebagai berikut:
 \endfoot
 \hline
 \endlastfoot
-1 & Pengajuan Proposal & \cellcolor{lightgray} & \cellcolor{lightgray} & & & & & & & & & & & & \\ \hline
-2 & Penerbitan Surat Pengantar & & & \cellcolor{blue} & \cellcolor{blue} & & & & & & & & & & \\ \hline
-3 & Pelaksanaan Kerja Praktek & & & & & \cellcolor{cyan} & \cellcolor{cyan} & \cellcolor{cyan} & \cellcolor{cyan} & & & & & & \\ \hline
-4 & Pengajuan Seminar & & & & & & & & & \cellcolor{green} & \cellcolor{green} & & & & \\ \hline
-5 & Pelaksanaan Seminar & & & & & & & & & & & \cellcolor{lime} & \cellcolor{lime} & & \\ \hline
-6 & Revisi & & & & & & & & & & & & & \cellcolor{magenta} & \cellcolor{magenta} \\ \hline
+1 & Pengajuan Proposal & \cellcolor[HTML]{f8cbad} & & & & & & & & & & & & & \\ \hline
+2 & Penerbitan Surat Pengantar & & & & \cellcolor[HTML]{f8cbad} & & & & & & & & & & \\ \hline
+3 & Pelaksanaan Kerja Praktek & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & & & & \\ \hline
+4 & Pengajuan Seminar & & & & & & & & & & & & & \cellcolor[HTML]{b4c7e7} & \\ \hline
+5 & Pelaksanaan Seminar & & & & & & & & & & & & & \cellcolor[HTML]{c6e0b4} & \\ \hline
+6 & Revisi & & & & & & & & & & & & & & \cellcolor[HTML]{8faadc} \\ \hline
 \end{longtable}
 
 
