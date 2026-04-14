@@ -95,7 +95,7 @@ Arsitektur aplikasi menggambarkan topologi jaringan dan infrastruktur logis dari
 
 ### Diagram *Use Case*
 
-Diagram Use Case digunakan untuk menggambarkan interaksi antara pengguna dengan sistem yang akan dibangun. Pada sistem self-printing ini, terdapat dua aktor utama yang saling berinteraksi, yaitu Pengguna (yang berinteraksi melalui perangkat seluler dan layar anjungan) serta Admin (yang berinteraksi melalui dashboard). Diagram berikut mendeskripsikan daftar aktivitas utama yang dapat dilakukan oleh masing-masing aktor.
+Diagram Use Case digunakan untuk menggambarkan interaksi antara pengguna dengan sistem yang akan dibangun. Pada sistem self-printing ini, terdapat dua aktor utama yang saling berinteraksi, yaitu Pengguna (yang berinteraksi melalui perangkat seluler dan layar anjungan) serta Admin (yang berinteraksi melalui *dashboard*). Diagram berikut mendeskripsikan daftar aktivitas utama yang dapat dilakukan oleh masing-masing aktor.
 
 ![Diagram *Use Case*](kp/images/usecase-diagram.png)
 
@@ -105,9 +105,9 @@ Diagram Activity memvisualisasikan alur kerja (*workflow*) dari proses bisnis ya
 
 #### Diagram *Activity* Melihat *Dashboard*
 
-Gambar \ref{fig:activity-melihat-dash} menunjukkan bagaimana Admin membuka halaman dashboard dan sistem menampilkan halaman dashboard yang berisi ringkasan data statistik penggunaan kertas.
+Gambar \ref{fig:activity-melihat-dash} menunjukkan bagaimana Admin membuka halaman *dashboard* dan sistem menampilkan halaman *dashboard* yang berisi ringkasan data statistik penggunaan kertas.
 
-![Diagram \textit{Activity} Melihat Dashboard \label{fig:activity-melihat-dash}](kp/images/activity/1.dashboard.png)
+![Diagram \textit{Activity} Melihat \textit{Dashboard} \label{fig:activity-melihat-dash}](kp/images/activity/1.dashboard.png)
 
 #### Diagram *Activity Login*
 

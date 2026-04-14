@@ -2,9 +2,38 @@
 
 ## Studi Pustaka
 
+\begin{longtable}{|p{2.5cm}|p{3.8cm}|p{3.8cm}|p{4.2cm}|}
+\caption{Perbandingan Penelitian Terdahulu (\textit{State of the Art})}\label{tab:sota} \\
+\hline
+\centering\textbf{Aspek Pembanding} & \centering\textbf{Jurnal 1 (Yinka-Banjo, dkk.)} & \centering\textbf{Jurnal 2 (JUSITI)} & \centering\textbf{Kerja Praktik (Penulis)} \tabularnewline \hline
+\endfirsthead
+\hline
+\centering\textbf{Aspek Pembanding} & \centering\textbf{Jurnal 1} & \centering\textbf{Jurnal 2} & \centering\textbf{Kerja Praktik} \tabularnewline \hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+
+\raggedright \textbf{Fokus Sistem} & Sistem pemanggilan antrean publik pada instansi seperti Bank atau Rumah Sakit. & Fitur komunikasi (\textit{chat}) dan notifikasi pada sistem informasi gereja. & Sinkronisasi antrean cetak pada mesin anjungan mandiri (\textit{Self-Printing Kiosk}). \\ \hline
+
+\raggedright \textbf{Arsitektur Dasar} & \textit{Event-Driven Architecture} (EDA). & \textit{Event-Driven Architecture} (EDA). & \textit{Event-Driven Architecture} (EDA). \\ \hline
+
+\raggedright \textbf{Teknologi \textit{Backend}} & PHP \textit{Native} CLI dan Javascript. & \textit{Framework} Laravel dan MySQL. & \textit{Framework} Laravel dan MySQL. \\ \hline
+
+\raggedright \textbf{Teknologi \textit{Real-Time}} & Pustaka (\textit{library}) pihak ketiga berbasis PHP (Ratchet). & WebSocket menggunakan layanan pihak ketiga (\textit{Pusher}). & WebSocket menggunakan \textit{server self-hosted} (Laravel Reverb). \\ \hline
+
+\raggedright \textbf{Tujuan WebSocket} & Memperbarui tampilan nomor antrean pada layar pelanggan secara instan. & Mengirimkan notifikasi pesan dan memicu fitur \textit{Text-to-speech} di peramban. & Memperbarui status antrean, mengubah \textit{state} tombol, dan memicu perintah eksekusi ke printer fisik. \\ \hline
+
+\end{longtable}
+
+"Terdapat kesamaan fundamental antara kedua penelitian terdahulu dengan sistem yang dikembangkan pada UPA PK2 UNTAN, yaitu penggunaan arsitektur berbasis kejadian (Event-Driven) untuk menciptakan sinkronisasi real-time. Namun, terdapat kebaruan (novelty) dari kerja praktik ini pada dua aspek utama.
+
+Pertama, dari segi infrastruktur arsitektur real-time. Jika penelitian pertama bergantung pada pustaka eksternal (Ratchet) yang memerlukan konfigurasi event-loop terpisah, dan penelitian kedua dibatasi oleh kuota layanan pihak ketiga (Pusher), kerja praktik ini mengimplementasikan Laravel Reverb. Teknologi ini merupakan peladen WebSocket first-party self-hosted yang terintegrasi secara mulus (seamless) dalam ekosistem Laravel, sehingga institusi memiliki kontrol penuh atas performa tanpa batasan kuota. Kedua, dari segi fungsionalitas, sinyal WebSocket pada KP ini tidak sebatas memperbarui elemen antarmuka (UI updates), melainkan digunakan sebagai jembatan otorisasi yang seketika mengaktifkan kemampuan anjungan untuk mengeksekusi perangkat keras pencetak fisik (printer)."
+
 ##	Website 
 
-Website didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. Backend, atau yang sering dirujuk sebagai sisi *server* (*server-side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem . Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL) . Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau browser, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*) . Selain fungsionalitas konten, *backend* memegang peranan krusial dalam aspek keamanan aplikasi, karena seluruh proses validasi data akhir dan penyimpanan informasi sensitif harus dilakukan sepenuhnya di sisi server guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
+Website didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. Backend, atau yang sering dirujuk sebagai sisi *server* (*server-side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem . Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL) . Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau *browser*, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*) . Selain fungsionalitas konten, *backend* memegang peranan krusial dalam aspek keamanan aplikasi, karena seluruh proses validasi data akhir dan penyimpanan informasi sensitif harus dilakukan sepenuhnya di *server-side* guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
 
 ## UPA PK2 UNTAN
 
@@ -16,7 +45,7 @@ Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universi
 
 ## *Web to Print Workflow*
 
-*Web to Print Workflow* dalam konteks otomatisasi industri grafika merupakan sebuah sistem yang mengintegrasikan portal berbasis web sebagai antarmuka untuk menghubungkan pengguna jasa cetak (*print buyer*) dengan penyedia jasa cetak (*print provider*) secara digital. Inti dari alur kerja ini adalah otomatisasi alur kerja, yaitu proses menyuplai data secara otomatis ke perangkat produksi agar mesin dapat menjalankan proses cetak segera setelah instruksi tersedia. Dalam sistem anjungan mandiri, *website* berfungsi sebagai pengontrol yang mengirimkan *metadata* berupa informasi spesifikasi dokumen langsung ke perangkat printer tanpa memerlukan bantuan *operator* manual. Dengan demikian, alur kerja ini mengubah urutan produksi konvensional menjadi sebuah rangkaian proses digital yang efisien, di mana setiap tahapan cetak dijalankan berdasarkan daftar aturan prosedur yang telah didefinisikan dalam sistem web tersebut [@Hoffmann2023]
+*Web to Print Workflow* merupakan sebuah sistem yang mengintegrasikan portal berbasis web sebagai antarmuka untuk menghubungkan pengguna jasa cetak (*print buyer*) dengan penyedia jasa cetak (*print provider*) secara digital. Inti dari alur kerja ini adalah otomatisasi alur kerja, yaitu proses menyuplai data secara otomatis ke perangkat produksi agar mesin dapat menjalankan proses cetak segera setelah instruksi tersedia. Dalam sistem anjungan mandiri, *website* berfungsi sebagai pengontrol yang mengirimkan *metadata* berupa informasi spesifikasi dokumen langsung ke perangkat printer tanpa memerlukan bantuan *operator* manual. Dengan demikian, alur kerja ini mengubah urutan produksi konvensional menjadi sebuah rangkaian proses digital yang efisien, di mana setiap tahapan cetak dijalankan berdasarkan daftar aturan prosedur yang telah didefinisikan dalam sistem web tersebut [@Hoffmann2023]
 
 ## Sinkronisasi Data
 
@@ -28,7 +57,7 @@ Sistem *real time* didefinisikan sebagai sistem yang diwajibkan untuk menyelesai
 
 ## Websocket
 
-WebSocket adalah standar industri terbuka yang memungkinkan komunikasi dua arah (bidirectional) dan penuh (full-duplex) antara aplikasi klien dan server melalui Web tanpa memerlukan plugin tambahan. Teknologi ini beroperasi melalui koneksi tunggal (single-socket) yang terus terbuka setelah proses jabat tangan (handshake) awal untuk meningkatkan (upgrade) protokol HTTP ke protokol WebSocket melalui koneksi TCP yang sama. Berbeda dengan arsitektur HTTP lama yang memiliki latensi tinggi karena keterbatasan pola request-response, WebSocket sangat mengurangi latensi karena memungkinkan server mengirimkan pesan secara instan begitu data tersedia tanpa harus menunggu permintaan dari klien. Dengan karakteristik yang berbasis event (event-driven), WebSocket menyediakan kemampuan jaringan bergaya TCP bagi website untuk mendukung interaksi yang responsif dan sinkronisasi data real-time secara efisien [@Wang2013].
+WebSocket adalah standar industri terbuka yang memungkinkan komunikasi dua arah (*bidirectional*) antara aplikasi klien dan *server* melalui Web tanpa memerlukan plugin tambahan. Teknologi ini beroperasi melalui koneksi tunggal (*single-socket*) yang terus terbuka setelah proses jabat tangan (*handshake*) awal untuk meningkatkan protokol HTTP ke protokol WebSocket melalui koneksi TCP yang sama. Berbeda dengan arsitektur HTTP lama yang memiliki latensi tinggi karena keterbatasan pola *request-response*, WebSocket sangat mengurangi latensi karena memungkinkan *server* mengirimkan pesan secara instan begitu data tersedia tanpa harus menunggu permintaan dari klien. Dengan karakteristik yang berbasis event (*event-driven*), WebSocket menyediakan kemampuan jaringan bergaya TCP bagi website untuk mendukung interaksi yang responsif dan sinkronisasi data *real-time* secara efisien [@Wang2013].
 
 ## Laravel
 

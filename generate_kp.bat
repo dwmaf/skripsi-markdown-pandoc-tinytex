@@ -22,7 +22,7 @@ set /p choice="Pilih angka (0-7, 12-15): "
 :: Perintah untuk membuat folder Preview jika belum ada
 if not exist "Preview" mkdir "Preview"
 
-if "%choice%"=="1" set FILES=kp/kp-bab1.md & set OUT=kp\Preview\Preview_KP_Bab1.pdf
+if "%choice%"=="1" set FILES=kp/kp-preface.md kp/kp-bab1.md & set OUT=kp\Preview\Preview_KP_Bab1.pdf
 if "%choice%"=="2" set FILES=kp/kp-bab2.md & set OUT=kp\Preview\Preview_KP_Bab2.pdf
 if "%choice%"=="3" set FILES=kp/kp-bab3.md & set OUT=kp\Preview\Preview_KP_Bab3.pdf
 if "%choice%"=="4" set FILES=kp/kp-bab4.md & set OUT=kp\Preview\Preview_KP_Bab4.pdf
