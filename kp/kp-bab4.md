@@ -2,15 +2,15 @@
 
 ## Implementasi 
 
-Berikut merupakan hasil implementasi tampilan halaman dan penjelasan *backend* dari Web Self-Printing. Penjelasan di bawah ini mencakup visualisasi antarmuka pengguna beserta deskripsi fungsionalitas dari setiap komponen yang tersedia pada sistem.
+Berikut merupakan hasil implementasi tampilan halaman dan penjelasan *backend* dari Web *Self-Printing*. Penjelasan di bawah ini mencakup visualisasi antarmuka pengguna beserta deskripsi fungsionalitas dari setiap komponen yang tersedia pada sistem.
 
 ### Halaman Unggah Dokumen
 
-Gambar \ref{fig:hal-anjungan-6} menampilkan antarmuka awal pada layar anjungan saat sistem dalam kondisi siaga (idle). Pada tahap ini, sistem belum menerima data dokumen apa pun. Antarmuka hanya menampilkan sebuah instruksi dan kode QR dinamis yang harus dipindai oleh pengguna menggunakan perangkat seluler untuk memulai sesi pencetakan secara mandiri.
+Gambar \ref{fig:hal-anjungan-6} menampilkan antarmuka awal pada layar anjungan saat sistem dalam kondisi siaga. Pada tahap ini, sistem belum menerima data dokumen apa pun. Antarmuka hanya menampilkan sebuah instruksi dan kode QR dinamis yang harus dipindai oleh pengguna menggunakan perangkat seluler untuk memulai sesi pencetakan secara mandiri.
 
 ![Halaman Anjungan \label{fig:hal-anjungan-6}](kp/images/hasil/2-anjungan-6.png)
 
-Setelah pengguna memindai kode QR dari layar anjungan, browser pada perangkat seluler pengguna akan secara otomatis diarahkan ke halaman pengunggahan dokumen seperti yang ditunjukkan pada Gambar \ref{fig:hal-unggah-doc-1}. Melalui antarmuka ini, pengguna dapat memilih file berekstensi PDF dari penyimpanan perangkat mereka untuk diunggah ke peladen (server).
+Setelah pengguna memindai kode QR dari layar anjungan, *browser* pada perangkat seluler pengguna akan secara otomatis diarahkan ke halaman pengunggahan dokumen seperti yang ditunjukkan pada Gambar \ref{fig:hal-unggah-doc-1}. Melalui antarmuka ini, pengguna dapat memilih file berekstensi PDF dari penyimpanan perangkat mereka untuk diunggah ke peladen (server).
 
 ![Halaman Unggah Dokumen di Perangkat Pengguna \label{fig:hal-unggah-doc-1}](kp/images/hasil/1-unggah-doc-1.png)
 
@@ -18,14 +18,14 @@ Dari sisi backend, proses pengunggahan dokumen tersebut ditangani oleh fungsi kh
 
 ![Source Code Menangani Route POST Unggah Dokumen \label{fig:source-1}](kp/images/hasil/10-source-1-upload.png)
 
-Pemicu dari controller tersebut kemudian dilanjutkan ke dalam sebuah Class Event khusus yang ditunjukkan pada Gambar \ref{fig:source-2}. Class ini diimplementasikan menggunakan infrastruktur WebSocket (dalam hal ini memanfaatkan paket Laravel Reverb). Fungsinya adalah melakukan siaran data (broadcasting) ke saluran (channel) yang sedang didengarkan oleh perangkat anjungan. Saat event ini tereksekusi, browser anjungan akan menangkap sinyal real-time tersebut dan secara otomatis memuat ulang (reload) antarmukanya untuk menampilkan pratinjau dokumen tanpa memerlukan interaksi fisik dari pengguna.
+Pemicu dari controller tersebut kemudian dilanjutkan ke dalam sebuah Class Event khusus yang ditunjukkan pada Gambar \ref{fig:source-2}. Class ini diimplementasikan menggunakan infrastruktur WebSocket (dalam hal ini memanfaatkan paket Laravel Reverb). Fungsinya adalah melakukan siaran data (broadcasting) ke saluran (channel) yang sedang didengarkan oleh perangkat anjungan. Saat event ini tereksekusi, *browser* anjungan akan menangkap sinyal real-time tersebut dan secara otomatis memuat ulang (reload) antarmukanya untuk menampilkan pratinjau dokumen tanpa memerlukan interaksi fisik dari pengguna.
 
 ![Source Code Class Websocket Upload File \label{fig:source-2}](kp/images/hasil/10-source-2-event-file-upload.png)
 
 
 ### Request Cetak Dokumen
 
-Setelah sinyal real-time dari event pengunggahan dokumen berhasil ditangkap oleh browser anjungan, antarmuka anjungan secara otomatis memuat ulang (reload) dan menampilkan daftar file yang siap diproses seperti pada Gambar \ref{fig:hal-anjungan-1}. Pada tahapan ini, tersedia dua aksi utama bagi pengguna: tombol berlogo printer untuk membuka modal konfigurasi cetak, dan tombol sampah untuk menghapus dokumen dari antrean sementara di anjungan.
+Setelah sinyal real-time dari event pengunggahan dokumen berhasil ditangkap oleh *browser* anjungan, antarmuka anjungan secara otomatis memuat ulang (reload) dan menampilkan daftar file yang siap diproses seperti pada Gambar \ref{fig:hal-anjungan-1}. Pada tahapan ini, tersedia dua aksi utama bagi pengguna: tombol berlogo printer untuk membuka modal konfigurasi cetak, dan tombol sampah untuk menghapus dokumen dari antrean sementara di anjungan.
 
 ![Halaman Anjungan \label{fig:hal-anjungan-1}](kp/images/hasil/2-anjungan-1.png)
 

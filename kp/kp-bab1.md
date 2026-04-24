@@ -12,32 +12,32 @@ Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universi
 
 Metode akses manual seperti itu tidak efisien dan sangat rentan terhadap risiko keamanan privasi data mahasiswa. Selain itu, ketiadaan sistem terpusat ini menyulitkan pihak pengelola untuk melakukan pengawasan terhadap penggunaan aset. Tanpa adanya sistem otorisasi dan rekapitulasi, pemantauan terhadap volume penggunaan kertas serta validasi terhadap dokumen yang dicetak tidak dapat dilakukan secara akurat. Hal ini menimbulkan risiko pemborosan bahan habis pakai dan kurangnya transparansi dalam pencatatan aktivitas operasional harian.
 
-Pengembangan aplikasi Self Printing berbasis web hadir sebagai solusi untuk mengaktifkan fungsi anjungan tersebut sekaligus memberikan mekanisme kendali mutu. Melalui aplikasi ini, setiap dokumen yang diunggah oleh mahasiswa melalui perangkat mobile tidak akan langsung dicetak oleh mesin. Sistem didesain agar setiap permintaan cetak yang mencakup detail konfigurasi seperti ukuran kertas (A4/F4), mode warna, dan jumlah halaman harus melalui tahap verifikasi dan persetujuan oleh operator. Hal ini memastikan bahwa setiap lembar kertas yang keluar dari mesin telah terdata dan mendapatkan izin dari pengawas.
+Pengembangan aplikasi self-printing berbasis web hadir sebagai solusi untuk mengaktifkan fungsi anjungan tersebut sekaligus memberikan mekanisme kendali mutu. Melalui aplikasi ini, setiap dokumen yang diunggah oleh mahasiswa melalui perangkat *mobile* tidak akan langsung dicetak oleh mesin. Sistem didesain agar setiap permintaan cetak yang mencakup detail konfigurasi seperti ukuran kertas (A4/F4), mode warna, dan jumlah halaman harus melalui tahap verifikasi dan persetujuan oleh operator. Hal ini memastikan bahwa setiap lembar kertas yang keluar dari mesin telah terdata dan mendapatkan izin dari pengawas.
 
 Namun, implementasi alur persetujuan ini menghadapi tantangan teknis dalam hal sinkronisasi data antar perangkat. Pada arsitektur web tradisional, layar anjungan tidak akan mengetahui jika operator telah menyetujui permintaan cetak kecuali halaman dimuat ulang secara manual. Jeda komunikasi ini akan menyebabkan kebingungan pada pengguna di depan anjungan dan menghambat proses pelayanan. Diperlukan sebuah teknologi yang mampu menghubungkan status antara perangkat mahasiswa, layar operator, dan mesin anjungan secara instan.
 
-Untuk mengatasi permasalahan tersebut, teknologi WebSocket diimplementasikan guna menciptakan sinkronisasi komunikasi dua arah antara sistem administrator dan mesin anjungan secara *real-time*. Melalui penerapan teknologi ini, setiap pembaruan status antrean dan persetujuan dokumen dapat langsung diteruskan ke layar anjungan pengguna secara instan, sehingga menciptakan proses pelayanan mandiri yang lebih responsif dan efisien tanpa memerlukan interaksi pemuatan ulang antarmuka secara manual.
+Untuk mengatasi permasalahan tersebut, teknologi WebSocket diimplementasikan guna menciptakan sinkronisasi komunikasi dua arah antara sistem admin dan mesin anjungan secara *real time*. Melalui penerapan teknologi ini, setiap pembaruan status antrean dan persetujuan dokumen dapat langsung diteruskan ke layar anjungan pengguna secara instan, sehingga menciptakan proses pelayanan mandiri yang lebih responsif dan efisien tanpa memerlukan interaksi pemuatan ulang antarmuka secara manual.
 
-Berdasarkan kondisi tersebut, penulis mengangkat judul “Implementasi Teknologi WebSocket untuk Sinkronisasi Data *Real-Time* pada Aplikasi Self Printing Berbasis Web di UPA PK2 UNTAN”. Aplikasi ini diharapkan dapat mengoptimalkan penggunaan perangkat anjungan yang sudah tersedia, meningkatkan efisiensi pelayanan, serta menjamin pengawasan penggunaan sumber daya yang lebih akurat dan terukur.
+Berdasarkan kondisi tersebut, penulis mengangkat judul “Implementasi Teknologi WebSocket untuk Sinkronisasi Data *Real-Time* pada *Backend Website Self-Printing* di UPA PK2 UNTAN”. Aplikasi ini diharapkan dapat mengoptimalkan penggunaan perangkat anjungan yang sudah tersedia, meningkatkan efisiensi pelayanan, serta menjamin pengawasan penggunaan sumber daya yang lebih akurat dan terukur.
 
 ## Perumusan Masalah
 
 Berdasarkan latar belakang di atas, dibuatlah perumusan masalah yaitu:
 
 1. Bagaimana merancang arsitektur backend yang mampu mengelola alur pengunggahan dokumen dan manajemen antrean pencetakan secara aman dan terpusat?
-2. Bagaimana mengimplementasikan teknologi WebSocket menggunakan Laravel Reverb untuk menciptakan sinkronisasi status secara real-time dua arah antara layar anjungan dan panel administrator?
+2. Bagaimana mengimplementasikan teknologi WebSocket menggunakan Laravel Reverb untuk menciptakan sinkronisasi status secara *real time* dua arah antara layar anjungan dan panel admin?
 
 ## Tujuan Kerja Praktek dan Target yang Akan Dicapai
 
 Tujuan kerja praktek adalah sebagai berikut:
 
 a.	Untuk memenuhi beban satuan kredit semester (SKS) yang harus ditempuh sebagai persyaratan akademis di Program Studi Informatika Fakultas Teknik Universitas Tanjungpura.
-b.	Untuk membuat *website* Self Printing di UPA PK2 UNTAN.
+b.	Untuk membuat *website self-printing* di UPA PK2 UNTAN.
 
 Adapun target yang akan dicapai sebagai berikut:
 
 a.	Terpenuhinya beban satuan kredit semester (SKS) yang harus ditempuh sebagai persyaratan akademis di Program Studi Informatika Fakultas Teknik Universitas Tanjungpura.
-b.	Dapat membuat *website* Self Printing di UPA PK2 UNTAN.
+b.	Dapat membuat *website self-printing* di UPA PK2 UNTAN.
 
 ## Manfaat Kerja Praktek
 
@@ -57,8 +57,8 @@ b.	Memahami konsep *Event-Driven Architecture* dalam pengembangan perangkat luna
 
 Agar pelaksanaan kerja praktek ini tidak menyimpang dari permasalahan, dibuatlah batasan masalah sebagai berikut:
 
-a.  Implementasi komunikasi *real-time* dibangun menggunakan Laravel Reverb sebagai *server* WebSocket, sedangkan penanganan *event listener* di sisi antarmuka (klien) memanfaatkan integrasi pustaka JavaScript (seperti Laravel Echo).
-b.	Penulis hanya bertanggung jawab pada logika backend (pengiriman sinyal/event) dan memastikan data diterima oleh klien. Desain antarmuka pengguna (UI) secara mendetail dikerjakan oleh rekan tim divisi *Frontend*.
+a.  Implementasi komunikasi *real-time* dibangun menggunakan Laravel Reverb sebagai *server* WebSocket, sedangkan penanganan *event listener* di sisi antarmuka memanfaatkan integrasi pustaka JavaScript (seperti Laravel Echo).
+b.	Penulis hanya bertanggung jawab pada logika *backend* (pengiriman *event*) dan memastikan data diterima oleh klien. Desain antarmuka pengguna secara mendetail dikerjakan oleh rekan tim divisi *frontend*.
 
 
 ## Metodologi Kerja Praktek
@@ -66,16 +66,17 @@ b.	Penulis hanya bertanggung jawab pada logika backend (pengiriman sinyal/event)
 1.	Analisis Kebutuhan
 
 Pada tahap ini, kebutuhan yang diperlukan oleh *website* diperoleh dengan cara berikut:
+
 a.	Observasi, dilakukan dengan melakukan pengamatan langsung ke lokasi kerja praktek.
 b.	Wawancara, berinteraksi dengan pihak terkait melalui sesi tanya jawab untuk memahami kebutuhan yang spesifik dari *website* yang akan dibuat.
 
 2.	Perancangan
 
-Proses perancangan bertujuan menghasilkan kerangka aplikasi yang sesuai dengan hasil analisis sebelumnya. Perancangan ini akan menggunakan UML (use case).
+Proses perancangan bertujuan menghasilkan kerangka aplikasi yang sesuai dengan hasil analisis sebelumnya. Perancangan ini akan menggunakan UML (diagram *use case*).
 
 3.	Implementasi
 
-Langkah implementasi melibatkan eksekusi rencana yang telah dirancang sebelumnya, menghasilkan sebuah *website* Self Printing di UPA PK2 UNTAN.
+Langkah implementasi melibatkan eksekusi rencana yang telah dirancang sebelumnya, menghasilkan sebuah *website* *self-printing* di UPA PK2 UNTAN.
 
 4.	Pengujian
 

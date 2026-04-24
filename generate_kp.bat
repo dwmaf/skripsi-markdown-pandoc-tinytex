@@ -12,7 +12,6 @@ echo ------------------------------------------
 echo 12. Render Bab 1 - 2
 echo 13. Render Bab 1 - 3
 echo 14. Render Bab 1 - 4
-echo 15. Render Bab 1 - 5
 echo ------------------------------------------
 echo 7. Render SEMUA FULL (Laporan KP)
 echo 0. Batal / Keluar
@@ -29,12 +28,11 @@ if "%choice%"=="4" set FILES=kp/kp-bab4.md & set OUT=kp\Preview\Preview_KP_Bab4.
 if "%choice%"=="5" set FILES=kp/kp-bab5.md & set OUT=kp\Preview\Preview_KP_Bab5.pdf
 
 :: --- TAMBAHAN RENTANG BAB ---
-if "%choice%"=="12" set FILES=kp/kp-bab1.md kp/kp-bab2.md & set OUT=kp\Preview\Preview_KP_Bab1-2.pdf
-if "%choice%"=="13" set FILES=kp/kp-bab1.md kp/kp-bab2.md kp/kp-bab3.md & set OUT=kp\Preview\Preview_KP_Bab1-3.pdf
-if "%choice%"=="14" set FILES=kp/kp-bab1.md kp/kp-bab2.md kp/kp-bab3.md kp/kp-bab4.md & set OUT=kp\Preview\Preview_KP_Bab1-4.pdf
-if "%choice%"=="15" set FILES=kp/kp-bab1.md kp/kp-bab2.md kp/kp-bab3.md kp/kp-bab4.md kp/kp-bab5.md & set OUT=kp\Preview\Preview_KP_Bab1-5.pdf
+if "%choice%"=="12" set FILES=kp/kp-preface.md kp/kp-bab1.md kp/kp-bab2.md kp/kp-lampiran.md & set OUT=kp\Preview\Preview_KP_Bab1-2.pdf
+if "%choice%"=="13" set FILES=kp/kp-preface.md kp/kp-bab1.md kp/kp-bab2.md kp/kp-bab3.md kp/kp-lampiran.md & set OUT=kp\Preview\Preview_KP_Bab1-3.pdf
+if "%choice%"=="14" set FILES=kp/kp-preface.md kp/kp-bab1.md kp/kp-bab2.md kp/kp-bab3.md kp/kp-bab4.md kp/kp-lampiran.md & set OUT=kp\Preview\Preview_KP_Bab1-4.pdf
 
-if "%choice%"=="7" set FILES=kp/kp-preface.md kp/kp-bab1.md kp/kp-bab2.md kp/kp-bab3.md kp/kp-bab4.md kp/kp-bab5.md & set OUT=DawamAgungFathoni_Laporan_KP.pdf
+if "%choice%"=="7" set FILES=kp/kp-preface.md kp/kp-bab1.md kp/kp-bab2.md kp/kp-bab3.md kp/kp-bab4.md kp/kp-bab5.md kp/kp-lampiran.md & set OUT=DawamAgungFathoni_Laporan_KP.pdf
 if "%choice%"=="0" exit /b
 
 echo.

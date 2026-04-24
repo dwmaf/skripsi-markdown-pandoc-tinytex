@@ -113,11 +113,11 @@ Susunan Penguji Skripsi:
 
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
 Ketua,              & Penguji Utama, \\[3.5em]
-Morteza Muthahhari, S.Kom., M.T.I.        & (Nama Penguji Utama) \\
-NIP. 198607092019031008            & NIP. ... \\[2em]
+Morteza Muthahhari, S.Kom., M.T.I.        & Enda Esyudha Pratama, S.T., M.T. \\
+NIP. 198607092019031008            & NIP. 198810182019031006 \\[2em]
 Sekretaris,         & Penguji Pendamping, \\[3.5em]
-Bomo Wibowo Sanjaya, S.T., M.T.   & (Nama Penguji Pendamping) \\
-NIP. 197404011999031003            & NIP. ...
+Bomo Wibowo Sanjaya, S.T., M.T.   & Rifqi Anugrah, S.Kom., M.Kom. \\
+NIP. 197404011999031003            & NIP. 199803122024061001
 \end{tabular*}
 
 \vspace{1em}
@@ -138,14 +138,26 @@ NIP 196712231992031002
 
 \vspace*{\fill}
 \begin{center}
-Saya persembahkan skripsi ini untuk kedua orang tua saya.
+Puji syukur kehadirat Allah SWT atas segala rahmat dan kemudahan-Nya, sehingga perjalanan panjang yang penuh dengan baris kode, error log, dan ribuan cangkir kopi ini akhirnya sampai di titik akhir. Dengan penuh rasa syukur, karya sederhana ini saya persembahkan untuk:
+
+Kedua orang tua tercinta, ayahanda dan ibunda, Terima kasih telah menjadi server utama yang tak pernah down dalam memberikan doa, kasih sayang, dan dukungan finansial. Tanpa restu dan sabar kalian, baris pertama kodingan ini tidak akan pernah tertulis. Skripsi ini adalah kado kecil untuk segala peluh yang kalian tumpahkan demi melihat saya memakai toga. Semoga ini bisa menjadi awal untuk membahagiakan kalian lebih jauh lagi.
+
+Dosen pembimbing dan penguji, terima kasih telah sabar membimbing saya yang terkadang masih logic error ini. Terima kasih telah memberikan arahan hingga aplikasi LSP ini tidak hanya menjadi sekadar tugas akhir, tapi sebuah karya yang layak diuji.
+
+Teman-teman seperjuangan (angkatan 2021), khususnya kawan-kawan yang sudah sering berbagi error handling, tempat curhat saat deadline mencekik, dan teman nongkrong di sela-sela pengerjaan bab 4 yang tak berujung. Kalian adalah user interface paling nyaman dalam perjalanan kuliah saya. Kita mulai bersama, dan kita harus sukses bersama.
+
+Untuk diriku sendiri, terima kasih karena tidak menekan tombol shutdown di saat keadaan terasa sangat berat. Terima kasih sudah tetap keep running meskipun memori otak hampir penuh dan semangat hampir timeout. Kamu hebat sudah sampai di sini.
+
+Almamater tercinta, Universitas Tanjungpura, tempat saya tumbuh dan belajar arti sesungguhnya dari sebuah perjuangan intelektual.
+
+Semoga skripsi ini bermanfaat, dan semoga setiap baris kode di dalamnya menjadi amal jariyah bagi kita semua.
 \end{center}
 \vspace*{\fill}
 \newpage
 
 # KATA PENGANTAR {-}
 \setlength{\parindent}{1.27cm}
-Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menyelesaikan penulisan tugas akhir penelitian yang berjudul “Pengembangan Sistem Informasi Lembaga Sertifikasi Profesi (LSP) UNTAN Menggunakan *Progressive Web App*”. Penulis menyadari dalam penulisan tugas akhir penelitian ini tidak terlepas dari bantuan berbagai pihak. Untuk itu pada kesempatan ini, penulis menyampaikan terima kasih kepada Bapak Dr. Yus Sholva, S.T., M.T. selaku Ketua Jurusan Informatika Fakultas Teknik Universitas Tanjungpura, Bapak Morteza Muthahhari, S.Kom., M.T.I. selaku Dosen Pembimbing I, Bapak Bomo Wibowo Sanjaya selaku Dosen Pembimbing II, Bapak ... selaku Dosen Penguji I dan Bapak ... selaku Dosen Penguji II dalam penelitian ini. Penulis berharap semoga tugas akhir penelitian ini bermanfaat bagi semua pihak dan bila terdapat kekurangan penulis mengharapkan saran dan kritik yang membangun dari semua pihak untuk menyempurnakan tugas akhir penelitian ini.
+Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menyelesaikan penulisan tugas akhir penelitian yang berjudul “Pengembangan Sistem Informasi Lembaga Sertifikasi Profesi (LSP) UNTAN Menggunakan *Progressive Web App*”. Penulis menyadari dalam penulisan tugas akhir penelitian ini tidak terlepas dari bantuan berbagai pihak. Untuk itu pada kesempatan ini, penulis menyampaikan terima kasih kepada Bapak Dr. Yus Sholva, S.T., M.T. selaku Ketua Jurusan Informatika Fakultas Teknik Universitas Tanjungpura, Bapak Morteza Muthahhari, S.Kom., M.T.I. selaku Dosen Pembimbing I, Bapak Bomo Wibowo Sanjaya selaku Dosen Pembimbing II, Bapak Enda Esyudha Pratama, S.T., M.T. selaku Dosen Penguji I dan Bapak Rifqi Anugrah, S.Kom., M.Kom. selaku Dosen Penguji II dalam penelitian ini. Penulis berharap semoga tugas akhir penelitian ini bermanfaat bagi semua pihak dan bila terdapat kekurangan penulis mengharapkan saran dan kritik yang membangun dari semua pihak untuk menyempurnakan tugas akhir penelitian ini.
 
 \vspace{1cm}
 \begin{flushright}
@@ -167,7 +179,7 @@ Dawam Agung Fathoni
 \setlength{\parskip}{0pt}
 \fontsize{10pt}{12pt}\selectfont
 \vspace{10pt}
-Lembaga Sertifikasi Profesi (LSP) Universitas Tanjungpura (UNTAN) didirikan untuk menyelenggarakan proses sertifikasi guna meningkatkan daya saing mahasiswa di dunia kerja. Pada pelaksanaannya, proses pendaftaran sertifikasi masih belum terintegrasi secara terpusat, mengandalkan pengisian formulir pihak ketiga, serta melibatkan pengelolaan dokumen fisik yang rentan terhadap risiko kehilangan dan inefisiensi waktu. Penelitian ini bertujuan untuk merancang dan membangun Sistem Informasi LSP UNTAN yang dapat memfasilitasi keseluruhan proses pendaftaran, verifikasi berkas, asesmen, hingga penerbitan sertifikat digital secara daring. Sistem ini dikembangkan menggunakan pendekatan \textit{System Development Life Cycle} (SDLC) dengan model \textit{Waterfall}, menggunakan kerangka kerja Laravel sebagai antarmuka belakang (\textit{backend}) dan Vue.js yang diintegrasikan melalui Inertia.js sebagai antarmuka depan (\textit{frontend}). Penelitian ini turut mengimplementasikan teknologi \textit{Progressive Web App} (PWA) agar aplikasi web mampu memberikan pengalaman menyerupai aplikasi \textit{native}, dengan memanfaatkan fitur \textit{Add to Home Screen} dan \textit{Push Notification} melalui \textit{Firebase Cloud Messaging} (FCM). Hasil penelitian ini adalah sebuah sistem informasi berbasis web yang berhasil mengotomatisasi alur kerja pendaftaran sertifikasi, meningkatkan efisiensi kerja admin dan asesor, serta memberikan kemudahan akses bagi asesi tanpa perlu mengunduh aplikasi melalui \textit{app store}. Berdasarkan pengujian menggunakan metode \textit{Black Box Testing} yang merujuk pada standar ISO-IEC-IEEE-29119, seluruh fungsionalitas sistem informasi yang dibangun telah berjalan dengan baik dan sesuai dengan kebutuhan yang diharapkan.
+Lembaga Sertifikasi Profesi (LSP) Universitas Tanjungpura (UNTAN) didirikan untuk menyelenggarakan proses sertifikasi guna meningkatkan daya saing mahasiswa di dunia kerja. Pada pelaksanaannya, proses pendaftaran sertifikasi masih belum terintegrasi secara terpusat, mengandalkan pengisian formulir pihak ketiga, serta melibatkan pengelolaan dokumen fisik yang rentan terhadap risiko kehilangan dan inefisiensi waktu. Penelitian ini bertujuan untuk merancang dan membangun Sistem Informasi LSP UNTAN yang dapat memfasilitasi keseluruhan proses pendaftaran, verifikasi berkas, asesmen, hingga penerbitan sertifikat digital secara daring. Sistem ini dikembangkan menggunakan pendekatan \textit{System Development Life Cycle} (SDLC) dengan model \textit{Waterfall}, menggunakan kerangka kerja Laravel sebagai antarmuka belakang (\textit{backend}) dan Vue.js yang diintegrasikan melalui Inertia.js sebagai antarmuka depan (\textit{frontend}). Penelitian ini turut mengimplementasikan teknologi \textit{Progressive Web App} (PWA) agar aplikasi web mampu memberikan pengalaman menyerupai aplikasi \textit{native}, dengan memanfaatkan fitur \textit{Add to Home Screen} dan \textit{Push Notification} melalui \textit{Firebase Cloud Messaging} (FCM). Hasil penelitian ini adalah sebuah sistem informasi berbasis web yang berhasil mengotomatisasi alur kerja pendaftaran sertifikasi, meningkatkan efisiensi kerja admin dan asesor, serta memberikan kemudahan akses bagi asesi tanpa perlu mengunduh aplikasi melalui \textit{app store}. Berdasarkan pengujian menggunakan metode \textit{Black Box Testing}, seluruh fungsionalitas sistem informasi yang dibangun telah berjalan dengan baik dan sesuai dengan kebutuhan yang diharapkan.
 \vspace{10pt}
 
 \noindent\textbf{Kata Kunci}: \textit{Sistem Informasi, Sertifikasi Kompetensi, Progressive Web App, LSP UNTAN, Black Box Testing.}

@@ -2,7 +2,7 @@
 \begin{center}
 \fontsize{14pt}{17pt}\selectfont
 \textbf{LAPORAN KERJA PRAKTEK}\\
-\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA REAL-TIME PADA BACKEND WEBSITE SELF PRINTING DI UPA PK2 UNTAN}
+\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA \textit{REAL-TIME} PADA \textit{BACKEND WEBSITE SELF-PRINTING} DI UPA PK2 UNTAN}
 
 
 \normalsize
@@ -33,10 +33,10 @@
 \begin{center}
 \textbf{LAPORAN KERJA PRAKTEK}
 
-\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA REAL-TIME PADA BACKEND WEBSITE SELF PRINTING DI UPA PK2 UNTAN}
+\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA \textit{REAL-TIME} PADA \textit{BACKEND WEBSITE SELF-PRINTING} DI UPA PK2 UNTAN}
 \end{center}
 
-\noindent Laporan kerja praktek yang berjudul “Implementasi Teknologi Websocket Untuk Sinkronisasi Data Real-Time Pada Backend Website Self Printing Di UPA PK2 UNTAN” ini disesuaikan dengan judul Kerja Praktek yang telah dilaksanakan oleh penulis. Judul Kerja Praktek yang telah diambil serta dilaksanakan oleh penulis yaitu Implementasi Teknologi Websocket Untuk Sinkronisasi Data Real-Time Pada Backend Website Self Printing Di UPA PK2 UNTAN. Laporan Kerja Praktek yang ditujukan kepada “Jurusan/Program Studi Informatika Fakultas Teknik Universitas Tanjungpura Pontianak” ini telah disusun oleh:
+\noindent Laporan kerja praktek yang berjudul “Implementasi Teknologi Websocket Untuk Sinkronisasi Data *Real-Time* Pada *Backend Website Self-Printing* Di UPA PK2 UNTAN” ini disesuaikan dengan judul Kerja Praktek yang telah dilaksanakan oleh penulis. Judul Kerja Praktek yang telah diambil serta dilaksanakan oleh penulis yaitu Implementasi Teknologi Websocket Untuk Sinkronisasi Data *Real-Time* Pada *Backend Website Self-Printing* Di UPA PK2 UNTAN. Laporan Kerja Praktek yang ditujukan kepada “Jurusan/Program Studi Informatika Fakultas Teknik Universitas Tanjungpura Pontianak” ini telah disusun oleh:
 
 \vspace{-1.7em}
 \begin{flushleft}
@@ -69,7 +69,7 @@ Penulis
 \vspace{2em}
 \textbf{LAPORAN KERJA PRAKTEK}
 
-\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA REAL-TIME PADA BACKEND WEBSITE SELF PRINTING DI UPA PK2 UNTAN}
+\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA \textit{REAL-TIME} PADA \textit{BACKEND WEBSITE SELF-PRINTING} DI UPA PK2 UNTAN}
 
 \vspace{40pt}
 \textbf{OLEH:}\\
@@ -115,7 +115,7 @@ Tahun Akademik  & : 2025/2026
 \noindent Menyatakan bahwa Laporan Kerja Praktek saya yang berjudul:
 \vspace{-1.5em}
 \begin{center}
-\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA REAL-TIME PADA BACKEND WEBSITE SELF PRINTING DI UPA PK2 UNTAN}
+\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA \textit{REAL-TIME} PADA \textit{BACKEND WEBSITE SELF-PRINTING} DI UPA PK2 UNTAN}
 \end{center}
 \vspace{-1.5em}
 \noindent Merupakan karya sendiri dan bukan merupakan karya orang lain. Apabila suatu saat nanti terbukti saya melakukan plagiat, maka saya akan menerima sanksi yang telah ditetapkan. 
@@ -140,7 +140,7 @@ Penulis
 
 # KATA PENGANTAR {-}
 \setlength{\parindent}{1.27cm}
-Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menyelesaikan penulisan laporan kerja praktek  yang berjudul “Implementasi Teknologi Websocket Untuk Sinkronisasi Data Real-Time Pada Backend Website Self Printing Di UPA PK2 UNTAN”. Penulis menyadari dalam penulisan laporan kerja praktek  ini tidak terlepas dari bantuan berbagai pihak. Untuk itu pada kesempatan ini, penulis menyampaikan terima kasih kepada Bapak Dr. Yus Sholva, S.T., M.T. selaku Ketua Jurusan Informatika Fakultas Teknik Universitas Tanjungpura, Bapak Enriko Yudhistira Ramadhan, S.Kom., M.T. selaku Dosen Pembimbing Kerja Praktek, Bapak Donny Hidayat S.Kom selaku Pembimbing Lapangan Kerja Praktek dalam kerja praktek ini. Penulis berharap semoga laporan kerja praktek  ini bermanfaat bagi semua pihak dan bila terdapat kekurangan penulis mengharapkan saran dan kritik yang membangun dari semua pihak untuk menyempurnakan laporan kerja praktek ini.
+Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menyelesaikan penulisan laporan kerja praktek  yang berjudul “Implementasi Teknologi Websocket Untuk Sinkronisasi Data *Real-Time* Pada *Backend Website Self-Printing* Di UPA PK2 UNTAN”. Penulis menyadari dalam penulisan laporan kerja praktek  ini tidak terlepas dari bantuan berbagai pihak. Untuk itu pada kesempatan ini, penulis menyampaikan terima kasih kepada Bapak Dr. Yus Sholva, S.T., M.T. selaku Ketua Jurusan Informatika Fakultas Teknik Universitas Tanjungpura, Bapak Enriko Yudhistira Ramadhan, S.Kom., M.T. selaku Dosen Pembimbing Kerja Praktek, Bapak Donny Hidayat S.Kom selaku Pembimbing Lapangan Kerja Praktek dalam kerja praktek ini. Penulis berharap semoga laporan kerja praktek  ini bermanfaat bagi semua pihak dan bila terdapat kekurangan penulis mengharapkan saran dan kritik yang membangun dari semua pihak untuk menyempurnakan laporan kerja praktek ini.
 
 \vspace{1cm}
 \begin{flushright}

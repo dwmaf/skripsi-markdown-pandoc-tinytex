@@ -5,7 +5,7 @@
 \begin{longtable}{|p{2.5cm}|p{3.8cm}|p{3.8cm}|p{4.2cm}|}
 \caption{Perbandingan Penelitian Terdahulu (\textit{State of the Art})}\label{tab:sota} \\
 \hline
-\centering\textbf{Aspek Pembanding} & \centering\textbf{Jurnal 1 (Yinka-Banjo, dkk.)} & \centering\textbf{Jurnal 2 (JUSITI)} & \centering\textbf{Kerja Praktik (Penulis)} \tabularnewline \hline
+\centering\textbf{Aspek Pembanding} & \centering\textbf{Jurnal 1} & \centering\textbf{Jurnal 2} & \centering\textbf{Kerja Praktik (Penulis)} \tabularnewline \hline
 \endfirsthead
 \hline
 \centering\textbf{Aspek Pembanding} & \centering\textbf{Jurnal 1} & \centering\textbf{Jurnal 2} & \centering\textbf{Kerja Praktik} \tabularnewline \hline
@@ -27,17 +27,17 @@
 
 \end{longtable}
 
-"Terdapat kesamaan fundamental antara kedua penelitian terdahulu dengan sistem yang dikembangkan pada UPA PK2 UNTAN, yaitu penggunaan arsitektur berbasis kejadian (Event-Driven) untuk menciptakan sinkronisasi real-time. Namun, terdapat kebaruan (novelty) dari kerja praktik ini pada dua aspek utama.
+Terdapat kesamaan fundamental antara kedua penelitian terdahulu dengan sistem yang dikembangkan pada UPA PK2 UNTAN, yaitu penggunaan arsitektur berbasis kejadian (*Event-Driven*) untuk menciptakan sinkronisasi *real-time*. Namun, terdapat kebaruan dari kerja praktik ini pada dua aspek utama.
 
-Pertama, dari segi infrastruktur arsitektur real-time. Jika penelitian pertama bergantung pada pustaka eksternal (Ratchet) yang memerlukan konfigurasi event-loop terpisah, dan penelitian kedua dibatasi oleh kuota layanan pihak ketiga (Pusher), kerja praktik ini mengimplementasikan Laravel Reverb. Teknologi ini merupakan peladen WebSocket first-party self-hosted yang terintegrasi secara mulus (seamless) dalam ekosistem Laravel, sehingga institusi memiliki kontrol penuh atas performa tanpa batasan kuota. Kedua, dari segi fungsionalitas, sinyal WebSocket pada KP ini tidak sebatas memperbarui elemen antarmuka (UI updates), melainkan digunakan sebagai jembatan otorisasi yang seketika mengaktifkan kemampuan anjungan untuk mengeksekusi perangkat keras pencetak fisik (printer)."
+Pertama, dari segi infrastruktur arsitektur *real-time*. Jika penelitian pertama yang berjudul "Sistem Pemanggilan Antrian Menggunakan Websocket" bergantung pada pustaka eksternal (Ratchet) yang memerlukan konfigurasi *event-loop* terpisah, dan penelitian kedua yang berjudul "Layanan *Real Time* Berbasis Websocket Dan *Speechsynthesis* Pada *Website* Gereja" dibatasi oleh kuota layanan pihak ketiga (Pusher), kerja praktik ini mengimplementasikan Laravel Reverb. Teknologi ini merupakan *server* WebSocket *first-party self-hosted* yang terintegrasi secara mulus dalam ekosistem Laravel, sehingga penulis memiliki kontrol penuh atas performa tanpa batasan kuota. Kedua, dari segi fungsionalitas, sinyal WebSocket pada KP ini tidak sebatas memperbarui elemen antarmuka, melainkan digunakan sebagai jembatan otorisasi yang seketika mengaktifkan kemampuan anjungan untuk mengeksekusi printer [@David2025] [@Rachmat2016].
 
 ##	Website 
 
-Website didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. Backend, atau yang sering dirujuk sebagai sisi *server* (*server-side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem . Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL) . Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau *browser*, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*) . Selain fungsionalitas konten, *backend* memegang peranan krusial dalam aspek keamanan aplikasi, karena seluruh proses validasi data akhir dan penyimpanan informasi sensitif harus dilakukan sepenuhnya di *server-side* guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
+Website didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. *Backend*, atau yang sering dirujuk sebagai sisi *server* (*server side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem . Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL) . Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau *browser*, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*) . Selain fungsionalitas konten, *backend* memegang peranan krusial dalam aspek keamanan aplikasi, karena seluruh proses validasi data akhir dan penyimpanan informasi sensitif harus dilakukan sepenuhnya di *server side* guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
 
 ## UPA PK2 UNTAN
 
-Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universitas Tanjungpura, yang secara resmi berdiri pada bulan Oktober 2024, merupakan unit strategis perguruan tinggi yang berfokus pada pengembangan karier dan pembinaan kewirausahaan bagi mahasiswa serta alumni. Unit ini memiliki peran fundamental dalam menjembatani dunia pendidikan dengan dunia usaha, industri (DUDI), dan pemerintahan guna mencetak lulusan yang adaptif, inovatif, dan berdaya saing tinggi di dunia kerja. Secara operasional, pusat layanan dan administrasi UPA PK2 UNTAN berlokasi di Gedung Konferensi Lantai 2, Jalan Jenderal Ahmad Yani, Bansir Laut, Kecamatan Pontianak Tenggara, Kota Pontianak, Kalimantan Barat 78124.
+Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universitas Tanjungpura, yang secara resmi berdiri pada bulan Oktober 2024, merupakan unit strategis perguruan tinggi yang berfokus pada pengembangan karier dan pembinaan kewirausahaan bagi mahasiswa serta alumni. Unit ini memiliki peran fundamental dalam menjembatani dunia pendidikan dengan dunia usaha, industri, dan pemerintahan guna mencetak lulusan yang adaptif, inovatif, dan berdaya saing tinggi di dunia kerja. Secara operasional, pusat layanan dan administrasi UPA PK2 UNTAN berlokasi di Gedung Konferensi Lantai 2, Jalan Jenderal Ahmad Yani, Bansir Laut, Kecamatan Pontianak Tenggara, Kota Pontianak, Kalimantan Barat 78124.
 
 ## *Web Self-Service*
 
@@ -45,15 +45,15 @@ Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universi
 
 ## *Web to Print Workflow*
 
-*Web to Print Workflow* merupakan sebuah sistem yang mengintegrasikan portal berbasis web sebagai antarmuka untuk menghubungkan pengguna jasa cetak (*print buyer*) dengan penyedia jasa cetak (*print provider*) secara digital. Inti dari alur kerja ini adalah otomatisasi alur kerja, yaitu proses menyuplai data secara otomatis ke perangkat produksi agar mesin dapat menjalankan proses cetak segera setelah instruksi tersedia. Dalam sistem anjungan mandiri, *website* berfungsi sebagai pengontrol yang mengirimkan *metadata* berupa informasi spesifikasi dokumen langsung ke perangkat printer tanpa memerlukan bantuan *operator* manual. Dengan demikian, alur kerja ini mengubah urutan produksi konvensional menjadi sebuah rangkaian proses digital yang efisien, di mana setiap tahapan cetak dijalankan berdasarkan daftar aturan prosedur yang telah didefinisikan dalam sistem web tersebut [@Hoffmann2023]
+*Web to Print Workflow* merupakan sebuah sistem yang mengintegrasikan portal berbasis web sebagai antarmuka untuk menghubungkan pengguna jasa cetak (*print buyer*) dengan penyedia jasa cetak (*print provider*) secara digital. Inti dari alur kerja ini adalah otomatisasi alur kerja, yaitu proses menyuplai data secara otomatis ke perangkat produksi agar mesin dapat menjalankan proses cetak segera setelah instruksi tersedia. Dalam sistem anjungan mandiri, *website* berfungsi sebagai pengontrol yang mengirimkan *metadata* berupa informasi spesifikasi dokumen langsung ke perangkat printer tanpa memerlukan bantuan operator manual. Dengan demikian, alur kerja ini mengubah urutan produksi konvensional menjadi sebuah rangkaian proses digital yang efisien, di mana setiap tahapan cetak dijalankan berdasarkan daftar aturan prosedur yang telah didefinisikan dalam sistem web tersebut [@Hoffmann2023]
 
 ## Sinkronisasi Data
 
-Sinkronisasi data adalah proses terintegrasi untuk memelihara konsistensi antara basis data pusat dan tampilan terminal agar berbagai salinan data yang sama tidak saling bertentangan atau mengalami inkonsistensi. Melalui mekanisme replikasi dan propagasi pembaruan, sistem menjamin bahwa layar terminal selalu menyajikan snapshot yang konsisten secara transaksi, di mana setiap perubahan data yang relevan tercermin secara akurat berdasarkan status terakhir yang sah di *server*. Proses sinkronisasi ini harus menjaga sifat atomisitas, yaitu prinsip bahwa seluruh rangkaian pembaruan harus berhasil secara utuh atau tidak sama sekali untuk mencegah kegagalan data akibat masalah jaringan, sehingga tercipta transparansi replikasi di mana pengguna merasa seolah-olah berinteraksi langsung dengan satu sumber data tunggal yang terpadu [@Silberschatz2011].
+Sinkronisasi data adalah proses terintegrasi untuk memelihara konsistensi antara basis data pusat dan tampilan terminal agar berbagai salinan data yang sama tidak saling bertentangan atau mengalami inkonsistensi. Melalui mekanisme replikasi dan propagasi pembaruan, sistem menjamin bahwa layar terminal selalu menyajikan *snapshot* yang konsisten secara transaksi, di mana setiap perubahan data yang relevan tercermin secara akurat berdasarkan status terakhir yang sah di *server*. Proses sinkronisasi ini harus menjaga sifat atomisitas, yaitu prinsip bahwa seluruh rangkaian pembaruan harus berhasil secara utuh atau tidak sama sekali untuk mencegah kegagalan data akibat masalah jaringan, sehingga tercipta transparansi replikasi di mana pengguna merasa seolah-olah berinteraksi langsung dengan satu sumber data tunggal yang terpadu [@Silberschatz2011].
 
 ## *Real Time*
 
-Sistem *real time* didefinisikan sebagai sistem yang diwajibkan untuk menyelesaikan tugas dan memberikan layanannya secara tepat waktu (*on a timely basis*) menjamin fungsionalitas dan integritas data. Karakteristik utama yang memberikan kesan respon instan adalah responsivitas yang dirasakan (*perceived responsiveness*), di mana sistem harus bekerja cukup cepat sehingga pengguna tidak merasakan adanya kelambanan (*sluggishness*) [@Liu2000].
+Sistem *real-time* didefinisikan sebagai sistem yang diwajibkan untuk menyelesaikan tugas dan memberikan layanannya secara tepat waktu (*on a timely basis*) menjamin fungsionalitas dan integritas data. Karakteristik utama yang memberikan kesan respon instan adalah responsivitas yang dirasakan (*perceived responsiveness*), di mana sistem harus bekerja cukup cepat sehingga pengguna tidak merasakan adanya kelambanan (*sluggishness*) [@Liu2000].
 
 ## Websocket
 
@@ -63,9 +63,9 @@ WebSocket adalah standar industri terbuka yang memungkinkan komunikasi dua arah 
 
 Laravel didefinisikan sebagai kerangka kerja (*framework*) aplikasi web berbasis PHP dan bersifat *open source* yang dirancang untuk memfasilitasi pengembangan sistem yang kompleks dengan sintaks yang ekspresif dan elegan. Kerangka kerja ini mengadopsi arsitektur *Model-View-Controller* (MVC) dan menyediakan standar konvensi (*opinionated defaults*) yang membantu pengembang membangun aplikasi secara terstruktur dan efisien.
 
-Keunggulan utama Laravel terletak pada kemampuannya menyediakan ekosistem fitur yang komprehensif dan siap pakai (out-of-the-box). Fitur-fitur krusial seperti otentikasi pengguna, mekanisme validasi *input* yang ketat, serta manajemen basis data melalui *Eloquent Object-Relational Mapping* (ORM) dan *Query Builder* tersedia secara bawaan. Hal ini tidak hanya mempercepat proses pengembangan, tetapi juga menjamin keamanan dan konsistensi kode program dibandingkan membangun sistem dari nol.
+Keunggulan utama Laravel terletak pada kemampuannya menyediakan ekosistem fitur yang komprehensif dan siap pakai. Fitur-fitur krusial seperti otentikasi pengguna, mekanisme validasi *input* yang ketat, serta manajemen basis data melalui *Eloquent Object-Relational Mapping* (ORM) dan *Query Builder* tersedia secara bawaan. Hal ini tidak hanya mempercepat proses pengembangan, tetapi juga menjamin keamanan dan konsistensi kode program dibandingkan membangun sistem dari nol.
 
-Dalam pengembangan aplikasi ini, Laravel difungsikan sebagai fondasi *backend* yang terintegrasi erat dengan antarmuka pengguna melalui pustaka Inertia.js. Pendekatan ini memungkinkan penerapan arsitektur *Monolith*, di mana Laravel tetap memegang kendali penuh atas manajemen *routing* dan *controller*, namun masih dapat memvisualisasikan tampilan berbasis komponen Vue.js tanpa perlu membangun RESTful API yang terpisah dan kompleks. Fitur *Migrations* tetap digunakan untuk manajemen skema basis data MySQL agar terorganisir [@Stauffer2019].
+Dalam pengembangan aplikasi ini, Laravel difungsikan sebagai fondasi *backend* yang terintegrasi erat dengan antarmuka pengguna melalui pustaka Inertia.js. Pendekatan ini memungkinkan penerapan arsitektur *monolith*, di mana Laravel tetap memegang kendali penuh atas manajemen *routing* dan *controller*, namun masih dapat memvisualisasikan tampilan berbasis komponen Vue.js tanpa perlu membangun RESTful API yang terpisah dan kompleks. Fitur *migrations* tetap digunakan untuk manajemen skema basis data MySQL agar terorganisir [@Stauffer2019].
 
 ## Unified Modelling Language (UML)
 
@@ -134,7 +134,7 @@ Menunjukkan akhir dari seluruh aliran aktivitas dalam diagram. Digambarkan denga
 
 ### Diagram *Class*
 
-Diagram *Class* merupakan sebuah diagram yang merepresentasikan struktur logis dari sebuah sistem. Diagram ini memvisualisasikan keberadaan kelas-kelas serta hubungan (*relationships*) yang terjalin di antaranya. Selama analisis, diagram *class* digunakan untuk menunjukkan peran dan tanggung jawab umum entitas yang menentukan perilaku sistem. Selama perancangan, diagram *class* digunakan untuk menggambarkan struktur kelas-kelas yang membentuk arsitektur sistem [@Booch2007]. Simbol-simbol diagram *class* dapat dilihat pada Tabel \ref{tab:simbol-class} berikut.
+Diagram *Class* merupakan sebuah diagram yang merepresentasikan struktur logis dari sebuah sistem. Diagram ini memvisualisasikan keberadaan kelas-kelas serta hubungan yang terjalin di antaranya. Selama analisis, diagram *class* digunakan untuk menunjukkan peran dan tanggung jawab umum entitas yang menentukan perilaku sistem. Selama perancangan, diagram *class* digunakan untuk menggambarkan struktur kelas-kelas yang membentuk arsitektur sistem [@Booch2007]. Simbol-simbol diagram *class* dapat dilihat pada Tabel \ref{tab:simbol-class} berikut.
 
 \begin{longtable}{|p{3.5cm}|p{10.5cm}|}
 \caption{Simbol-Simbol Diagram \textit{Class}}\label{tab:simbol-class} \\
@@ -153,7 +153,7 @@ Diagram *Class* merupakan sebuah diagram yang merepresentasikan struktur logis d
 
 \raggedright \textbf{Asosiasi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/asosiasi.png} & Hubungan statis antar kelas yang menunjukkan bahwa satu kelas memiliki keterkaitan dengan kelas lainnya. \\ \hline
 
-\raggedright \textbf{Agregasi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/agregasi.png} & Hubungan "bagian dari" (\textit{part-of}) di mana objek bagian dapat berdiri sendiri tanpa objek induknya. Digambarkan dengan garis dengan ujung belah ketupat kosong. \\ \hline
+\raggedright \textbf{Agregasi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/agregasi.png} & Hubungan di mana objek bagian dapat berdiri sendiri tanpa objek induknya. Digambarkan dengan garis dengan ujung belah ketupat kosong. \\ \hline
 
 \raggedright \textbf{Komposisi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/komposisi.png} & Hubungan kepemilikan yang kuat di mana objek bagian tidak dapat hidup tanpa objek induknya. Digambarkan dengan belah ketupat hitam penuh. \\ \hline
 
@@ -167,7 +167,7 @@ Diagram *Class* merupakan sebuah diagram yang merepresentasikan struktur logis d
 
 Komponen utama dalam ERD meliputi entitas, atribut, dan hubungan (*relationships*) antar entitas tersebut. Diagram ini juga memetakan batasan struktural seperti rasio kardinalitas (misalnya 1:1 atau 1:N) dan batasan partisipasi untuk memastikan integritas hubungan antar data.
 
-*Data dictionary* atau sering disebut katalog DBMS, didefinisikan sebagai repositori penyimpanan metadata, yaitu data yang mendeskripsikan struktur basis data itu sendiri. Di dalamnya tersimpan definisi skema lengkap, mulai dari nama kolom, tipe data.
+*Data dictionary* atau sering disebut katalog DBMS, didefinisikan sebagai repositori penyimpanan *metadata*, yaitu data yang mendeskripsikan struktur basis data itu sendiri. Di dalamnya tersimpan definisi skema lengkap, mulai dari nama kolom, tipe data.
 
 Perangkat lunak DBMS menggunakan katalog ini sebagai acuan utama saat mengakses atau memanipulasi data untuk memastikan bahwa setiap perubahan status data tetap valid dan sesuai dengan aturan struktur yang telah didefinisikan sebelumnya. Simbol-simbol ERD dapat dilihat pada Tabel \ref{tab:simbol-erd} berikut.
 
@@ -184,7 +184,7 @@ Perangkat lunak DBMS menggunakan katalog ini sebagai acuan utama saat mengakses 
 \hline
 \endlastfoot
 \raggedright \textbf{\textit{Entity}} \par \centering \includegraphics[width=2.5cm]{images/simbol/erd/entity.png} & Kumpulan objek yang memiliki karakteristik yang sama dan dapat diidentifikasi secara unik. Digambarkan dengan bentuk persegi panjang. \\ \hline
-\raggedright \textbf{\textit{Relationship}} \par \centering \includegraphics[width=2cm]{images/simbol/erd/relation.png} & Menunjukkan adanya hubungan atau keterkaitan antara dua atau lebih entitas. Digambarkan dengan bentuk belah ketupat (\textit{diamond}). \\ \hline
+\raggedright \textbf{\textit{Relationship}} \par \centering \includegraphics[width=2cm]{images/simbol/erd/relation.png} & Menunjukkan adanya hubungan atau keterkaitan antara dua atau lebih entitas. Digambarkan dengan bentuk belah ketupat. \\ \hline
 \raggedright \textbf{\textit{Attribute}} \par \centering \includegraphics[width=2cm]{images/simbol/erd/attribute.png} & 
 Karakteristik atau properti yang mendeskripsikan suatu entitas. Digambarkan dengan bentuk oval. \\ \hline
 \raggedright \textbf{Garis Penghubung} \par \centering \includegraphics[width=2cm]{images/simbol/erd/line.png} & Garis yang menghubungkan atribut ke entitas atau entitas ke relasi dalam diagram. \\ \hline

@@ -17,5 +17,3 @@ Beberapa saran yang dapat diberikan untuk pengembangan aplikasi Self Printing in
 3. Optimalisasi sistem manajemen file pada server agar secara otomatis menghapus dokumen lama yang sudah berhasil dicetak guna menjaga kapasitas penyimpanan server tetap efisien.
 
 \newpage
-
-# DAFTAR PUSTAKA
