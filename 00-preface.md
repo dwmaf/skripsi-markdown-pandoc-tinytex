@@ -56,7 +56,7 @@ Demikian pernyataan ini dibuat dengan sebenar-benarnya. Saya sanggup menerima ko
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, Maret 2026 \\
+Pontianak, April 2026 \\
 Penulis, \\
 \\
 \\
@@ -122,7 +122,7 @@ NIP. 197404011999031003            & NIP. 199803122024061001
 
 \vspace{1em}
 \begin{tabular}{@{}l@{}}
-Pontianak, Maret 2026 \\
+Pontianak, April 2026 \\
 Dekan, \\[3.5em]
 Dr. -Ing Ir. Slamet Widodo, M.T., IPM. \\
 NIP 196712231992031002
@@ -138,19 +138,13 @@ NIP 196712231992031002
 
 \vspace*{\fill}
 \begin{center}
-Puji syukur kehadirat Allah SWT atas segala rahmat dan kemudahan-Nya, sehingga perjalanan panjang yang penuh dengan baris kode, error log, dan ribuan cangkir kopi ini akhirnya sampai di titik akhir. Dengan penuh rasa syukur, karya sederhana ini saya persembahkan untuk:
+Dengan penuh rasa syukur, karya sederhana ini saya persembahkan untuk kedua orang tua tercinta, ayahanda dan ibunda, Terima kasih telah menjadi server utama yang tak pernah down dalam memberikan doa, kasih sayang, dan dukungan finansial. Tanpa restu dan sabar kalian, baris pertama kodingan ini tidak akan pernah tertulis. Skripsi ini adalah kado kecil untuk segala peluh yang kalian tumpahkan demi melihat saya memakai toga. Semoga ini bisa menjadi awal untuk membahagiakan kalian lebih jauh lagi.
 
-Kedua orang tua tercinta, ayahanda dan ibunda, Terima kasih telah menjadi server utama yang tak pernah down dalam memberikan doa, kasih sayang, dan dukungan finansial. Tanpa restu dan sabar kalian, baris pertama kodingan ini tidak akan pernah tertulis. Skripsi ini adalah kado kecil untuk segala peluh yang kalian tumpahkan demi melihat saya memakai toga. Semoga ini bisa menjadi awal untuk membahagiakan kalian lebih jauh lagi.
+Dosen pembimbing, Pak Teza dan Pak Bomo. Dan dosen penguji, Pak Enda dan Pak Rifqi. terima kasih telah sabar membimbing saya yang terkadang masih logic error ini. Terima kasih telah memberikan arahan hingga aplikasi LSP ini tidak hanya menjadi sekadar tugas akhir, tapi sebuah karya yang layak diuji. Terima kasih untuk Pak Afif yang juga sudah mendukung saya.
 
-Dosen pembimbing dan penguji, terima kasih telah sabar membimbing saya yang terkadang masih logic error ini. Terima kasih telah memberikan arahan hingga aplikasi LSP ini tidak hanya menjadi sekadar tugas akhir, tapi sebuah karya yang layak diuji.
+Teman-teman seperjuangan (angkatan 2021), khususnya kawan-kawan yang sudah sering berbagi error handling, tempat curhat saat deadline, dan teman nongkrong di sela-sela pengerjaan bab 4 yang tak berujung. Kalian adalah user interface paling nyaman dalam perjalanan kuliah saya. Kita mulai bersama, dan kita harus sukses bersama.
 
-Teman-teman seperjuangan (angkatan 2021), khususnya kawan-kawan yang sudah sering berbagi error handling, tempat curhat saat deadline mencekik, dan teman nongkrong di sela-sela pengerjaan bab 4 yang tak berujung. Kalian adalah user interface paling nyaman dalam perjalanan kuliah saya. Kita mulai bersama, dan kita harus sukses bersama.
-
-Untuk diriku sendiri, terima kasih karena tidak menekan tombol shutdown di saat keadaan terasa sangat berat. Terima kasih sudah tetap keep running meskipun memori otak hampir penuh dan semangat hampir timeout. Kamu hebat sudah sampai di sini.
-
-Almamater tercinta, Universitas Tanjungpura, tempat saya tumbuh dan belajar arti sesungguhnya dari sebuah perjuangan intelektual.
-
-Semoga skripsi ini bermanfaat, dan semoga setiap baris kode di dalamnya menjadi amal jariyah bagi kita semua.
+Untuk diriku sendiri, terima kasih karena tidak menekan tombol shutdown di saat keadaan terasa sangat berat. Terima kasih sudah tetap keep running meskipun memori otak hampir penuh dan semangat hampir timeout. Kamu hebat sudah sampai di sini. Almamater tercinta, Universitas Tanjungpura, tempat saya tumbuh dan belajar arti sesungguhnya dari sebuah perjuangan intelektual. Semoga skripsi ini bermanfaat, dan semoga setiap baris kode di dalamnya menjadi amal jariyah bagi kita semua.
 \end{center}
 \vspace*{\fill}
 \newpage
@@ -163,7 +157,7 @@ Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menye
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, Maret 2026 \\
+Pontianak, April 2026 \\
 Penulis, \\
 \\
 \\

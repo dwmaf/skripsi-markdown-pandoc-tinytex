@@ -68,6 +68,10 @@ header-includes:
   - \titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{1em}{}
   - \titlespacing*{\subsection}{0pt}{2pt}{-6pt}
 
+  # 5. Format Sub-Sub-Sub-Bab (Heading 4)
+  - \titleformat{\subsubsection}{\normalfont\bfseries}{\thesubsubsection}{1em}{}
+  - \titlespacing*{\subsubsection}{0pt}{2pt}{-6pt}
+  
   # --- FORMAT CAPTION GAMBAR & TABEL ---
   - \usepackage{caption}
   

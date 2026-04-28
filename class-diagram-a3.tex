@@ -1,0 +1,33 @@
+
+\documentclass[12pt,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[a3paper, landscape, margin=2cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\thefigure}{3.19}
+\captionsetup[figure]{labelfont=bf, labelsep=space}
+
+\setcounter{page}{48}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=0.85\textheight, keepaspectratio]{images/class.png}
+    \vspace{1.5cm}
+    \caption{Diagram \textit{Class}}
+    \label{fig:diagram-class}
+\end{figure}
+
+\end{document}
