@@ -2,7 +2,11 @@
 
 ## Studi Pustaka
 
-\begin{longtable}{|p{2.5cm}|p{3.8cm}|p{3.8cm}|p{4.2cm}|}
+\captionsetup[longtable]{justification=raggedright, singlelinecheck=false}
+\setlength{\LTcapwidth}{13.8cm}
+\addtolength{\LTcapwidth}{8\tabcolsep}
+\addtolength{\LTcapwidth}{5\arrayrulewidth}
+\begin{longtable}{|p{2cm}|p{3.8cm}|p{3.8cm}|p{4.2cm}|}
 \caption{Perbandingan Penelitian Terdahulu (\textit{State of the Art})}\label{tab:sota} \\
 \hline
 \centering\textbf{Aspek Pembanding} & \centering\textbf{Jurnal 1} & \centering\textbf{Jurnal 2} & \centering\textbf{Kerja Praktik (Penulis)} \tabularnewline \hline
@@ -19,9 +23,9 @@
 
 \raggedright \textbf{Arsitektur Dasar} & \textit{Event-Driven Architecture} (EDA). & \textit{Event-Driven Architecture} (EDA). & \textit{Event-Driven Architecture} (EDA). \\ \hline
 
-\raggedright \textbf{Teknologi \textit{Backend}} & PHP \textit{Native} CLI dan Javascript. & \textit{Framework} Laravel dan MySQL. & \textit{Framework} Laravel dan MySQL. \\ \hline
+\raggedright \textbf{Teknologi \textit{Backend} } & PHP \textit{Native} CLI dan Javascript. & \textit{Framework} Laravel dan MySQL. & \textit{Framework} Laravel dan MySQL. \\ \hline
 
-\raggedright \textbf{Teknologi \textit{Real-Time}} & Pustaka (\textit{library}) pihak ketiga berbasis PHP (Ratchet). & WebSocket menggunakan layanan pihak ketiga (\textit{Pusher}). & WebSocket menggunakan \textit{server self-hosted} (Laravel Reverb). \\ \hline
+\raggedright \textbf{Teknologi \textit{Real-Time} } & Pustaka (\textit{library}) pihak ketiga berbasis PHP (Ratchet). & WebSocket menggunakan layanan pihak ketiga (Pusher). & WebSocket menggunakan \textit{server self-hosted} (Laravel Reverb). \\ \hline
 
 \raggedright \textbf{Tujuan WebSocket} & Memperbarui tampilan nomor antrean pada layar pelanggan secara instan. & Mengirimkan notifikasi pesan dan memicu fitur \textit{Text-to-speech} di peramban. & Memperbarui status antrean, mengubah \textit{state} tombol, dan memicu perintah eksekusi ke printer fisik. \\ \hline
 
@@ -31,9 +35,9 @@ Terdapat kesamaan fundamental antara kedua penelitian terdahulu dengan sistem ya
 
 Pertama, dari segi infrastruktur arsitektur *real-time*. Jika penelitian pertama yang berjudul "Sistem Pemanggilan Antrian Menggunakan Websocket" bergantung pada pustaka eksternal (Ratchet) yang memerlukan konfigurasi *event-loop* terpisah, dan penelitian kedua yang berjudul "Layanan *Real Time* Berbasis Websocket Dan *Speechsynthesis* Pada *Website* Gereja" dibatasi oleh kuota layanan pihak ketiga (Pusher), kerja praktik ini mengimplementasikan Laravel Reverb. Teknologi ini merupakan *server* WebSocket *first-party self-hosted* yang terintegrasi secara mulus dalam ekosistem Laravel, sehingga penulis memiliki kontrol penuh atas performa tanpa batasan kuota. Kedua, dari segi fungsionalitas, sinyal WebSocket pada KP ini tidak sebatas memperbarui elemen antarmuka, melainkan digunakan sebagai jembatan otorisasi yang seketika mengaktifkan kemampuan anjungan untuk mengeksekusi printer [@David2025] [@Rachmat2016].
 
-##	Website 
+##	*Website* 
 
-Website didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. *Backend*, atau yang sering dirujuk sebagai sisi *server* (*server side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem . Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL) . Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau *browser*, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*) . Selain fungsionalitas konten, *backend* memegang peranan krusial dalam aspek keamanan aplikasi, karena seluruh proses validasi data akhir dan penyimpanan informasi sensitif harus dilakukan sepenuhnya di *server side* guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
+*Website* didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. *Backend*, atau yang sering dirujuk sebagai sisi *server* (*server side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem. Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL). Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau *browser*, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*). Selain fungsionalitas konten, \textit{backend} memegang peranan krusial dalam aspek keamanan aplikasi, karena validasi tingkat akhir dan penyimpanan informasi sensitif merupakan tanggung jawab mutlak di sisi *server* guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
 
 ## UPA PK2 UNTAN
 
@@ -41,11 +45,11 @@ Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universi
 
 ## *Web Self-Service*
 
-*Web Self-Service* merupakan perwujudan dari *Self-Service Technologies* (SSTs), yakni antarmuka teknologi yang memungkinkan pelanggan untuk mendapatkan atau menghasilkan layanan secara mandiri tanpa keterlibatan langsung dari karyawan perusahaan. Melalui platform berbasis internet, teknologi ini memfasilitasi pengguna untuk melakukan berbagai aktivitas seperti transaksi pembelian, pengecekan informasi akun, hingga pelacakan pengiriman tanpa perlu mengunjungi gerai fisik atau berkomunikasi dengan staf. Layanan ini secara garis besar mencakup tiga tujuan utama yaitu, layanan pelanggan untuk menjawab kebutuhan informasi, transaksi langsung untuk pertukaran sumber daya secara efisien, serta bantuan mandiri yang memungkinkan pelanggan belajar dan memperoleh layanan sesuai kenyamanan mereka. Secara fundamental, *Web Self-Service* mengalihkan interaksi tradisional di pasar fisik ke dalam *marketspace*, yaitu ranah virtual di mana produk dan layanan hadir sebagai informasi digital yang dikirimkan melalui saluran berbasis informasi [@Meuter2000].
+*Web Self-Service* merupakan perwujudan dari *Self-Service Technologies* (SSTs), yakni antarmuka teknologi yang memungkinkan pengguna untuk mendapatkan atau menghasilkan layanan secara mandiri tanpa keterlibatan langsung dari karyawan perusahaan. Melalui platform berbasis internet, teknologi ini memfasilitasi pengguna untuk melakukan berbagai aktivitas fungsional tanpa perlu mengantre secara fisik di loket pelayanan. Layanan ini secara garis besar mencakup pemenuhan kebutuhan informasi, eksekusi layanan langsung secara efisien, serta bantuan mandiri yang memungkinkan pengguna belajar dan memperoleh layanan sesuai kenyamanan mereka. Secara fundamental, *Web Self-Service* mengalihkan interaksi tradisional di ruang fisik ke dalam *marketspace* atau ranah virtual [@Meuter2000]. Dalam konteks instansi akademik seperti UPA PK2 UNTAN, konsep inilah yang menjadi landasan utama dari implementasi sistem *self-printing*, di mana layanan pencetakan dokumen dialihkan menjadi layanan mandiri berbasis \textit{web} untuk memangkas waktu tunggu dan mengoptimalkan efisiensi kerja staf.
 
 ## *Web to Print Workflow*
 
-*Web to Print Workflow* merupakan sebuah sistem yang mengintegrasikan portal berbasis web sebagai antarmuka untuk menghubungkan pengguna jasa cetak (*print buyer*) dengan penyedia jasa cetak (*print provider*) secara digital. Inti dari alur kerja ini adalah otomatisasi alur kerja, yaitu proses menyuplai data secara otomatis ke perangkat produksi agar mesin dapat menjalankan proses cetak segera setelah instruksi tersedia. Dalam sistem anjungan mandiri, *website* berfungsi sebagai pengontrol yang mengirimkan *metadata* berupa informasi spesifikasi dokumen langsung ke perangkat printer tanpa memerlukan bantuan operator manual. Dengan demikian, alur kerja ini mengubah urutan produksi konvensional menjadi sebuah rangkaian proses digital yang efisien, di mana setiap tahapan cetak dijalankan berdasarkan daftar aturan prosedur yang telah didefinisikan dalam sistem web tersebut [@Hoffmann2023]
+*Web to Print Workflow* merupakan sebuah sistem yang mengintegrasikan portal berbasis web sebagai antarmuka untuk menghubungkan pengguna jasa cetak dengan penyedia jasa cetak (*print provider*) secara digital. Inti dari konsep ini adalah otomatisasi alur kerja, yaitu proses menyuplai data secara otomatis ke perangkat produksi agar mesin dapat menjalankan proses cetak segera setelah instruksi tersedia. Dalam sistem anjungan mandiri, *website* berfungsi sebagai pengontrol yang mengirimkan *metadata* berupa informasi spesifikasi dokumen langsung ke perangkat printer tanpa memerlukan bantuan operator manual. Dengan demikian, alur kerja ini mengubah urutan produksi konvensional menjadi sebuah rangkaian proses digital yang efisien, di mana setiap tahapan cetak dijalankan berdasarkan daftar aturan prosedur yang telah didefinisikan dalam sistem web tersebut [@Hoffmann2023]
 
 ## Sinkronisasi Data
 
@@ -55,9 +59,9 @@ Sinkronisasi data adalah proses terintegrasi untuk memelihara konsistensi antara
 
 Sistem *real-time* didefinisikan sebagai sistem yang diwajibkan untuk menyelesaikan tugas dan memberikan layanannya secara tepat waktu (*on a timely basis*) menjamin fungsionalitas dan integritas data. Karakteristik utama yang memberikan kesan respon instan adalah responsivitas yang dirasakan (*perceived responsiveness*), di mana sistem harus bekerja cukup cepat sehingga pengguna tidak merasakan adanya kelambanan (*sluggishness*) [@Liu2000].
 
-## Websocket
+## WebSocket
 
-WebSocket adalah standar industri terbuka yang memungkinkan komunikasi dua arah (*bidirectional*) antara aplikasi klien dan *server* melalui Web tanpa memerlukan plugin tambahan. Teknologi ini beroperasi melalui koneksi tunggal (*single-socket*) yang terus terbuka setelah proses jabat tangan (*handshake*) awal untuk meningkatkan protokol HTTP ke protokol WebSocket melalui koneksi TCP yang sama. Berbeda dengan arsitektur HTTP lama yang memiliki latensi tinggi karena keterbatasan pola *request-response*, WebSocket sangat mengurangi latensi karena memungkinkan *server* mengirimkan pesan secara instan begitu data tersedia tanpa harus menunggu permintaan dari klien. Dengan karakteristik yang berbasis event (*event-driven*), WebSocket menyediakan kemampuan jaringan bergaya TCP bagi website untuk mendukung interaksi yang responsif dan sinkronisasi data *real-time* secara efisien [@Wang2013].
+WebSocket adalah standar industri terbuka yang memungkinkan komunikasi dua arah (*bidirectional*) antara aplikasi klien dan *server* melalui Web tanpa memerlukan plugin tambahan. Teknologi ini beroperasi melalui koneksi tunggal (*single-socket*) yang terus terbuka setelah proses jabat tangan (*handshake*) awal untuk meningkatkan protokol HTTP ke protokol WebSocket melalui koneksi TCP yang sama. Berbeda dengan arsitektur HTTP lama yang memiliki latensi tinggi karena keterbatasan pola *request-response*, WebSocket sangat mengurangi latensi karena memungkinkan *server* mengirimkan pesan secara instan begitu data tersedia tanpa harus menunggu permintaan dari klien. Dengan karakteristik yang berbasis event (*event-driven*), WebSocket menyediakan kemampuan jaringan bergaya TCP bagi *website* untuk mendukung interaksi yang responsif dan sinkronisasi data *real-time* secara efisien [@Wang2013].
 
 ## Laravel
 
@@ -75,6 +79,9 @@ Dalam pengembangan aplikasi ini, Laravel difungsikan sebagai fondasi *backend* y
 
 Dalam UML, diagram *use case* didefinisikan sebagai representasi visual yang menggambarkan konteks serta fungsionalitas dari sistem yang akan dibangun. Diagram ini secara spesifik memetakan interaksi antara entitas eksternal (aktor) dengan sistem. Kemampuan visualisasi ini menjadikan diagram *use case* sebagai instrumen vital untuk menjembatani kesenjangan komunikasi dan menyelaraskan pemahaman antara pemangku kepentingan bisnis dan tim pengembang. Diagram *use case* secara khusus memvisualisasikan siapa (atau apa) yang berinteraksi dengan sistem serta apa yang diinginkan dunia luar agar sistem tersebut lakukan [@Booch2007]. Simbol-simbol diagram *use case* dapat dilihat pada Tabel \ref{tab:simbol-usecase} berikut.
 
+\setlength{\LTcapwidth}{14cm}
+\addtolength{\LTcapwidth}{4\tabcolsep}
+\addtolength{\LTcapwidth}{3\arrayrulewidth}
 \begin{longtable}{|p{3.5cm}|p{10.5cm}|}
 \caption{Simbol-Simbol Diagram \textit{Use Case}}\label{tab:simbol-usecase} \\
 \hline
@@ -106,6 +113,9 @@ Relasi antara \textit{use case} tambahan dan \textit{use case} utama, di mana \t
 
 Diagram *activity* didefinisikan sebagai representasi visual yang menggambarkan alur aktivitas dalam suatu sistem, proses bisnis, maupun alur kerja (*workflow*). Diagram ini secara spesifik memfokuskan pada aktivitas-aktivitas yang dijalankan serta mengidentifikasi entitas (siapa atau apa) yang bertanggung jawab atas pelaksanaannya. Dalam tahap analisis, diagram ini menjadi instrumen fundamental untuk mendetailkan skenario *use case* dan memahami perilaku eksekusi sistem tingkat tinggi tanpa perlu melibatkan kompleksitas detail pertukaran pesan internal yang teknis [@Booch2007]. Simbol-simbol diagram *activity* dapat dilihat pada Tabel \ref{tab:simbol-activity} berikut.
 
+\setlength{\LTcapwidth}{14cm}
+\addtolength{\LTcapwidth}{4\tabcolsep}
+\addtolength{\LTcapwidth}{3\arrayrulewidth}
 \begin{longtable}{|p{3.5cm}|p{10.5cm}|}
 \caption{Simbol-Simbol Diagram \textit{Activity}}\label{tab:simbol-activity} \\
 \hline
@@ -136,6 +146,9 @@ Menunjukkan akhir dari seluruh aliran aktivitas dalam diagram. Digambarkan denga
 
 Diagram *Class* merupakan sebuah diagram yang merepresentasikan struktur logis dari sebuah sistem. Diagram ini memvisualisasikan keberadaan kelas-kelas serta hubungan yang terjalin di antaranya. Selama analisis, diagram *class* digunakan untuk menunjukkan peran dan tanggung jawab umum entitas yang menentukan perilaku sistem. Selama perancangan, diagram *class* digunakan untuk menggambarkan struktur kelas-kelas yang membentuk arsitektur sistem [@Booch2007]. Simbol-simbol diagram *class* dapat dilihat pada Tabel \ref{tab:simbol-class} berikut.
 
+\setlength{\LTcapwidth}{14cm}
+\addtolength{\LTcapwidth}{4\tabcolsep}
+\addtolength{\LTcapwidth}{3\arrayrulewidth}
 \begin{longtable}{|p{3.5cm}|p{10.5cm}|}
 \caption{Simbol-Simbol Diagram \textit{Class}}\label{tab:simbol-class} \\
 \hline
@@ -171,6 +184,9 @@ Komponen utama dalam ERD meliputi entitas, atribut, dan hubungan (*relationships
 
 Perangkat lunak DBMS menggunakan katalog ini sebagai acuan utama saat mengakses atau memanipulasi data untuk memastikan bahwa setiap perubahan status data tetap valid dan sesuai dengan aturan struktur yang telah didefinisikan sebelumnya. Simbol-simbol ERD dapat dilihat pada Tabel \ref{tab:simbol-erd} berikut.
 
+\setlength{\LTcapwidth}{14cm}
+\addtolength{\LTcapwidth}{4\tabcolsep}
+\addtolength{\LTcapwidth}{3\arrayrulewidth}
 \begin{longtable}{|p{3.5cm}|p{10.5cm}|}
 \caption{Simbol-Simbol \textit{Entity Relationship Diagram}}\label{tab:simbol-erd} \\
 \hline
@@ -203,4 +219,4 @@ MySQL disebut perangkat lunak basis data *open-source* RDBMS. MySQL dikenal kare
 
 Lebih lanjut, Pressman menjelaskan bahwa metode ini berusaha menemukan kesalahan dalam beberapa kategori spesifik, yaitu fungsi yang tidak benar atau hilang, kesalahan antarmuka (*interface errors*), kesalahan dalam struktur data atau akses basis data eksternal, kesalahan perilaku atau kinerja aplikasi, serta kesalahan inisialisasi dan terminasi.
 
-
+Selain pengujian fungsionalitas, penelitian ini juga melakukan pengujian kinerja (*Performance Testing*). Salah satu tujuan utama dari pengujian kinerja adalah untuk mengukur rata-rata waktu respon pengguna (*average user response time*) dalam kondisi operasional normal. Dalam konteks sistem ini, pengujian difokuskan pada pengukuran *response time* dari proses sinkronisasi antarmuka melalui protokol WebSocket, guna memastikan bahwa arsitektur *backend* yang dibangun mampu memberikan respons yang instan saat proses verifikasi cetak dilakukan oleh admin [@Pressman2015].

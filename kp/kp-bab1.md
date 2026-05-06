@@ -80,7 +80,7 @@ Langkah implementasi melibatkan eksekusi rencana yang telah dirancang sebelumnya
 
 4.	Pengujian
 
-Setelah implementasi selesai maka aka dilakukan pengujian terhadap *website* yang telah dbuat. Tujuan pengujian adalah untuk memastikan *website* bekerja sesuai dengan yang diharapkan.
+Setelah implementasi selesai maka akan dilakukan pengujian terhadap *website* yang telah dbuat. Tujuan pengujian adalah untuk memastikan *website* bekerja sesuai dengan yang diharapkan.
 
 ##	Rincian Pelaksanaan Kerja Praktek
 Waktu pelaksanaan kerja praktek adalah pada bulan Januari – Maret 2026.

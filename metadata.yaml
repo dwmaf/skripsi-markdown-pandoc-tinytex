@@ -88,6 +88,11 @@ header-includes:
   - \hyphenpenalty=10000
   - \hbadness=10000
 
+  # Mencegah satu baris paragraf terpisah ke halaman baru (Widow/Orphan control mirip Word)
+  - \widowpenalty=10000
+  - \clubpenalty=10000
+  - \displaywidowpenalty=10000
+
   # --- (BIAR GAMBAR DIEM DI TEMPAT) ---
   # H artinya Here
   - \usepackage{float}
