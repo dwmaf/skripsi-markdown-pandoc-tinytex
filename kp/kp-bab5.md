@@ -2,9 +2,9 @@
 
 ## Kesimpulan
 
-Berdasarkan dari hasil dan perancangan serta pengujian aplikasi yang telah dilakukan oleh penulis, maka dapat ditarik kesimpulan bahwa kerja praktik ini sebagai berikut.
+Berdasarkan dari hasil dan perancangan serta pengujian aplikasi yang telah dilakukan oleh penulis, maka dapat ditarik kesimpulan bahwa kerja praktek ini sebagai berikut.
 
-1. Kerja praktik ini telah menghasilkan sebuah sistem aplikasi *Self-Printing* berbasis web yang mampu mengintegrasikan alur kerja antara perangkat mahasiswa, panel operator, dan mesin anjungan secara terpusat.
+1. Kerja praktek ini telah menghasilkan sebuah sistem aplikasi *Self-Printing* berbasis web yang mampu mengintegrasikan alur kerja antara perangkat mahasiswa, panel operator, dan mesin anjungan secara terpusat.
 2. Implementasi teknologi WebSocket menggunakan Laravel Reverb berhasil mengatasi kendala komunikasi data tradisional, memungkinkan sinkronisasi status persetujuan cetak secara *real-time* tanpa memerlukan penyegaran (*refresh*) halaman manual pada layar anjungan.
 3. Arsitektur *backend* yang dirancang mampu menangani pengiriman dokumen secara *asynchronous* dan melakukan pembaruan daftar antrian pada sisi operator secara otomatis saat terjadi aktivitas pengunggahan dokumen oleh pengguna.
 4. Dengan adanya sistem ini, UPA PK2 UNTAN kini memiliki mekanisme kontrol yang lebih baik terhadap penggunaan sumber daya cetak (kertas) melalui tahap verifikasi operator sebelum dokumen diproses oleh printer.

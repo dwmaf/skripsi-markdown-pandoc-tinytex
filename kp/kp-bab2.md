@@ -39,10 +39,6 @@ Pertama, dari segi infrastruktur arsitektur *real-time*. Jika penelitian pertama
 
 *Website* didefinisikan sebagai sekumpulan file *hypertext* yang saling tertaut dan menyajikan informasi menggunakan teks serta grafis. [@Pressman2015]. *Backend*, atau yang sering dirujuk sebagai sisi *server* (*server side*), merupakan infrastruktur komputasi yang mencakup *server*, sistem penyimpanan data (basis data), serta aplikasi yang menetap di *server* guna mengelola logika bisnis dan sumber daya sistem. Pengalaman web di sisi *backend* dibangun dari tiga komponen utama, yaitu *Web Server* (seperti Apache), bahasa pemrograman *server-side scripting* (seperti PHP), dan basis data (seperti MySQL). Secara operasional, *backend* berfungsi untuk menerima permintaan (*request*) dari klien atau *browser*, memproses data tersebut secara dinamis termasuk melakukan kueri ke basis data untuk mengambil atau menyimpan informasi dan mengirimkan hasilnya kembali kepada klien dalam bentuk balasan (*response*). Selain fungsionalitas konten, \textit{backend} memegang peranan krusial dalam aspek keamanan aplikasi, karena validasi tingkat akhir dan penyimpanan informasi sensitif merupakan tanggung jawab mutlak di sisi *server* guna menjaga integritas sistem dari potensi manipulasi di sisi klien [@Nixon2018].
 
-## UPA PK2 UNTAN
-
-Unit Penunjang Akademik Pengembangan Karier dan Kewirausahaan (UPA PK2) Universitas Tanjungpura, yang secara resmi berdiri pada bulan Oktober 2024, merupakan unit strategis perguruan tinggi yang berfokus pada pengembangan karier dan pembinaan kewirausahaan bagi mahasiswa serta alumni. Unit ini memiliki peran fundamental dalam menjembatani dunia pendidikan dengan dunia usaha, industri, dan pemerintahan guna mencetak lulusan yang adaptif, inovatif, dan berdaya saing tinggi di dunia kerja. Secara operasional, pusat layanan dan administrasi UPA PK2 UNTAN berlokasi di Gedung Konferensi Lantai 2, Jalan Jenderal Ahmad Yani, Bansir Laut, Kecamatan Pontianak Tenggara, Kota Pontianak, Kalimantan Barat 78124.
-
 ## *Web Self-Service*
 
 *Web Self-Service* merupakan perwujudan dari *Self-Service Technologies* (SSTs), yakni antarmuka teknologi yang memungkinkan pengguna untuk mendapatkan atau menghasilkan layanan secara mandiri tanpa keterlibatan langsung dari karyawan perusahaan. Melalui platform berbasis internet, teknologi ini memfasilitasi pengguna untuk melakukan berbagai aktivitas fungsional tanpa perlu mengantre secara fisik di loket pelayanan. Layanan ini secara garis besar mencakup pemenuhan kebutuhan informasi, eksekusi layanan langsung secara efisien, serta bantuan mandiri yang memungkinkan pengguna belajar dan memperoleh layanan sesuai kenyamanan mereka. Secara fundamental, *Web Self-Service* mengalihkan interaksi tradisional di ruang fisik ke dalam *marketspace* atau ranah virtual [@Meuter2000]. Dalam konteks instansi akademik seperti UPA PK2 UNTAN, konsep inilah yang menjadi landasan utama dari implementasi sistem *self-printing*, di mana layanan pencetakan dokumen dialihkan menjadi layanan mandiri berbasis \textit{web} untuk memangkas waktu tunggu dan mengoptimalkan efisiensi kerja staf.
@@ -70,6 +66,26 @@ Laravel didefinisikan sebagai kerangka kerja (*framework*) aplikasi web berbasis
 Keunggulan utama Laravel terletak pada kemampuannya menyediakan ekosistem fitur yang komprehensif dan siap pakai. Fitur-fitur krusial seperti otentikasi pengguna, mekanisme validasi *input* yang ketat, serta manajemen basis data melalui *Eloquent Object-Relational Mapping* (ORM) dan *Query Builder* tersedia secara bawaan. Hal ini tidak hanya mempercepat proses pengembangan, tetapi juga menjamin keamanan dan konsistensi kode program dibandingkan membangun sistem dari nol.
 
 Dalam pengembangan aplikasi ini, Laravel difungsikan sebagai fondasi *backend* yang terintegrasi erat dengan antarmuka pengguna melalui pustaka Inertia.js. Pendekatan ini memungkinkan penerapan arsitektur *monolith*, di mana Laravel tetap memegang kendali penuh atas manajemen *routing* dan *controller*, namun masih dapat memvisualisasikan tampilan berbasis komponen Vue.js tanpa perlu membangun RESTful API yang terpisah dan kompleks. Fitur *migrations* tetap digunakan untuk manajemen skema basis data MySQL agar terorganisir [@Stauffer2019].
+
+## *System Development Life Cycle* (SDLC)
+
+*System Development Life Cycle* (SDLC) adalah proses untuk menentukan bagaimana sebuah sistem atau aplikasi dapat mendukung kebutuhan bisnis, merancangnya, membangunnya, dan menyerahkannya kepada pengguna [@Dennis2012].
+
+Untuk mengimplementasikan siklus hidup pengembangan sistem tersebut, penelitian ini menggunakan model *Waterfall* yang dikemukakan oleh Ian Sommerville. Model *Waterfall* sebagai pendekatan yang mengambil aktivitas proses fundamental seperti spesifikasi, pengembangan, validasi, dan evolusi dan merepresentasikannya sebagai fase-fase proses yang terpisah dan berurutan, seperti sebuah air terjun. Karena sifatnya yang mengalir dari satu fase ke fase berikutnya [@sommerville2011]. Kelebihan dari *Waterfall* adalah kualitas dari sistem yang dihasilkan akan baik dan meminimilasir kesalahan yang mungkin akan terjadi, karena pelaksanaannya dilakukan secara bertahap [@wahid2020].
+
+![Waterfall](images/waterfall-sommerville.png)
+
+Berikut adalah tahapan-tahapan dari metode *Waterfall* [@sommerville2011].
+
+a.  *Requirements Definition*, tahap ini bertujuan untuk mengumpulkan kebutuhan sistem termasuk batasan dan layanan yang akan ditawarkan oleh sistem melalui komunikasi dengan pengguna.
+
+b.  *System and Software Design*, proses perancangan sistem mengalokasikan persyaratan ke sistem perangkat keras atau perangkat lunak dengan membangun arsitektur sistem secara keseluruhan. Perancangan perangkat lunak melibatkan identifikasi dan penggambaran abstraksi sistem perangkat lunak fundamental dan hubungan di antara mereka.
+
+c.  *Implementation and Unit Testing*, selama tahap ini, desain perangkat lunak diwujudkan dalam bentuk serangkaian program atau unit program. Pengujian unit melibatkan verifikasi bahwa setiap unit memenuhi spesifikasinya.
+
+d.  *Integration and System Testing*, unit-unit program atau program-program individual diintegrasikan dan diuji sebagai suatu sistem yang lengkap untuk memastikan bahwa persyaratan perangkat lunak telah terpenuhi. Setelah pengujian, sistem perangkat lunak dikirimkan kepada pelanggan.
+
+e.  *Operation and Maintenance*, ini adalah fase siklus hidup terpanjang. Sistem dipasang dan digunakan secara praktis. Pemeliharaan melibatkan perbaikan kesalahan yang tidak ditemukan pada tahap awal siklus hidup, peningkatan implementasi unit sistem, dan peningkatan layanan sistem saat persyaratan baru ditemukan.
 
 ## Unified Modelling Language (UML)
 
@@ -161,15 +177,10 @@ Diagram *Class* merupakan sebuah diagram yang merepresentasikan struktur logis d
 \endfoot
 \hline
 \endlastfoot
-
 \raggedright \textbf{\textit{Class}} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/classname.png} & Struktur utama yang mendefinisikan objek, terdiri dari tiga bagian: nama kelas, atribut properti, dan metode. \\ \hline
-
 \raggedright \textbf{Asosiasi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/asosiasi.png} & Hubungan statis antar kelas yang menunjukkan bahwa satu kelas memiliki keterkaitan dengan kelas lainnya. \\ \hline
-
 \raggedright \textbf{Agregasi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/agregasi.png} & Hubungan di mana objek bagian dapat berdiri sendiri tanpa objek induknya. Digambarkan dengan garis dengan ujung belah ketupat kosong. \\ \hline
-
 \raggedright \textbf{Komposisi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/komposisi.png} & Hubungan kepemilikan yang kuat di mana objek bagian tidak dapat hidup tanpa objek induknya. Digambarkan dengan belah ketupat hitam penuh. \\ \hline
-
 \raggedright \textbf{Generalisasi} \par \centering \includegraphics[width=2.5cm]{images/simbol/class/generalisasi.png} & Menunjukkan hubungan pewarisan antara kelas induk (\textit{superclass}) dan kelas anak (\textit{subclass}). \\ \hline
 
 \end{longtable}
@@ -213,10 +224,10 @@ Karakteristik atau properti yang mendeskripsikan suatu entitas. Digambarkan deng
 
 MySQL disebut perangkat lunak basis data *open-source* RDBMS. MySQL dikenal karena fleksibilitasnya yang dapat beroperasi di berbagai sistem operasi seperti Windows, Linux, dan Mac OS X, serta sering menjadi pilihan utama sebagai *backend* penyimpanan data untuk aplikasi berbasis web. Meskipun tersedia secara gratis, MySQL menawarkan fitur-fitur tingkat lanjut seperti kemampuan replikasi bawaan dan skalabilitas yang mumpuni menjadikannya solusi yang andal bagi organisasi maupun pengembang individu dalam menjaga ketersediaan data dan integritas sistem [@Hoffer2011].
 
-## *Black Box Testing*
+## *Testing*
 
 *Black box testing*, yang juga dikenal sebagai pengujian perilaku (*behavioral testing*), merupakan metode pengujian yang berfokus pada persyaratan fungsional perangkat lunak. Berbeda dengan *white box testing* yang membedah logika internal program, *black box testing* memungkinkan penguji untuk memperoleh serangkaian kondisi input yang sepenuhnya menguji semua persyaratan fungsional program tanpa perlu mengetahui struktur kode aplikasinya [@Pressman2015].
 
 Lebih lanjut, Pressman menjelaskan bahwa metode ini berusaha menemukan kesalahan dalam beberapa kategori spesifik, yaitu fungsi yang tidak benar atau hilang, kesalahan antarmuka (*interface errors*), kesalahan dalam struktur data atau akses basis data eksternal, kesalahan perilaku atau kinerja aplikasi, serta kesalahan inisialisasi dan terminasi.
 
-Selain pengujian fungsionalitas, penelitian ini juga melakukan pengujian kinerja (*Performance Testing*). Salah satu tujuan utama dari pengujian kinerja adalah untuk mengukur rata-rata waktu respon pengguna (*average user response time*) dalam kondisi operasional normal. Dalam konteks sistem ini, pengujian difokuskan pada pengukuran *response time* dari proses sinkronisasi antarmuka melalui protokol WebSocket, guna memastikan bahwa arsitektur *backend* yang dibangun mampu memberikan respons yang instan saat proses verifikasi cetak dilakukan oleh admin [@Pressman2015].
+Selain pengujian fungsionalitas, penelitian ini juga melakukan pengujian kinerja (*performance testing*). Salah satu tujuan utama dari pengujian kinerja adalah untuk mengukur rata-rata waktu respon pengguna (*average user response time*) dalam kondisi operasional normal. Dalam konteks sistem ini, pengujian difokuskan pada pengukuran *response time* dari proses sinkronisasi antarmuka melalui protokol WebSocket, guna memastikan bahwa arsitektur *backend* yang dibangun mampu memberikan respons yang instan saat proses verifikasi cetak dilakukan oleh admin [@Pressman2015]. Adapun standar keberhasilan responsivitas yang digunakan merujuk pada ambang batas persepsi manusia, di mana waktu respon di bawah 100 ms dikategorikan sebagai respon instan dan di bawah 1.000 ms sebagai batas toleransi agar alur interaksi pengguna tidak terganggu [@Nielsen1993].

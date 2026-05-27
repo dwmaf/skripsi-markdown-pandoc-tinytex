@@ -32,6 +32,7 @@ PONTIANAK\\
 \end{center}
 \newpage
 
+\pagestyle{plain}
 \pagenumbering{roman}
 \setcounter{page}{2}
 

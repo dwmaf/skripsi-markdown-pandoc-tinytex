@@ -24,7 +24,11 @@ Kondisi tersebut menimbulkan beberapa permasalahan utama, yaitu:
 
 Untuk mengatasi keterbatasan pada sistem yang sedang berjalan, dikembangkan sebuah sistem Web *Self-Printing* berbasis *Real-Time Data Synchronization*. Sistem ini mengubah proses cetak manual menjadi otomatis dan mandiri (*Web-to-Print Workflow*) dengan memanfaatkan protokol WebSocket untuk komunikasi dua arah tanpa jeda.
 
-Alur kerja sistem baru ini dirancang sebagai berikut:
+Alur kerja sistem baru ini dirancang pada Gambar \ref{fig:proses-bisnis}.
+
+![Proses bisnis sistem \label{fig:proses-bisnis}](kp/images/proses-bisnis.png)
+
+Berikut adalah penjelasan dari proses bisnis pada Gambar \ref{fig:proses-bisnis}.
 
 1. Inisiasi & Identifikasi: Layar utama anjungan menampilkan sebuah kode QR.
 2. Unggah Dokumen (*Mobile*): Pengguna memindai kode QR menggunakan perangkat seluler yang akan mengarahkan mereka ke halaman web khusus untuk mengunggah *file* berekstensi PDF yang ingin dicetak.
@@ -32,7 +36,6 @@ Alur kerja sistem baru ini dirancang sebagai berikut:
 4. Konfigurasi dan Permintaan Cetak: Melalui layar sentuh anjungan, pengguna menekan tombol "*Print*", lalu sistem akan menampilkan *preview* dokumen beserta opsi konfigurasi cetak (jenis kertas, *full page*/*custom page*, dan opsi warna/hitam putih). Setelah selesai, pengguna menekan tombol "*Request*".
 5. Verifikasi Admin: Permintaan cetak akan masuk secara *real-time* ke halaman web Admin. Admin dapat melihat detail konfigurasi dan memiliki wewenang untuk menekan tombol Terima atau Tolak.
 6. Eksekusi Cetak: Jika Admin menyetujui, status tombol pada layar anjungan pengguna seketika berubah menjadi hijau. Pengguna dapat menekan tombol tersebut, melihat *preview* akhir, dan menekan "Cetak Sekarang" untuk memicu mesin printer mencetak dokumen fisik.
-7. *Monitoring* (*Dashboard*): Sistem baru juga dilengkapi dengan *Dashboard* untuk Admin, yang melacak metrik penggunaan seperti jumlah kertas yang dicetak (per bulan dan *all-time*) serta grafik tren penggunaan.
 
 ### Kebutuhan Sistem
 
@@ -88,14 +91,14 @@ PHP & Bahasa Pemrograman Web. \\ \hline
 
 Berdasarkan analisis alur kerja, sistem ini melibatkan dua aktor utama dengan hak akses dan kebutuhan fungsional yang berbeda:
 
-Kebutuhan pengguna biasa (User / Mahasiswa) sebagai berikut.
+Kebutuhan Pengguna sebagai berikut.
 
 1. Membutuhkan antarmuka di layar seluler untuk mengunggah dokumen (PDF).
 2. Membutuhkan antarmuka di layar anjungan untuk melihat preview dokumen dan memulai proses *printing* fisik.
 3. Membutuhkan fitur konfigurasi cetak (warna, ukuran, rentang halaman) di layar anjungan.
 4. Membutuhkan indikator visual (*real-time*) mengenai status persetujuan cetak dari admin.
 
-Kebutuhan administrator (Admin) sebagai berikut.
+Kebutuhan Admin sebagai berikut.
 
 1. Membutuhkan fitur otentikasi (*login*) untuk masuk ke *dashboard*.
 2. Membutuhkan halaman Daftar *Request* yang menampilkan antrean permintaan cetak secara *real-time* beserta detail konfigurasinya.
@@ -110,13 +113,13 @@ Berdasarkan hasil analisis kebutuhan sistem dan pengguna pada tahap sebelumnya, 
 
 Arsitektur aplikasi menggambarkan infrastruktur logis dari sistem yang dibangun. Berbeda dengan arsitektur *client-server* tradisional yang bersifat searah, arsitektur sistem Web *Self-Printing* ini dirancang menggunakan pendekatan terdistribusi yang melibatkan berbagai perangkat fisik dan antarmuka secara bersamaan. Bagian ini memvisualisasikan bagaimana aliran data bergerak dari perangkat seluler pengguna, dikelola oleh *server* dan basis data melalui internet, disinkronisasikan menggunakan protokol WebSocket, hingga akhirnya dieksekusi oleh mesin anjungan dan printer fisik di lokasi.
 
-![Arsitektur Aplikasi](kp/images/arsitektur-aplikasi.png){width=10cm}
+![Arsitektur aplikasi](kp/images/arsitektur-aplikasi.png){width=10cm}
 
 ### Diagram *Use Case*
 
 Diagram *use case* digunakan untuk menggambarkan interaksi antara pengguna dengan sistem yang akan dibangun. Pada sistem *self-printing* ini, terdapat dua aktor utama yang saling berinteraksi, yaitu Pengguna (yang berinteraksi melalui perangkat seluler dan layar anjungan) serta Admin (yang berinteraksi melalui *dashboard*). Diagram berikut mendeskripsikan daftar *use case* utama yang dapat dilakukan oleh masing-masing aktor.
 
-![Diagram *Use Case*](kp/images/usecase-diagram.png)
+![Diagram *use case*](kp/images/usecase-diagram.png)
 
 ### Diagram *Activity*
 
@@ -126,49 +129,49 @@ Diagram *activity* memvisualisasikan alur kerja (*workflow*) dari sistem. Karena
 
 Gambar \ref{fig:activity-melihat-dash} menunjukkan bagaimana Admin membuka halaman *dashboard* dan sistem menampilkan halaman *dashboard* yang berisi ringkasan data statistik penggunaan kertas.
 
-![Diagram \textit{Activity} Melihat \textit{Dashboard} \label{fig:activity-melihat-dash}](kp/images/activity/1.dashboard.png)
+![Diagram \textit{activity} melihat \textit{dashboard} \label{fig:activity-melihat-dash}](kp/images/activity/1.dashboard.png)
 
 #### Diagram *Activity Login*
 
 Gambar \ref{fig:activity-login} menunjukkan bagaimana Admin melakukan proses autentikasi ke dalam sistem guna mendapatkan hak akses penuh ke *dashboard*.
 
-![Diagram \textit{Activity Login} \label{fig:activity-login}](kp/images/activity/2.login.png)
+![Diagram \textit{activity login} \label{fig:activity-login}](kp/images/activity/2.login.png)
 
 #### Diagram *Activity* Kelola Permintaan Cetak
 
 Gambar \ref{fig:activity-kelola-printrequest} menunjukkan bagaimana Admin melakukan tinjauan terhadap antrean permintaan cetak dokumen yang masuk dan memberikan persetujuan (*approve*) atau penolakan (*reject*).
 
-![Diagram \textit{Activity} Kelola Permintaan Cetak \label{fig:activity-kelola-printrequest}](kp/images/activity/3.kelola-printrequest.png)
+![Diagram \textit{activity} kelola permintaan cetak \label{fig:activity-kelola-printrequest}](kp/images/activity/3.kelola-printrequest.png)
 
 #### Diagram *Activity* Unggah Dokumen
 
 Gambar \ref{fig:activity-unggah-dokumen} menunjukkan bagaimana Pengguna melakukan pemindaian kode QR di layar anjungan untuk mengakses halaman pengunggahan dokumen PDF melalui perangkat seluler, yang kemudian akan disinkronisasikan secara otomatis ke antarmuka anjungan.
 
-![Diagram \textit{Activity} Unggah Dokumen \label{fig:activity-unggah-dokumen}](kp/images/activity/4.unggah-dokumen.png)
+![Diagram \textit{activity} unggah dokumen \label{fig:activity-unggah-dokumen}](kp/images/activity/4.unggah-dokumen.png)
 
 #### Diagram *Activity Request* Cetak Dokumen
 
 Gambar \ref{fig:activity-request-cetak} menunjukkan bagaimana Pengguna melakukan peninjauan *preview* dokumen serta penyesuaian parameter cetak seperti jumlah salinan, rentang halaman, dan mode warna sebelum mengirimkan permintaan cetak yang akan memperbarui antrean admin secara otomatis.
 
-![Diagram \textit{Activity Request} Cetak Dokumen \label{fig:activity-request-cetak}](kp/images/activity/5.request-cetak.png)
+![Diagram \textit{activity request} cetak dokumen \label{fig:activity-request-cetak}](kp/images/activity/5.request-cetak.png)
 
 #### Diagram *Activity* Cetak Dokumen
 
 Gambar \ref{fig:activity-cetak-dokumen} menunjukkan bagaimana Pengguna melakukan eksekusi pencetakan fisik pada mesin anjungan, yang secara otomatis mengirimkan instruksi ke perangkat printer.
 
-![Diagram \textit{Activity} Cetak Dokumen \label{fig:activity-cetak-dokumen}](kp/images/activity/6.cetak-dokumen.png)
+![Diagram \textit{activity} cetak dokumen \label{fig:activity-cetak-dokumen}](kp/images/activity/6.cetak-dokumen.png)
 
 ### Diagram *Class*
 
 Diagram *class* pada Gambar \ref{fig:diagram-class} menunjukkan struktur sistem secara statis dengan memperlihatkan kelas-kelas yang ada, atribut, metode, serta hubungan antar objek dalam Web *Self-Printing*. Diagram ini berfungsi sebagai representasi dari struktur basis data dan logika sistem yang akan diimplementasikan.
 
-![Diagram \textit{Class} \label{fig:diagram-class}](kp/images/class.png){width=10cm}
+![Diagram \textit{class} \label{fig:diagram-class}](kp/images/class.png){width=10cm}
 
-### *Entity Relationship Diagram*
+### *Entity Relationship Diagram* (ERD)
 
-Perancangan *Entity Relationship Diagram* (ERD) bertujuan untuk memodelkan struktur logis dari basis data yang akan digunakan oleh sistem *backend*. Gambar \ref{fig:erd} memvisualisasikan entitas-entitas utama yang saling berelasi dalam sistem penyimpanan, seperti entitas berkas dan riwayat permintaan cetak. Relasi antar entitas ini dirancang sedemikian rupa untuk menjaga konsistensi data (*data integrity*).
+Perancangan ERD bertujuan untuk memodelkan struktur logis dari basis data yang akan digunakan oleh sistem *backend*. Gambar \ref{fig:erd} memvisualisasikan entitas-entitas utama yang saling berelasi dalam sistem penyimpanan, seperti entitas berkas dan riwayat permintaan cetak. Relasi antar entitas ini dirancang sedemikian rupa untuk menjaga konsistensi data (*data integrity*).
 
-![\textit{Entity Relationship Diagram} \label{fig:erd}](kp/images/erd.png)
+![\textit{Entity relationship diagram} \label{fig:erd}](kp/images/erd.png)
 
 ### Data Dictionary
 
@@ -263,7 +266,7 @@ Metode pengujian pada penelitian ini terbagi menjadi dua pendekatan utama, yaitu
 
 1. Pengujian Fungsionalitas (*Black Box Testing*): Pengujian ini berfokus pada fungsionalitas sistem tanpa melibatkan struktur kode internal, dengan merujuk pada standar ISO-IEC-IEEE-29119 untuk kolom-kolom dalam tiap kasus ujinya [@ISO/IEC/IEEE2013].
 
-2. Pengujian Kinerja (*Performance Testing*): Pengujian ini berfokus pada aspek keandalan dan kecepatan respons sistem *real-time*. Merujuk pada parameter Pressman [@Pressman2015]. Pengujian ini mengukur rata-rata waktu respon pengguna (*average user response time*) untuk memvalidasi kecepatan sinkronisasi data melalui protokol WebSocket.
+2. Pengujian Kinerja (*Performance Testing*): Pengujian ini berfokus pada aspek keandalan dan kecepatan respons sistem *real-time*. Pengujian ini mengukur rata-rata waktu respon pengguna (*average user response time*) untuk memvalidasi kecepatan sinkronisasi data melalui protokol WebSocket [@Pressman2015].
 
 ### Lingkungan Pengujian
 
@@ -295,8 +298,8 @@ Laptop / PC & Acer Aspire A314-32 & Perangkat utama, \textit{server} lokal \\ \h
 \textbf{Perangkat Lunak} & \textbf{Spesifikasi / Versi} & \textbf{Keterangan} \\ \hline
 \endhead \hline
 \endfoot
-Sistem Operasi (Laptop) & Windows 10 & Sistem operasi pengembang dan pengujian \textit{desktop} \\ \hline
-Sistem Operasi (HP) & Android 12 / MIUI 14.0.2 & Sistem operasi pengujian \textit{mobile} \\ \hline
+Sistem Operasi (Laptop) & Windows 10 & Sistem operasi pengembang dan pengujian sisi Admin dan anjungan \\ \hline
+Sistem Operasi (HP) & Android 12 / MIUI 14.0.2 & Sistem operasi pengujian sisi pengguna \\ \hline
 \textit{Web Browser} (Laptop) & Microsoft Edge & Akses antarmuka \textit{desktop} \\ \hline
 \end{longtable}
 
@@ -315,16 +318,16 @@ Setiap pengujian akan didokumentasikan ke dalam sebuah tabel kasus uji dengan fo
 \textbf{Komponen Kolom} & \textbf{Penjelasan Isi} \\ \hline
 \endhead \hline
 \endfoot
-ID Test & Kode unik untuk mengidentifikasi setiap kasus uji (contoh: TC-01, artinya \textit{test case} 01). \\ \hline
+Id Tes & Kode unik untuk mengidentifikasi setiap kasus uji (contoh: TC-01, artinya \textit{test case} 01). \\ \hline
 Skenario Pengujian & Langkah-langkah atau urutan tindakan yang dilakukan oleh penguji pada sistem. \\ \hline
 Input & Data atau aksi yang dimasukkan oleh pengguna (seperti teks, file, atau klik tombol) untuk menjalankan fungsi. \\ \hline
 Output yang Diharapkan & Respon atau keluaran sistem yang dianggap benar secara fungsional terhadap input yang diberikan. \\ \hline
-Status & Hasil akhir pengujian untuk menentukan apakah fungsi berjalan sesuai harapan (Berhasil/Gagal). \\ \hline
+Status & Hasil akhir pengujian untuk menentukan apakah fungsi berjalan sesuai harapan (Sesuai/Tidak Sesuai). \\ \hline
 \end{longtable}
 
 ### Struktur *Performance Testing*
 
-Untuk pengujian kinerja berbasis *response time*, skenario difokuskan pada pengukuran jeda waktu (*latency*) sinkronisasi. Pengukuran dilakukan dengan mencatat selisih waktu antara pengiriman instruksi HTTP POST (Verifikasi) dari antarmuka Admin hingga pesan WebSocket diterima dan dirender oleh antarmuka anjungan.
+Untuk pengujian kinerja berbasis *response time*, skenario difokuskan pada pengukuran jeda waktu (*latency*) sinkronisasi. Pengukuran dilakukan dengan mencatat selisih waktu antara pengiriman instruksi HTTP POST (Verifikasi permintaan cetak) dari antarmuka Admin hingga pesan WebSocket diterima dan dirender oleh antarmuka anjungan.
 
 Pengujian ini akan diulang sebanyak 10 kali percobaan untuk mendapatkan nilai rata-rata yang stabil dan akurat. Hasil pengujian akan didokumentasikan dengan struktur tabel sebagai berikut:
 
@@ -340,7 +343,8 @@ Pengujian ini akan diulang sebanyak 10 kali percobaan untuk mendapatkan nilai ra
 \endhead \hline
 \endfoot
 Percobaan Ke- & Nomor urut iterasi pengujian (1 hingga 10). \\ \hline
-Aksi Admin & Tindakan pemicu yang dilakukan oleh Admin (misalnya: Klik tombol "Verifikasi"). \\ \hline
-Waktu Respon UI Anjungan (ms) & Catatan waktu latensi dalam satuan milidetik yang diukur menggunakan fitur Network/WebSocket pada \textit{browser developer tools}. \\ \hline
-Keterangan & Penilaian kualitatif berdasarkan standar ambang batas latensi (misal: "Sangat Cepat" jika di bawah 100 ms). \\ \hline
+Waktu Mulai & Nilai \textit{timestamp} (\textit{epoch time} dalam satuan milidetik) yang dicatat melalui fungsi Date.now() tepat saat administrator menekan tombol "Verifikasi". \\ \hline
+Waktu Selesai & Nilai \textit{timestamp} (\textit{epoch time} dalam satuan milidetik) yang dicatat melalui fungsi Date.now() tepat saat \textit{event listener} WebSocket di sisi anjungan menerima data dan memicu perubahan status tampilan. \\ \hline
+Waktu Respon Antarmuka Anjungan (ms) & Durasi total waktu respon (\textit{latency}) dalam satuan milidetik, yang didapatkan dari hasil pengurangan nilai Waktu Selesai dengan Waktu Mulai. \\ \hline
+Keterangan & Indikator responsivitas sistem berdasarkan ambang batas waktu respon pengguna. Bernilai "Responsif" jika waktu respon berada di bawah 1.000 ms (1 detik), sesuai dengan standar batas persepsi kenyamanan interaksi manusia dan komputer. \\ \hline
 \end{longtable}

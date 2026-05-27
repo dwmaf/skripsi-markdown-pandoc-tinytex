@@ -15,6 +15,28 @@ header-includes:
   - \usepackage[table]{xcolor}
   - \usepackage{enumitem}
 
+  # --- PENGATURAN NOMOR HALAMAN (FANCYHDR) ---
+  - \usepackage{fancyhdr}
+  - \setlength{\headheight}{15pt} # Mencegah teks terlalu dekat ke atas/kena margin
+  
+  # 1. Custom style 'skripsi' untuk halaman biasa (kanan atas)
+  - |
+    \fancypagestyle{skripsi}{
+      \fancyhf{}
+      \fancyhead[R]{\thepage}
+      \renewcommand{\headrulewidth}{0pt}
+      \renewcommand{\footrulewidth}{0pt}
+    }
+    
+  # 2. Timpa style 'plain' untuk halaman pertama tiap Bab (tengah bawah)
+  - |
+    \fancypagestyle{plain}{
+      \fancyhf{} 
+      \fancyfoot[C]{\thepage}
+      \renewcommand{\headrulewidth}{0pt}
+      \renewcommand{\footrulewidth}{0pt}
+    }
+
   # Paksa semua list (Enumerate & Itemize) untuk tidak punya jarak tambahan di atas/bawah
   - \setlist{nosep, leftmargin=1.27cm} 
 

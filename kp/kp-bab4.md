@@ -16,13 +16,21 @@ Setelah Pengguna memindai kode QR dari layar anjungan, *browser* pada perangkat 
 
 ![Halaman unggah dokumen di perangkat Pengguna \label{fig:hal-unggah-doc-1}](kp/images/hasil/1-unggah-doc-1.png){width=8cm}
 
+Gambar \ref{fig:hal-unggah-doc-2} menampilkan jika berkas yang diunggah tidak sesuai format (pdf, jpg, png, atau jpeg), maka sistem akan menampilkan pesan *error* yang sesuai dan berkas tidak akan masuk ke basis data.
+
+![Tampilan jika berkas tak sesuai format \label{fig:hal-unggah-doc-2}](kp/images/hasil/format-file-salah.png){width=8cm}
+
+Gambar \ref{fig:hal-unggah-doc-3} menampilkan jika ukuran berkas yang diunggah melebihi batas (10 mb), maka sistem akan menampilkan pesan *error* yang sesuai dan berkas tidak akan masuk ke basis data.
+
+![Tampilan jika ukuran berkas melebihi batas \label{fig:hal-unggah-doc-3}](kp/images/hasil/file-size-kebesaran.png){width=8cm}
+
 Dari sisi backend, proses pengunggahan dokumen tersebut ditangani oleh fungsi khusus di dalam *controller*. Gambar \ref{fig:source-1} menunjukkan potongan kode (*source code*) yang bertugas menerima *request* berjenis POST dari perangkat Pengguna. Logika pada kode ini mencakup validasi tipe dokumen, penyimpanan berkas PDF ke dalam direktori *server*, dan pencatatan data ke dalam basis data. Di baris akhir, sistem memicu sebuah *event* untuk memberikan sinyal bahwa ada dokumen baru yang berhasil masuk.
 
 ![\textit{Source code} untuk menangani unggah dokumen \label{fig:source-1}](kp/images/hasil/10-source-1-upload.png)
 
 Pemicu dari *controller* tersebut kemudian dilanjutkan ke dalam sebuah *class event* khusus yang ditunjukkan pada Gambar \ref{fig:source-2}. Class ini diimplementasikan menggunakan infrastruktur WebSocket (dalam hal ini memanfaatkan paket Laravel Reverb). Fungsinya adalah melakukan siaran data (*broadcasting*) ke saluran (*channel*) yang sedang didengarkan oleh perangkat anjungan. Saat *event* ini tereksekusi, *browser* anjungan akan menangkap sinyal *real-time* tersebut dan secara otomatis memuat ulang (*reload*) antarmukanya untuk menampilkan pratinjau dokumen tanpa memerlukan interaksi fisik dari Pengguna.
 
-![\textit{Source code class} bbsocket unggah dokumen \label{fig:source-2}](kp/images/hasil/10-source-2-event-file-upload.png)
+![\textit{Source code class} websocket unggah dokumen \label{fig:source-2}](kp/images/hasil/10-source-2-event-file-upload.png)
 
 ### *Request* Cetak Dokumen
 
@@ -30,7 +38,7 @@ Setelah sinyal *real-time* dari *event* pengunggahan dokumen berhasil ditangkap 
 
 ![Halaman anjungan \label{fig:hal-anjungan-1}](kp/images/hasil/2-anjungan-1.png)
 
-Aksi penekanan tombol printer pada Gambar \ref{fig:hal-anjungan-1} akan menampilkan jendela modal konfigurasi yang ditunjukkan pada Gambar \ref{fig:hal-anjungan-2} (bagian atas) dan Gambar \ref{fig:hal-anjungan-3} (bagian bawah). Melalui antarmuka ini, Pengguna dapat melihat pratinjau (*preview*) dokumen PDF di sisi kiri yang dapat digulir (*scroll*). Sementara di sisi kanan, Pengguna wajib mengisi parameter pencetakan meliputi ukuran kertas, pilihan halaman (seluruh halaman atau kustom), jumlah salinan (copy), serta mode warna (berwarna atau hitam putih). Proses konfigurasi diakhiri dengan menekan tombol Request.
+Aksi penekanan tombol printer pada Gambar \ref{fig:hal-anjungan-1} akan menampilkan jendela modal konfigurasi yang ditunjukkan pada Gambar \ref{fig:hal-anjungan-2} (bagian atas) dan Gambar \ref{fig:hal-anjungan-3} (bagian bawah). Melalui antarmuka ini, Pengguna dapat melihat pratinjau (*preview*) dokumen PDF di sisi kiri yang dapat digulir (*scroll*). Sementara di sisi kanan, Pengguna wajib mengisi parameter pencetakan meliputi ukuran kertas, pilihan halaman (seluruh halaman atau kustom), jumlah salinan (copy), serta mode warna (berwarna atau hitam putih). Proses konfigurasi diakhiri dengan menekan tombol *Request*.
 
 ![Modal konfigurasi cetak bagian atas \label{fig:hal-anjungan-2}](kp/images/hasil/2-anjungan-2.png)
 
@@ -44,6 +52,10 @@ Gambar \ref{fig:source-4} menunjukkan *class event* WebSocket yang dipanggil ole
 
 ![\textit{Source code class} Websocket permintaan cetak \label{fig:source-4}](kp/images/hasil/10-source-9-event-new-printreq.png)
 
+Gambar \ref{fig:hal-anjungan-pending} menampilkan berkas setelah tombol *Request* ditekan, statusnya berubah menjadi *pending*.
+
+![Tampilan permintaan cetak dengan status \textit{pending} \label{fig:hal-anjungan-pending}](kp/images/hasil/tampilan-permintaan-cetak-pending.png)
+
 ### Halaman Kelola Permintaan Cetak
 
 Pada sisi Admin, sistem menyediakan modul khusus untuk mengelola antrean permintaan cetak yang masuk. Gambar \ref{fig:source-5} menunjukkan potongan *source code* yang menangani pemanggilan halaman kelola permintaan cetak. Fungsi ini bertugas mengambil data permintaan cetak dari basis data untuk kemudian ditampilkan pada antarmuka Admin.
@@ -54,7 +66,13 @@ Antarmuka yang dihasilkan dari logika tersebut dapat dilihat pada Gambar \ref{fi
 
 ![Halaman kelola permintaan cetak \label{fig:hal-kelola-cetak-req}](kp/images/hasil/3-kelola-cetak-req-1.png)
 
-Apabila Admin menekan tombol centang (setuju), sistem akan memperbarui status permintaan tersebut di dalam basis data. Perubahan visual pada antarmuka Admin setelah tindakan persetujuan dilakukan ditunjukkan pada Gambar \ref{fig:hal-kelola-cetak-req-acc} (permintaan cetak disetujui), di mana status permintaan akan berubah untuk menandakan bahwa dokumen telah siap dieksekusi oleh Pengguna di mesin anjungan.
+Gambar \ref{fig:modal-acc-cetak} menampilkan modal konfirmasi jika Admin menyetujui permintaan cetak. Sementara jika Admin menolak permintaan cetaknya, maka akan menampilkan modal konfirmasi dengan pesan seperti pada Gambar \ref{fig:modal-reject-cetak}.
+
+![Modal konfirmasi menyetujui permintaan cetak \label{fig:modal-acc-cetak}](kp/images/hasil/modal-terima-permintaan-cetak.png){width=8cm}
+
+![Modal konfirmasi menolak permintaan cetak \label{fig:modal-reject-cetak}](kp/images/hasil/modal-tolak-permintaan-cetak.png){width=8cm}
+
+Apabila Admin menyetujui permintaan cetak, sistem akan memperbarui status permintaan tersebut di dalam basis data. Perubahan visual pada antarmuka Admin setelah tindakan persetujuan dilakukan ditunjukkan pada Gambar \ref{fig:hal-kelola-cetak-req-acc} (permintaan cetak disetujui), di mana status permintaan akan berubah untuk menandakan bahwa dokumen telah siap dieksekusi oleh Pengguna di mesin anjungan.
 
 ![Tampilan permintaan cetak disetujui \label{fig:hal-kelola-cetak-req-acc}](kp/images/hasil/3-kelola-cetak-req-2.png)
 
@@ -76,6 +94,10 @@ Ketika Pengguna menekan tombol print berwarna hijau tersebut, sistem akan menamp
 
 ![\textit{Preview} cetak dokumen \label{fig:hal-anjungan-5}](kp/images/hasil/2-anjungan-5.png)
 
+Gambar \ref{fig:perintah-cetak-terkirim} menampilkan notifikasi setelah perintah cetak berhasil terkirim ke perangkat printer.
+
+![Notifikasi cetak terkirim ke printer \label{fig:perintah-cetak-terkirim}](kp/images/hasil/perintah-cetak-terkirim.png)
+
 Gambar \ref{fig:source-8} menunjukkan *source code* yang menangani *route* POST instruksi pencetakan dokumen. Fungsi ini mengeksekusi perintah *print* pada tingkat sistem operasi dan sekaligus memperbarui status permintaan di dalam basis data dari *verified* menjadi *completed*. Pada baris akhir kode tersebut, sistem kembali memicu *event broadcasting* untuk memastikan data di seluruh antarmuka tetap sinkron.
 
 ![\textit{Source code} untuk \textit{print} dokumen \label{fig:source-8}](kp/images/hasil/10-source-6-print.png)
@@ -83,6 +105,10 @@ Gambar \ref{fig:source-8} menunjukkan *source code* yang menangani *route* POST 
 Sinyal *broadcasting* tersebut akan ditangkap oleh perangkat Admin, yang memicu *reload* pada halaman kelola permintaan cetak. Gambar \ref{fig:hal-kelola-cetak-req-3} menampilkan hasil akhir dari siklus sistem ini, di mana status antrean pada panel Admin secara otomatis berubah menjadi *completed*. Hal ini menandakan bahwa proses *Web-to-Print* telah selesai dieksekusi secara keseluruhan.
 
 ![Tampilan dokumen selesai dicetak di halaman kelola permintaan cetak \label{fig:hal-kelola-cetak-req-3}](kp/images/hasil/3-kelola-cetak-req-3.png)
+
+Gambar \ref{fig:hal-anjungan-ditolak} menampilkan berkas di halaman anjungan jika permintaan cetaknya ditolak, maka berkas itu akan berstatus *Rejected*. Pengguna masih bisa mengajukan permintaan cetak ulang dengan berkas tersebut lagi dengan menekan tombol printer.
+
+![Tampilan berkas di anjungan jika ditolak \label{fig:hal-anjungan-ditolak}](kp/images/hasil/tampilan-permintaan-cetak-ditolak.png)
 
 ### Halaman *Login*
 
@@ -127,7 +153,10 @@ Pengujian ini difokuskan pada fungsionalitas yang melibatkan aktor Admin. Adapun
 \endfoot
 TC-1 & Autentikasi sistem & membuka halaman \textit{login} dan mengisi kredensial (\textit{email} dan \textit{password}) & Berhasil masuk ke \textit{dashboard} & Sesuai \\ \hline
 TC-2 & Visualisasi statistik data pada \textit{dashboard} Admin & Mengakses halaman \textit{dashboard} Admin & Menampilkan grafik dan \textit{widget} data & Sesuai \\ \hline
-TC-3 & Mengelola permintaan cetak & Menyetujui atau menolak permintaan cetak yang masuk & Perubahannya langsung tersinkron dengan layar anjungan & Sesuai \\ \hline
+TC-3 & Mengelola permintaan cetak & Menyetujui permintaan cetak yang masuk & Perubahannya langsung tersinkron dengan layar anjungan & Sesuai \\ \hline
+TC-4 & Keamanan akses (\textit{Middleware}) & Mengakses URL \textit{folder} admin tanpa melakukan \textit{login} terlebih dahulu & Sistem menolak akses dan melakukan \textit{redirect} ke halaman \textit{login} & Sesuai \\ \hline
+TC-5 & Manajemen autentikasi & Menginput kredensial (\textit{email/password}) yang tidak terdaftar di basis data & Sistem menampilkan pesan peringatan kegagalan autentikasi & Sesuai \\ \hline
+TC-6 & Sinkronisasi penolakan data & Admin menekan tombol "Tolak" pada salah satu antrean cetak & Status pada basis data berubah dan antarmuka anjungan langsung memperbarui tampilan secara \textit{real-time} & Sesuai \\ \hline
 \end{longtable}
 
 ### Hasil Pengujian Sisi Pengguna
@@ -145,42 +174,45 @@ Pengujian ini difokuskan pada fungsionalitas yang melibatkan aktor Pengguna. Ada
 \textbf{ID Tes} & \textbf{Skenario Pengujian} & \textbf{Input} & \textbf{Output yang diharapkan} & \textbf{Status} \\ \hline
 \endhead \hline
 \endfoot
-TC-4 & Unggah dokumen & \textit{Scan} QR \textit{code} utk buka webnya di hp dan unggah dokumen & data dokumen itu masuk ke basis data tabel \textit{filestoprints} dan perubahan langsung tersinkron di layar anjungan & Sesuai \\ \hline
-TC-5 & \textit{Request} cetak dokumen & Tekan tombol \textit{print} di dokumen yg diunggah, isi konfigurasi, tekan tombol \textit{submit request} & data dokumen itu dan konfigurasi cetaknya masuk ke basis data tabel \textit{printrequests} dan perubahan langsung tersinkron di halaman admin & Sesuai \\ \hline
-TC-6 & Cetak dokumen & Tekan tombol \textit{print} pada dokumen yang udh di setujui Admin, tekan tombol \textit{print} di \textit{preview} yang muncul & Dokumen tercetak di printer dan perubahan langsung tersinkron di halaman admin (status permintaan cetaknya dari "\textit{verified}" jadi "\textit{completed}" ) & Sesuai \\ \hline
+TC-7 & Unggah dokumen & \textit{Scan} QR \textit{code} utk buka webnya di hp dan unggah dokumen & data dokumen itu masuk ke basis data tabel \textit{filestoprints} dan perubahan langsung tersinkron di layar anjungan & Sesuai \\ \hline
+TC-8 & Validasi unggah dokumen & Mengunggah berkas dengan format di luar ketentuan (contoh: .exe atau .zip) atau melebihi batas \text{size} yang ditentukan & \textit{Backend} memberikan respon \textit{error} validasi dan membatalkan proses simpan & Sesuai \\ \hline
+TC-9 & \textit{Request} cetak dokumen & Tekan tombol \textit{print} di dokumen yg diunggah, isi konfigurasi, tekan tombol \textit{submit request} & data dokumen itu dan konfigurasi cetaknya masuk ke basis data tabel \textit{printrequests} dan perubahan langsung tersinkron di halaman admin & Sesuai \\ \hline
+TC-10 & Cetak dokumen & Tekan tombol \textit{print} pada dokumen yang udh di setujui Admin, tekan tombol \textit{print} di \textit{preview} yang muncul & Dokumen tercetak di printer dan perubahan langsung tersinkron di halaman admin (status permintaan cetaknya dari "\textit{verified}" jadi "\textit{completed}" ) & Sesuai \\ \hline
 \end{longtable}
 
 ## *Performance Testing*
 
 ### Hasil Pengujian *Latency*
 
-Berikut adalah hasil pengukuran waktu respon sinkronisasi data.
+Pengujian *latency* dilakukan menggunakan metode pengukuran UNIX *Epoch Timestamp* dalam satuan milidetik (ms). Waktu mulai dicatat sesaat sebelum instruksi dikirim dari antarmuka Admin, dan waktu selesai dicatat tepat saat *listener* WebSocket menerima sinyal *event* di antarmuka Anjungan. Berdasarkan satu contoh siklus pengujian, didapatkan waktu mulai 1778144315248 dan waktu selesai 1778144315456, sehingga selisih waktu respon (*latency*) yang dihasilkan adalah sebesar 208 ms. Berikut adalah hasil pengukuran waktu respon sinkronisasi data untuk 10 percobaan.
 
+\newpage
 \captionsetup[longtable]{justification=raggedright, singlelinecheck=false}
-\setlength{\LTcapwidth}{13cm}
-\addtolength{\LTcapwidth}{10\tabcolsep}
-\addtolength{\LTcapwidth}{6\arrayrulewidth}
-\begin{longtable}{|p{1cm}|p{3cm}|p{3.5cm}|p{4.5cm}|>{\raggedright\arraybackslash}p{1cm}|}
+\setlength{\LTcapwidth}{11.7cm}
+\addtolength{\LTcapwidth}{8\tabcolsep}
+\addtolength{\LTcapwidth}{5\arrayrulewidth}
+\begin{longtable}{|p{1.7cm}|p{3cm}|p{3cm}|p{2cm}|p{2cm}|}
 \caption{Tabel Hasil Pengujian Latency} \label{tab:pengujian-latency} \\ \hline
-\textbf{Percobaan Ke-} & \textbf{Aksi Administrator} & \textbf{Waktu Respon UI Anjungan (ms)} & \textbf{Keterangan} \\ \hline
+\textbf{Percobaan Ke-} & \textbf{Waktu Mulai (ms)} & \textbf{Waktu Selesai (ms)} & \textbf{Waktu Respon UI Anjungan (ms)} & \textbf{Keterangan} \\ \hline
 \endfirsthead \hline
-\textbf{Percobaan Ke-} & \textbf{Aksi Administrator} & \textbf{Waktu Respon UI Anjungan (ms)} & \textbf{Keterangan} \\ \hline
+\textbf{Percobaan Ke-} & \textbf{Waktu Mulai (ms)} & \textbf{Waktu Selesai (ms)} & \textbf{Waktu Respon UI Anjungan (ms)} & \textbf{Keterangan} \\ \hline
 \endhead \hline
 \endfoot
-1 & Klik tombol "Verifikasi" & 45 & Sangat Cepat \\ \hline
-2 & Klik tombol "Verifikasi" & 52 & Sangat Cepat \\ \hline
-3 & Klik tombol "Verifikasi" & 48 & Sangat Cepat \\ \hline
-4 & Klik tombol "Verifikasi" & 65 & Sangat Cepat \\ \hline
-5 & Klik tombol "Verifikasi" & 50 & Sangat Cepat \\ \hline
-6 & Klik tombol "Verifikasi" & 42 & Sangat Cepat \\ \hline
-7 & Klik tombol "Verifikasi" & 70 & Sangat Cepat \\ \hline
-8 & Klik tombol "Verifikasi" & 55 & Sangat Cepat \\ \hline
-9 & Klik tombol "Verifikasi" & 48 & Sangat Cepat \\ \hline
-10 & Klik tombol "Verifikasi" & 45 & Sangat Cepat \\ \hline
-\textbf{Rata-rata} &  & 52 ms & Lolos Kriteria
+1 & 1778144315248 & 1778144315456 & 208 & Responsif \\ \hline
+2 & 1778144364695 & 1778144364895 & 200 & Responsif \\ \hline
+3 & 1778145946668 & 1778145946928 & 260 & Responsif \\ \hline
+4 & 1778145986487 & 1778145986651 & 164 & Responsif \\ \hline
+5 & 1778146020528 & 1778146020691 & 163 & Responsif \\ \hline
+6 & 1778153392005 & 1778153392189 & 184 & Responsif \\ \hline
+7 & 1778153652638 & 1778153652815 & 177 & Responsif \\ \hline
+8 & 1778153720007 & 1778153720263 & 256 & Responsif \\ \hline
+9 & 1778153751356 & 1778153751606 & 250 & Responsif \\ \hline
+10 & 1778153802356 & 1778153802578 & 222 & Responsif \\ \hline
+\multicolumn{3}{|r|}{\textbf{Rata-rata}} & 208.4 ms & Lolos Kriteria \\ \hline
+\end{longtable}
 
 ### Analisis Hasil Pengujian
 
-Berdasarkan data pada tabel di atas, diperoleh rata-rata waktu respon sebesar 52 ms. Mengacu pada standar interaksi pengguna, waktu respon di bawah 100 ms (0,1 detik) memberikan ilusi bahwa sistem bereaksi secara instan tanpa adanya jeda operasional. Hasil ini mengonfirmasi bahwa penggunaan kombinasi backend Laravel dan protokol WebSocket berhasil menangani *event-driven broadcasting* dengan sangat efisien. Sistem dinyatakan lolos uji kinerja karena mampu memberikan respons instan yang menjamin integritas sinkronisasi layar anjungan secara *real-time* tanpa mengalami kelambanan (*sluggishness*).
+Berdasarkan data pada Tabel \ref{tab:pengujian-latency}, diperoleh rata-rata waktu respon sebesar 208.4 ms. Mengacu pada standar interaksi pengguna, waktu respon di bawah 100 ms memberikan ilusi bahwa sistem bereaksi secara instan, sedangkan waktu di bawah 1.000 ms (1 detik) memastikan alur pikir pengguna tidak terganggu. Meskipun rata-rata yang diperoleh berada sedikit di atas ambang batas ilusi instan mutlak, angka 208.4 ms masih berada jauh di bawah ambang batas toleransi 1.000 ms. Hasil ini mengonfirmasi bahwa penggunaan kombinasi \textit{backend} Laravel dan protokol WebSocket berhasil menangani \textit{event-driven broadcasting} dengan sangat efisien. Sistem dinyatakan lolos uji kinerja karena mampu memberikan respons yang sangat cepat dan menjamin integritas sinkronisasi layar anjungan secara \textit{real-time} tanpa mengalami kelambanan (\textit{sluggishness}).
 
 \FrameImagesfalse

@@ -52,7 +52,7 @@ Periode Kerja Praktek  & : 23 Januari - 23 Maret 2026
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, April 2026
+Pontianak, Juni 2026
 \\
 \\
 \\
@@ -66,30 +66,7 @@ Penulis
 <!-- HALAMAN PERSETUJUAN -->
 
 \begin{center}
-\vspace{2em}
-\textbf{LAPORAN KERJA PRAKTEK}
-
-\textbf{IMPLEMENTASI TEKNOLOGI WEBSOCKET UNTUK SINKRONISASI DATA \textit{REAL-TIME} PADA \textit{BACKEND WEBSITE SELF-PRINTING} DI UPA PK2 UNTAN}
-
-\vspace{40pt}
-\textbf{OLEH:}\\
-\textbf{\underline{DAWAM AGUNG FATHONI}}\\
-\textbf{D1041211005}
-
-\vspace{40pt}
-
-Telah Diperiksa dan Siap untuk Diajukan dalam Seminar Kerja Praktek.
-
-\vspace{40pt}
-\textbf{Menyetujui}:
-
-\begin{tabular*}{\textwidth}{@{}c@{\extracolsep{\fill}}c@{}}
-\textbf{Dosen Pembimbing Kerja Praktek}              & \textbf{Pembimbing Lapangan Kerja Praktek} \\[3em]
-\textbf{Enriko Yudhistira Ramadhan, S.Kom., M.T.}        & \textbf{Donny Hidayat S.Kom} \\
-\textbf{NIP. 199801242025061004}            &  \\[2em]
-\end{tabular*}
-
-
+\includegraphics[height=0.9\textheight, keepaspectratio]{kp/images/lembar-pengesahan-kp_2.jpg.jpeg}
 \end{center}
 
 \newpage
@@ -126,7 +103,7 @@ Tahun Akademik  & : 2025/2026
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, April 2026
+Pontianak, Juni 2026
 \\
 \\
 \\
@@ -146,7 +123,7 @@ Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menye
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, April 2026 \\
+Pontianak, Juni 2026 \\
 Penulis, \\
 \\
 \\

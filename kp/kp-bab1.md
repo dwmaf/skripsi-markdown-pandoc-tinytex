@@ -86,11 +86,15 @@ Setelah implementasi selesai maka akan dilakukan pengujian terhadap *website* ya
 Waktu pelaksanaan kerja praktek adalah pada bulan Januari – Maret 2026.
 Adapun rincian pengerjaan kerja praktek adalah sebagai berikut:
 
-\begin{longtable}{|p{0.5cm}|p{4.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\captionsetup[longtable]{justification=raggedright, singlelinecheck=false}
+\setlength{\LTcapwidth}{7.8cm}
+\addtolength{\LTcapwidth}{30\tabcolsep}
+\addtolength{\LTcapwidth}{16\arrayrulewidth}
+\begin{longtable}{|p{0.5cm}|p{4.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \caption{Rincian Pelaksanaan Kerja Praktek} \\
 \hline
-\multirow{2}{*}{No} & \multirow{2}{*}{Kegiatan} & \multicolumn{2}{c|}{Jan} & \multicolumn{4}{c|}{Feb} & \multicolumn{4}{c|}{Mar} & \multicolumn{4}{c|}{Apr} \\ \cline{3-16}
-& & 2 & 3 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 \\ \hline
+\multirow{2}{*}{No} & \multirow{2}{*}{Kegiatan} & \multicolumn{2}{c|}{Jan} & \multicolumn{4}{c|}{Feb} & \multicolumn{4}{c|}{Mar} & \multicolumn{1}{c|}{Mei} & \multicolumn{2}{c|}{Jun} \\ \cline{3-15}
+& & 2 & 3 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 3 & 2 & 3 \\ \hline
 \endfirsthead
 \hline
 \endhead
@@ -98,12 +102,12 @@ Adapun rincian pengerjaan kerja praktek adalah sebagai berikut:
 \endfoot
 \hline
 \endlastfoot
-1 & Pengajuan Proposal & \cellcolor[HTML]{f8cbad} & & & & & & & & & & & & & \\ \hline
-2 & Penerbitan Surat Pengantar & & & & \cellcolor[HTML]{f8cbad} & & & & & & & & & & \\ \hline
-3 & Pelaksanaan Kerja Praktek & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & & & & \\ \hline
-4 & Pengajuan Seminar & & & & & & & & & & & & & \cellcolor[HTML]{b4c7e7} & \\ \hline
-5 & Pelaksanaan Seminar & & & & & & & & & & & & & \cellcolor[HTML]{c6e0b4} & \\ \hline
-6 & Revisi & & & & & & & & & & & & & & \cellcolor[HTML]{8faadc} \\ \hline
+1 & Pengajuan Proposal & \cellcolor[HTML]{f8cbad} & & & & & & & & & & & & \\ \hline
+2 & Penerbitan Surat Pengantar & & & & \cellcolor[HTML]{f8cbad} & & & & & & & & & \\ \hline
+3 & Pelaksanaan Kerja Praktek & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & \cellcolor[HTML]{ffd966} & & & \\ \hline
+4 & Pengajuan Seminar & & & & & & & & & & & \cellcolor[HTML]{b4c7e7} & & \\ \hline
+5 & Pelaksanaan Seminar & & & & & & & & & & & & \cellcolor[HTML]{c6e0b4} & \\ \hline
+6 & Revisi & & & & & & & & & & & & \cellcolor[HTML]{8faadc} & \cellcolor[HTML]{8faadc} \\ \hline
 \end{longtable}
 
 
