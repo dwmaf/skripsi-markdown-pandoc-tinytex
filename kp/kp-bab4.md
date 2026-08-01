@@ -28,13 +28,13 @@ Dari sisi backend, proses pengunggahan dokumen tersebut ditangani oleh fungsi kh
 
 ![\textit{Source code} untuk menangani unggah dokumen \label{fig:source-1}](kp/images/hasil/10-source-1-upload.png)
 
-Pemicu dari *controller* tersebut kemudian dilanjutkan ke dalam sebuah *class event* khusus yang ditunjukkan pada Gambar \ref{fig:source-2}. Class ini diimplementasikan menggunakan infrastruktur WebSocket (dalam hal ini memanfaatkan paket Laravel Reverb). Fungsinya adalah melakukan siaran data (*broadcasting*) ke saluran (*channel*) yang sedang didengarkan oleh perangkat anjungan. Saat *event* ini tereksekusi, *browser* anjungan akan menangkap sinyal *real-time* tersebut dan secara otomatis memuat ulang (*reload*) antarmukanya untuk menampilkan pratinjau dokumen tanpa memerlukan interaksi fisik dari Pengguna.
+Pemicu dari *controller* tersebut kemudian dilanjutkan ke dalam sebuah *class event* khusus yang ditunjukkan pada Gambar \ref{fig:source-2}. Class ini diimplementasikan menggunakan infrastruktur WebSocket (dalam hal ini memanfaatkan paket Laravel Reverb). Fungsinya adalah melakukan siaran data (*broadcasting*) ke saluran (*channel*) yang sedang didengarkan oleh perangkat anjungan. Saat *event* ini tereksekusi, *browser* anjungan akan menangkap sinyal *real-time* tersebut dan secara otomatis memperbarui antarmukanya untuk menampilkan pratinjau dokumen tanpa memerlukan interaksi fisik dari Pengguna.
 
 ![\textit{Source code class} websocket unggah dokumen \label{fig:source-2}](kp/images/hasil/10-source-2-event-file-upload.png)
 
 ### *Request* Cetak Dokumen
 
-Setelah sinyal *real-time* dari *event* pengunggahan dokumen berhasil ditangkap oleh *browser* anjungan, antarmuka anjungan secara otomatis *reload* dan menampilkan daftar dokumen yang siap diproses seperti pada Gambar \ref{fig:hal-anjungan-1}. Pada tahapan ini, tersedia dua aksi utama bagi Pengguna, tombol berlogo printer untuk membuka modal konfigurasi cetak, dan tombol sampah untuk menghapus dokumen dari antrean sementara di anjungan.
+Setelah sinyal *real-time* dari *event* pengunggahan dokumen berhasil ditangkap oleh *browser* anjungan, memperbarui antarmuka anjungan dan menampilkan daftar dokumen yang siap diproses seperti pada Gambar \ref{fig:hal-anjungan-1}. Pada tahapan ini, tersedia dua aksi utama bagi Pengguna, tombol berlogo printer untuk membuka modal konfigurasi cetak, dan tombol sampah untuk menghapus dokumen dari antrean sementara di anjungan.
 
 ![Halaman anjungan \label{fig:hal-anjungan-1}](kp/images/hasil/2-anjungan-1.png)
 
@@ -48,7 +48,7 @@ Secara teknis di sisi *backend*, permintaan konfigurasi dari Pengguna ditangani 
 
 ![\textit{Source code} untuk permintaan cetak baru \label{fig:source-3}](kp/images/hasil/10-source-3-submit-request.png)
 
-Gambar \ref{fig:source-4} menunjukkan *class event* WebSocket yang dipanggil oleh logika pada Gambar \ref{fig:source-3} sebelumnya. *Class* ini bertugas untuk melakukan *broadcasting* sinyal notifikasi melalui *channel* yang sedang dipantau oleh *dashboard* Admin. Saat sinyal ini diterima oleh perangkat Admin, antarmuka halaman kelola permintaan cetak Admin akan secara otomatis *reload*, sehingga Admin dapat langsung mengetahui adanya permintaan cetak baru yang memerlukan persetujuan.
+Gambar \ref{fig:source-4} menunjukkan *class event* WebSocket yang dipanggil oleh logika pada Gambar \ref{fig:source-3} sebelumnya. *Class* ini bertugas untuk melakukan *broadcasting* sinyal notifikasi melalui *channel* yang sedang dipantau oleh *dashboard* Admin. Saat sinyal ini diterima oleh perangkat Admin, antarmuka halaman kelola permintaan cetak Admin akan diperbarui, sehingga Admin dapat langsung mengetahui adanya permintaan cetak baru yang memerlukan persetujuan.
 
 ![\textit{Source code class} Websocket permintaan cetak \label{fig:source-4}](kp/images/hasil/10-source-9-event-new-printreq.png)
 
@@ -80,7 +80,7 @@ Gambar \ref{fig:source-6} menunjukkan *source code* yang menangani pemrosesan ke
 
 ![\textit{Source code} untuk verifikasi permintaan cetak \label{fig:source-6}](kp/images/hasil/10-source-5-func-verify.png)
 
-Sinkronisasi status tersebut dimungkinkan melalui *class event* WebSocket yang ditunjukkan pada Gambar \ref{fig:source-7}. *Class* ini menyiarkan sinyal pembaruan status ke beberapa *channel* sekaligus. Hal ini mengakibatkan terjadinya *reload* secara otomatis baik pada halaman Admin (untuk memperbarui daftar antrean) maupun pada halaman anjungan (untuk memberikan umpan balik visual kepada Pengguna bahwa permintaan mereka telah disetujui).
+Sinkronisasi status tersebut dimungkinkan melalui *class event* WebSocket yang ditunjukkan pada Gambar \ref{fig:source-7}. *Class* ini menyiarkan sinyal pembaruan status ke beberapa *channel* sekaligus. Hal ini memperbarui halaman Admin (untuk memperbarui daftar antrean) maupun pada halaman anjungan (untuk memberikan umpan balik visual kepada Pengguna bahwa permintaan mereka telah disetujui).
 
 ![\textit{Source code class} Websocket permintaan cetak diperbarui \label{fig:source-7}](kp/images/hasil/10-source-10-event-printreq-updated.png)
 
@@ -102,7 +102,7 @@ Gambar \ref{fig:source-8} menunjukkan *source code* yang menangani *route* POST 
 
 ![\textit{Source code} untuk \textit{print} dokumen \label{fig:source-8}](kp/images/hasil/10-source-6-print.png)
 
-Sinyal *broadcasting* tersebut akan ditangkap oleh perangkat Admin, yang memicu *reload* pada halaman kelola permintaan cetak. Gambar \ref{fig:hal-kelola-cetak-req-3} menampilkan hasil akhir dari siklus sistem ini, di mana status antrean pada panel Admin secara otomatis berubah menjadi *completed*. Hal ini menandakan bahwa proses *Web-to-Print* telah selesai dieksekusi secara keseluruhan.
+Sinyal *broadcasting* tersebut akan ditangkap oleh perangkat Admin, yang memperbarui pada halaman kelola permintaan cetak secara *real-time*. Gambar \ref{fig:hal-kelola-cetak-req-3} menampilkan hasil akhir dari siklus sistem ini, di mana status antrean pada panel Admin secara otomatis berubah menjadi *completed*. Hal ini menandakan bahwa proses *Web-to-Print* telah selesai dieksekusi secara keseluruhan.
 
 ![Tampilan dokumen selesai dicetak di halaman kelola permintaan cetak \label{fig:hal-kelola-cetak-req-3}](kp/images/hasil/3-kelola-cetak-req-3.png)
 
@@ -182,17 +182,23 @@ TC-10 & Cetak dokumen & Tekan tombol \textit{print} pada dokumen yang udh di set
 
 ## *Performance Testing*
 
+Tahap *performance testing* dilakukan untuk mengukur tingkat efisiensi, kecepatan, dan stabilitas sistem dalam melakukan sinkronisasi data secara *real-time*. Pengujian ini krusial untuk membuktikan secara kuantitatif apakah arsitektur *event-driven* berbasis WebSocket yang dibangun pada backend mampu meminimalkan jeda waktu (*latency*) saat mendistribusikan sinyal antarsistem. Pemaparan pada bagian ini dibagi menjadi dua bagian utama. Dimulai dengan penyajian hasil pengujian *latency*. Selanjutnya, data yang telah diperoleh tersebut dievaluasi pada bagian analisis hasil pengujian dengan mengomparasi performa sistem terhadap standar ambang batas interaksi pengguna.
+
 ### Hasil Pengujian *Latency*
 
-Pengujian *latency* dilakukan menggunakan metode pengukuran UNIX *Epoch Timestamp* dalam satuan milidetik (ms). Waktu mulai dicatat sesaat sebelum instruksi dikirim dari antarmuka Admin, dan waktu selesai dicatat tepat saat *listener* WebSocket menerima sinyal *event* di antarmuka Anjungan. Berdasarkan satu contoh siklus pengujian, didapatkan waktu mulai 1778144315248 dan waktu selesai 1778144315456, sehingga selisih waktu respon (*latency*) yang dihasilkan adalah sebesar 208 ms. Berikut adalah hasil pengukuran waktu respon sinkronisasi data untuk 10 percobaan.
+Pengujian *latency* dilakukan menggunakan metode pengukuran UNIX *Epoch Timestamp* dalam satuan milidetik (ms). Waktu mulai dicatat sesaat sebelum instruksi dikirim dari antarmuka Admin, dan waktu selesai dicatat tepat saat *listener* WebSocket menerima sinyal *event* di antarmuka Anjungan. Berdasarkan satu contoh siklus pengujian, didapatkan waktu mulai 1778153392005 (sebagaimana ditunjukkan pada Gambar \ref{fig:start-time-unix}) dan waktu selesai 1778153392189 (sebagaimana ditunjukkan pada Gambar \ref{fig:end-time-unix}), sehingga selisih waktu respon (*latency*) yang dihasilkan adalah sebesar 184 ms. Berikut adalah hasil pengukuran waktu respon sinkronisasi data untuk 10 percobaan.
+
+![\textit{Console log} waktu mulai di \textit{dashboard} Admin \label{fig:start-time-unix}](kp/images/hasil/unix-start-time.png){width=12cm}
+
+![\textit{Console log} waktu selesai pada anjungan \label{fig:end-time-unix}](kp/images/hasil/unix-end-time.png){width=12cm}
 
 \newpage
 \captionsetup[longtable]{justification=raggedright, singlelinecheck=false}
 \setlength{\LTcapwidth}{11.7cm}
-\addtolength{\LTcapwidth}{8\tabcolsep}
-\addtolength{\LTcapwidth}{5\arrayrulewidth}
+\addtolength{\LTcapwidth}{10\tabcolsep}
+\addtolength{\LTcapwidth}{6\arrayrulewidth}
 \begin{longtable}{|p{1.7cm}|p{3cm}|p{3cm}|p{2cm}|p{2cm}|}
-\caption{Tabel Hasil Pengujian Latency} \label{tab:pengujian-latency} \\ \hline
+\caption{Tabel Hasil Pengujian \textit{Latency}} \label{tab:pengujian-latency} \\ \hline
 \textbf{Percobaan Ke-} & \textbf{Waktu Mulai (ms)} & \textbf{Waktu Selesai (ms)} & \textbf{Waktu Respon UI Anjungan (ms)} & \textbf{Keterangan} \\ \hline
 \endfirsthead \hline
 \textbf{Percobaan Ke-} & \textbf{Waktu Mulai (ms)} & \textbf{Waktu Selesai (ms)} & \textbf{Waktu Respon UI Anjungan (ms)} & \textbf{Keterangan} \\ \hline

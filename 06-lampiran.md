@@ -103,3 +103,21 @@
 \begin{center}
 \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/lampiran/c-2.jpg}
 \end{center}
+
+\newpage
+
+# Lampiran D {- .unlisted}
+
+\vspace*{-2.6em}
+\begin{center}
+\textbf{LIMA METRIK PEMBENTUK SKOR \textit{PERFORMANCE}}
+\end{center}
+\vspace{1em}
+
+\setcounter{page}{1}
+\renewcommand{\thepage}{C-\arabic{page}}
+\addcontentsline{app}{lampiran}{Lampiran D Lima Metrik Pembentuk Skor Performance}
+
+\begin{center}
+\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/lampiran/score-fcp-lcp-tbt-cls-si.png}
+\end{center}

@@ -2,6 +2,8 @@
 
 ## Studi Pustaka
 
+Terdapat kesamaan fundamental antara kedua penelitian terdahulu dengan sistem yang dikembangkan pada UPA PK2 UNTAN, yaitu penggunaan arsitektur berbasis kejadian (*Event-Driven*) untuk menciptakan sinkronisasi *real-time*. Namun, terdapat kebaruan dari kerja praktik ini pada dua aspek utama.
+
 \captionsetup[longtable]{justification=raggedright, singlelinecheck=false}
 \setlength{\LTcapwidth}{13.8cm}
 \addtolength{\LTcapwidth}{8\tabcolsep}
@@ -30,8 +32,6 @@
 \raggedright \textbf{Tujuan WebSocket} & Memperbarui tampilan nomor antrean pada layar pelanggan secara instan. & Mengirimkan notifikasi pesan dan memicu fitur \textit{Text-to-speech} di peramban. & Memperbarui status antrean, mengubah \textit{state} tombol, dan memicu perintah eksekusi ke printer fisik. \\ \hline
 
 \end{longtable}
-
-Terdapat kesamaan fundamental antara kedua penelitian terdahulu dengan sistem yang dikembangkan pada UPA PK2 UNTAN, yaitu penggunaan arsitektur berbasis kejadian (*Event-Driven*) untuk menciptakan sinkronisasi *real-time*. Namun, terdapat kebaruan dari kerja praktik ini pada dua aspek utama.
 
 Pertama, dari segi infrastruktur arsitektur *real-time*. Jika penelitian pertama yang berjudul "Sistem Pemanggilan Antrian Menggunakan Websocket" bergantung pada pustaka eksternal (Ratchet) yang memerlukan konfigurasi *event-loop* terpisah, dan penelitian kedua yang berjudul "Layanan *Real Time* Berbasis Websocket Dan *Speechsynthesis* Pada *Website* Gereja" dibatasi oleh kuota layanan pihak ketiga (Pusher), kerja praktik ini mengimplementasikan Laravel Reverb. Teknologi ini merupakan *server* WebSocket *first-party self-hosted* yang terintegrasi secara mulus dalam ekosistem Laravel, sehingga penulis memiliki kontrol penuh atas performa tanpa batasan kuota. Kedua, dari segi fungsionalitas, sinyal WebSocket pada KP ini tidak sebatas memperbarui elemen antarmuka, melainkan digunakan sebagai jembatan otorisasi yang seketika mengaktifkan kemampuan anjungan untuk mengeksekusi printer [@David2025] [@Rachmat2016].
 

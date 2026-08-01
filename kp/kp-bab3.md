@@ -20,11 +20,11 @@ Kondisi tersebut menimbulkan beberapa permasalahan utama, yaitu:
 
 ## Analisa Pengembangan
 
+Analisa pada bagian ini dipetakan ke dalam tiga fokus utama. Pertama, dilakukan pemodelan alur kerja melalui analisa sistem baru untuk menggambarkan mekanisme sinkronisasi data secara *real-time*. Kedua, dijabarkan mengenai spesifikasi kebutuhan sistem yang mencakup infrastruktur jaringan serta standarisasi perangkat keras dan perangkat lunak pendukung. Terakhir, dilakukan pemetaan terhadap kebutuhan fungsional dari setiap aktor yang terlibat di dalam sistem.
+
 ### Analisa Sistem Baru
 
-Untuk mengatasi keterbatasan pada sistem yang sedang berjalan, dikembangkan sebuah sistem Web *Self-Printing* berbasis *Real-Time Data Synchronization*. Sistem ini mengubah proses cetak manual menjadi otomatis dan mandiri (*Web-to-Print Workflow*) dengan memanfaatkan protokol WebSocket untuk komunikasi dua arah tanpa jeda.
-
-Alur kerja sistem baru ini dirancang pada Gambar \ref{fig:proses-bisnis}.
+Untuk mengatasi keterbatasan pada sistem yang sedang berjalan, dikembangkan sebuah sistem Web *Self-Printing* berbasis *Real-Time Data Synchronization*. Sistem ini mengubah proses cetak manual menjadi otomatis dan mandiri (*Web-to-Print Workflow*) dengan memanfaatkan protokol WebSocket untuk komunikasi dua arah tanpa jeda. Alur kerja sistem baru ini dirancang pada Gambar \ref{fig:proses-bisnis}.
 
 ![Proses bisnis sistem \label{fig:proses-bisnis}](kp/images/proses-bisnis.png)
 

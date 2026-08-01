@@ -139,13 +139,7 @@ NIP 196712231992031002
 
 \vspace*{\fill}
 \begin{center}
-Dengan penuh rasa syukur, karya sederhana ini saya persembahkan untuk kedua orang tua tercinta, ayahanda dan ibunda, Terima kasih telah menjadi server utama yang tak pernah down dalam memberikan doa, kasih sayang, dan dukungan finansial. Tanpa restu dan sabar kalian, baris pertama kodingan ini tidak akan pernah tertulis. Skripsi ini adalah kado kecil untuk segala peluh yang kalian tumpahkan demi melihat saya memakai toga. Semoga ini bisa menjadi awal untuk membahagiakan kalian lebih jauh lagi.
-
-Dosen pembimbing, Pak Teza dan Pak Bomo. Dan dosen penguji, Pak Enda dan Pak Rifqi. terima kasih telah sabar membimbing saya yang terkadang masih logic error ini. Terima kasih telah memberikan arahan hingga aplikasi LSP ini tidak hanya menjadi sekadar tugas akhir, tapi sebuah karya yang layak diuji. Terima kasih untuk Pak Afif yang juga sudah mendukung saya.
-
-Teman-teman seperjuangan (angkatan 2021), khususnya kawan-kawan yang sudah sering berbagi error handling, tempat curhat saat deadline, dan teman nongkrong di sela-sela pengerjaan bab 4 yang tak berujung. Kalian adalah user interface paling nyaman dalam perjalanan kuliah saya. Kita mulai bersama, dan kita harus sukses bersama.
-
-Untuk diriku sendiri, terima kasih karena tidak menekan tombol shutdown di saat keadaan terasa sangat berat. Terima kasih sudah tetap keep running meskipun memori otak hampir penuh dan semangat hampir timeout. Kamu hebat sudah sampai di sini. Almamater tercinta, Universitas Tanjungpura, tempat saya tumbuh dan belajar arti sesungguhnya dari sebuah perjuangan intelektual. Semoga skripsi ini bermanfaat, dan semoga setiap baris kode di dalamnya menjadi amal jariyah bagi kita semua.
+Dengan penuh rasa syukur, karya sederhana ini saya persembahkan untuk kedua orang tua tercinta, Dosen pembimbing, Dosen penguji, teman-teman saya, serta diri saya sendiri. Semoga skripsi ini bermanfaat, dan semoga setiap baris kode di dalamnya menjadi amal jariyah bagi kita semua.
 \end{center}
 \vspace*{\fill}
 \newpage
