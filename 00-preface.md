@@ -3,7 +3,7 @@
 \begin{spacing}{1}
 \vspace*{50pt}
 \fontsize{14pt}{17pt}\selectfont
-\textbf{PENGEMBANGAN APLIKASI PENDAFTARAN SERTIFIKASI PADA LEMBAGA SERTIFIKASI PROFESI UNTAN MENGGUNAKAN \textit{PROGRESSIVE WEB APP} (PWA)}
+\textbf{PENGEMBANGAN APLIKASI MANAJEMEN SERTIFIKASI PADA LEMBAGA SERTIFIKASI PROFESI UNTAN MENGGUNAKAN \textit{PROGRESSIVE WEB APP} (PWA)}
 
 \vspace{20pt}
 \textbf{SKRIPSI}
@@ -48,7 +48,7 @@ NIM  & : D1041211005
 \end{flushleft}
 \vspace{-1.5em}
 
-\noindent menyatakan bahwa dalam skripsi yang berjudul “PENGEMBANGAN APLIKASI PENDAFTARAN SERTIFIKASI PADA LEMBAGA SERTIFIKASI PROFESI UNTAN MENGGUNAKAN *PROGRESSIVE WEB APP* (PWA)” tidak terdapat karya yang pernah diajukan untuk memperoleh gelar sarjana di suatu perguruan tinggi manapun. Sepanjang pengetahuan Saya, tidak terdapat karya atau pendapat yang pernah ditulis atau diterbitkan oleh orang lain, kecuali yang secara tertulis diacu dalam naskah ini dan disebutkan dalam Daftar Pustaka.
+\noindent menyatakan bahwa dalam skripsi yang berjudul “PENGEMBANGAN APLIKASI MANAJEMEN SERTIFIKASI PADA LEMBAGA SERTIFIKASI PROFESI UNTAN MENGGUNAKAN *PROGRESSIVE WEB APP* (PWA)” tidak terdapat karya yang pernah diajukan untuk memperoleh gelar sarjana di suatu perguruan tinggi manapun. Sepanjang pengetahuan Saya, tidak terdapat karya atau pendapat yang pernah ditulis atau diterbitkan oleh orang lain, kecuali yang secara tertulis diacu dalam naskah ini dan disebutkan dalam Daftar Pustaka.
 
 
 Demikian pernyataan ini dibuat dengan sebenar-benarnya. Saya sanggup menerima konsekuensi akademis dan hukum di kemudian hari apabila pernyataan yang dibuat ini tidak benar.
@@ -57,7 +57,7 @@ Demikian pernyataan ini dibuat dengan sebenar-benarnya. Saya sanggup menerima ko
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, April 2026 \\
+Pontianak, September 2026 \\
 Penulis, \\
 \\
 \\
@@ -94,7 +94,7 @@ NIM D1041211005
 \begin{center}
 \begin{spacing}{1}
 \vspace*{20pt}
-PENGEMBANGAN APLIKASI PENDAFTARAN SERTIFIKASI PADA LEMBAGA SERTIFIKASI PROFESI UNTAN MENGGUNAKAN \textit{PROGRESSIVE WEB APP} (PWA)
+PENGEMBANGAN APLIKASI MANAJEMEN SERTIFIKASI PADA LEMBAGA SERTIFIKASI PROFESI UNTAN MENGGUNAKAN \textit{PROGRESSIVE WEB APP} (PWA)
 
 \vspace{1em}
 Program Studi Sarjana Informatika\\
@@ -112,22 +112,27 @@ dan diterima sebagai salah satu persyaratan untuk memperoleh gelar sarjana.
 \vspace{1em}
 Susunan Penguji Skripsi:
 
-\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
-Ketua,              & Penguji Utama, \\[3.5em]
-Morteza Muthahhari, S.Kom., M.T.I.        & Enda Esyudha Pratama, S.T., M.T. \\
-NIP. 198607092019031008            & NIP. 198810182019031006 \\[2em]
-Sekretaris,         & Penguji Pendamping, \\[3.5em]
-Bomo Wibowo Sanjaya, S.T., M.T.   & Rifqi Anugrah, S.Kom., M.Kom. \\
-NIP. 197404011999031003            & NIP. 199803122024061001
-\end{tabular*}
-
-\vspace{1em}
-\begin{tabular}{@{}l@{}}
-Pontianak, April 2026 \\
-Dekan, \\[3.5em]
-Dr. -Ing Ir. Slamet Widodo, M.T., IPM. \\
-NIP 196712231992031002
+\noindent
+\begin{tabular}{@{}l c l@{}}
+Dosen Pembimbing Utama & : & Morteza Muthahhari, S.Kom., M.T.I. \\
+                       &   & NIP. 198607092019031008 \\[1em]
+Dosen Pembimbing Kedua & : & Dr. Ir. Bomo Wibowo Sanjaya, S.T., M.T., IPM. \\
+                       &   & NIP. 197404011999031003 \\[1em]
+Dosen Penguji Utama    & : & Enda Esyudha Pratama, S.T., M.T. \\
+                       &   & NIP. 198810182019031006 \\[1em]
+Dosen Penguji Kedua    & : & Rifqi Anugrah, S.Kom., M.Kom. \\
+                       &   & NIP. 199803122024061001 \\
 \end{tabular}
+
+\vspace{3em}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+Pontianak, September 2026 \\
+Dekan, & Pembimbing Utama, \\[4em]
+Dr.-Ing. Ir. Slamet Widodo, M.T., IPM. & Morteza Muthahhari, S.Kom., M.T.I. \\
+NIP. 196712231992031002 & NIP. 198607092019031008
+\end{tabular*}
 
 \end{spacing}
 \end{center}
@@ -139,20 +144,20 @@ NIP 196712231992031002
 
 \vspace*{\fill}
 \begin{center}
-Dengan penuh rasa syukur, karya sederhana ini saya persembahkan untuk kedua orang tua tercinta, Dosen pembimbing, Dosen penguji, teman-teman saya, serta diri saya sendiri. Semoga skripsi ini bermanfaat, dan semoga setiap baris kode di dalamnya menjadi amal jariyah bagi kita semua.
+Dengan penuh rasa syukur, karya sederhana ini saya persembahkan untuk kedua orang tua tercinta, dosen pembimbing, dosen penguji, teman-teman saya, serta diri saya sendiri. Semoga skripsi ini bermanfaat, dan semoga setiap baris kode di dalamnya menjadi amal jariyah bagi kita semua.
 \end{center}
 \vspace*{\fill}
 \newpage
 
 # KATA PENGANTAR {-}
 \setlength{\parindent}{1.27cm}
-Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menyelesaikan penulisan tugas akhir penelitian yang berjudul “Pengembangan Aplikasi Pendaftaran Sertifikasi Pada Lembaga Sertifikasi Profesi UNTAN Menggunakan *Progressive Web App* (PWA)”. Penulis menyadari dalam penulisan tugas akhir penelitian ini tidak terlepas dari bantuan berbagai pihak. Untuk itu pada kesempatan ini, penulis menyampaikan terima kasih kepada Bapak Dr. Yus Sholva, S.T., M.T. selaku Ketua Jurusan Informatika Fakultas Teknik Universitas Tanjungpura, Bapak Morteza Muthahhari, S.Kom., M.T.I. selaku Dosen Pembimbing I, Bapak Bomo Wibowo Sanjaya selaku Dosen Pembimbing II, Bapak Enda Esyudha Pratama, S.T., M.T. selaku Dosen Penguji I dan Bapak Rifqi Anugrah, S.Kom., M.Kom. selaku Dosen Penguji II dalam penelitian ini. Penulis berharap semoga tugas akhir penelitian ini bermanfaat bagi semua pihak dan bila terdapat kekurangan penulis mengharapkan saran dan kritik yang membangun dari semua pihak untuk menyempurnakan tugas akhir penelitian ini.
+Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menyelesaikan penulisan tugas akhir penelitian yang berjudul “Pengembangan Aplikasi Manajemen Sertifikasi Pada Lembaga Sertifikasi Profesi  UNTAN Menggunakan *Progressive Web App* (PWA)”. Penulis menyadari dalam penulisan tugas akhir penelitian ini tidak terlepas dari bantuan berbagai pihak. Untuk itu pada kesempatan ini, penulis menyampaikan terima kasih kepada Bapak Dr. Yus Sholva, S.T., M.T. selaku Ketua Jurusan Informatika Fakultas Teknik Universitas Tanjungpura, Bapak Morteza Muthahhari, S.Kom., M.T.I. selaku Dosen Pembimbing I, Bapak Bomo Wibowo Sanjaya selaku Dosen Pembimbing II, Bapak Enda Esyudha Pratama, S.T., M.T. selaku Dosen Penguji I dan Bapak Rifqi Anugrah, S.Kom., M.Kom. selaku Dosen Penguji II dalam penelitian ini. Penulis berharap semoga tugas akhir penelitian ini bermanfaat bagi semua pihak dan bila terdapat kekurangan penulis mengharapkan saran dan kritik yang membangun dari semua pihak untuk menyempurnakan tugas akhir penelitian ini.
 
 \vspace{1cm}
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, April 2026 \\
+Pontianak, September 2026 \\
 Penulis, \\
 \\
 \\
@@ -168,10 +173,10 @@ Dawam Agung Fathoni
 \setlength{\parskip}{0pt}
 \fontsize{10pt}{12pt}\selectfont
 \vspace{10pt}
-Lembaga Sertifikasi Profesi (LSP) Universitas Tanjungpura (UNTAN) didirikan untuk menyelenggarakan proses sertifikasi guna meningkatkan daya saing mahasiswa di dunia kerja. Pada pelaksanaannya, proses pendaftaran sertifikasi masih belum terintegrasi secara terpusat, mengandalkan pengisian formulir pihak ketiga, serta melibatkan pengelolaan dokumen fisik yang rentan terhadap risiko kehilangan dan inefisiensi waktu. Penelitian ini bertujuan untuk merancang dan membangun Aplikasi LSP UNTAN yang dapat memfasilitasi keseluruhan proses pendaftaran, verifikasi berkas, asesmen, hingga penerbitan sertifikat digital secara daring. Aplikasi ini dikembangkan menggunakan pendekatan \textit{System Development Life Cycle} (SDLC) dengan model \textit{Waterfall}, menggunakan kerangka kerja Laravel sebagai antarmuka belakang (\textit{backend}) dan Vue.js yang diintegrasikan melalui Inertia.js sebagai antarmuka depan (\textit{frontend}). Penelitian ini turut mengimplementasikan teknologi \textit{Progressive Web App} (PWA) agar aplikasi web mampu memberikan pengalaman menyerupai aplikasi \textit{native}, dengan memanfaatkan fitur \textit{Add to Home Screen} dan \textit{Push Notification} melalui \textit{Firebase Cloud Messaging} (FCM). Hasil penelitian ini adalah sebuah aplikasi berbasis web yang berhasil mengotomatisasi alur kerja pendaftaran sertifikasi, meningkatkan efisiensi kerja admin dan asesor, serta memberikan kemudahan akses bagi asesi tanpa perlu mengunduh aplikasi melalui \textit{app store}. Berdasarkan pengujian menggunakan metode \textit{Black Box Testing}, seluruh fungsionalitas aplikasi yang dibangun telah berjalan dengan baik dan sesuai dengan kebutuhan yang diharapkan.
+Lembaga Sertifikasi Profesi (LSP) Universitas Tanjungpura (UNTAN) didirikan untuk menyelenggarakan proses sertifikasi guna meningkatkan daya saing mahasiswa di dunia kerja. Pada pelaksanaannya, proses pendaftaran sertifikasi masih belum terintegrasi secara terpusat, mengandalkan pengisian formulir pihak ketiga (Google Form), serta melibatkan pengelolaan dokumen fisik yang rentan terhadap risiko kehilangan dan inefisiensi waktu. Penelitian ini bertujuan untuk merancang dan membangun Aplikasi LSP UNTAN yang dapat memfasilitasi keseluruhan proses pendaftaran, verifikasi berkas, asesmen, hingga pengumuman pengambilan sertifikat secara daring. Aplikasi ini dikembangkan menggunakan pendekatan \textit{System Development Life Cycle} (SDLC) dengan model \textit{Waterfall}, menggunakan kerangka kerja Laravel sebagai antarmuka belakang (\textit{backend}) dan Vue.js yang diintegrasikan melalui Inertia.js sebagai antarmuka depan (\textit{frontend}). Penelitian ini turut mengimplementasikan teknologi \textit{Progressive Web App} (PWA) agar aplikasi web mampu memberikan pengalaman menyerupai aplikasi \textit{native}, dengan memanfaatkan fitur \textit{Add to Home Screen} dan \textit{Push Notification} melalui \textit{Firebase Cloud Messaging} (FCM). Pengujian dilakukan menggunakan tiga metode, yaitu \textit{Black Box Testing} terhadap 34 skenario fungsional pada peran admin, asesor, dan asesi, \textit{Lighthouse Testing} untuk mengaudit kualitas aplikasi, serta validasi kriteria PWA melalui \textit{Developer Tools}. Hasil pengujian \textit{Black Box Testing} menunjukkan seluruh fungsionalitas aplikasi telah berjalan dengan baik dan sesuai kebutuhan yang diharapkan (status "Sesuai"). Hasil \textit{Lighthouse Testing} menunjukkan skor sempurna (100) pada kategori \textit{Accessibility, Best Practices}, dan SEO, serta skor 87 (kategori Cukup) pada \textit{Performance}. Validasi PWA membuktikan bahwa \textit{Service Worker} berjalan aktif, \textit{Web App Manifest} lengkap, aplikasi dapat dipasang ke layar utama perangkat, dan tetap dapat diakses dalam kondisi \textit{offline}. Aplikasi ini berhasil mengotomatisasi alur kerja pendaftaran sertifikasi, meningkatkan efisiensi kerja admin dan asesor, serta memberikan kemudahan akses bagi asesi tanpa perlu mengunduh aplikasi melalui \textit{app store}.
 \vspace{10pt}
 
-\noindent\textbf{Kata Kunci}: \textit{Aplikasi, Sertifikasi Kompetensi, Progressive Web App, LSP UNTAN, Black Box Testing.}
+\noindent\textbf{Kata Kunci}: \textit{Aplikasi Sertifikasi, Lembaga Sertifikasi Profesi, Progressive Web App, Laravel, Black Box Testing.}
 \end{spacing}
 \normalsize
 \newpage

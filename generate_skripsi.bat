@@ -3,6 +3,7 @@ cls
 echo ==========================================
 echo    MENU GENERATE PDF SKRIPSI (PANDOC)
 echo ==========================================
+echo 8. Render Bab Preface Saja
 echo 1. Render Bab 1 Saja
 echo 2. Render Bab 2 Saja
 echo 3. Render Bab 3 Saja
@@ -17,6 +18,7 @@ set /p choice="Pilih angka (0-7): "
 :: Perintah untuk membuat folder Preview jika belum ada
 if not exist "PreviewSkripsi" mkdir "PreviewSkripsi"
 
+if "%choice%"=="8" set FILES=00-preface.md & set OUT=PreviewSkripsi\Preview_Preface.pdf
 if "%choice%"=="1" set FILES=01-bab1.md & set OUT=PreviewSkripsi\Preview_Bab1.pdf
 if "%choice%"=="2" set FILES=02-bab2.md & set OUT=PreviewSkripsi\Preview_Bab2.pdf
 if "%choice%"=="3" set FILES=03-bab3.md & set OUT=PreviewSkripsi\Preview_Bab3.pdf

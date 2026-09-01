@@ -1,3 +1,21 @@
+SUSUNAN PENGUJI
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+Ketua,              & Penguji Utama, \\[3.5em]
+Morteza Muthahhari, S.Kom., M.T.I.        & Enda Esyudha Pratama, S.T., M.T. \\
+NIP. 198607092019031008            & NIP. 198810182019031006 \\[2em]
+Sekretaris,         & Penguji Pendamping, \\[3.5em]
+Bomo Wibowo Sanjaya, S.T., M.T.   & Rifqi Anugrah, S.Kom., M.Kom. \\
+NIP. 197404011999031003            & NIP. 199803122024061001
+\end{tabular*}
+
+\vspace{1em}
+\begin{tabular}{@{}l@{}}
+Pontianak, April 2026 \\
+Dekan, \\[3.5em]
+Dr. -Ing Ir. Slamet Widodo, M.T., IPM. \\
+NIP 196712231992031002
+\end{tabular}
+
 <!-- \vspace{2em}
 \textbf{LAPORAN KERJA PRAKTEK}
 
@@ -56,3 +74,12 @@ Aturan perhitungan untuk mendapatkan nilai akhir SUS adalah sebagai berikut:
 3. Total skor didapatkan dengan menjumlahkan seluruh hasil perhitungan dari ke-10 pertanyaan, lalu dikalikan dengan konstanta **2,5**.
 
 Skor akhir SUS akan berada pada rentang 0 hingga 100. Interpretasi kelayakan merujuk pada standar penilaian SUS, di mana skor rata-rata global adalah 68. Sistem dinyatakan masuk dalam rentang penerimaan yang layak (\textit{Acceptable}) jika skor mencapai angka di atas 68, dan selanjutnya akan diklasifikasikan ke dalam \textit{Adjective Rating} (\textit{Poor, OK, Good, Excellent,} atau \textit{Best Imaginable}).
+
+
+4. \textit{Avoid Forced Reflow / Layout Thrashing}
+Peringatan ini dipicu karena halaman \textit{Dashboard} memiliki layout yang kompleks, yang melibatkan pemuatan \textit{sidebar}, tabel data asesi, dan inisialisasi awal grafik \textit{charts} secara bersamaan. Ketika komponen grafik melakukan kalkulasi dimensi layar secara reaktif saat pertama kali merender data, \textit{browser} dipaksa melakukan kalkulasi ulang posisi elemen HTML (\textit{forced reflow}).
+
+
+
+
+
