@@ -1,3 +1,5 @@
+command generate file tex jadi pdf: xelatex class-diagram-a3.tex
+
 SUSUNAN PENGUJI
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
 Ketua,              & Penguji Utama, \\[3.5em]
