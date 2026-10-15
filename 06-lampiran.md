@@ -115,9 +115,9 @@
 \vspace{1em}
 
 \setcounter{page}{1}
-\renewcommand{\thepage}{C-\arabic{page}}
+\renewcommand{\thepage}{D-\arabic{page}}
 \addcontentsline{app}{lampiran}{Lampiran D Lima Metrik Pembentuk Skor Performance}
 
 \begin{center}
-\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/lampiran/score-fcp-lcp-tbt-cls-si.png}
+\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/lampiran/lampiran-4.png}
 \end{center}
