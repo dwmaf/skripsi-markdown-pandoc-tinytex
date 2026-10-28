@@ -10,7 +10,7 @@
 
 \normalsize
 \vspace{20pt}
-Program Studi Informatika\\
+Program Studi Sarjana Informatika\\
 Jurusan Informatika
 
 \vspace{40pt}
@@ -34,7 +34,7 @@ PONTIANAK\\
 
 \pagestyle{plain}
 \pagenumbering{roman}
-\setcounter{page}{1}
+\setcounter{page}{2}
 
 # HALAMAN PERNYATAAN {-}
 
@@ -57,7 +57,7 @@ Demikian pernyataan ini dibuat dengan sebenar-benarnya. Saya sanggup menerima ko
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, Oktober 2026 \\
+Pontianak, 8 Oktober 2026 \\
 Penulis, \\
 \\
 \\
@@ -106,7 +106,7 @@ Oleh:
 Dawam Agung Fathoni\\
 NIM D1041211005
 
-Telah dipertahankan di depan Penguji Skripsi pada tanggal 12 Oktober 2026
+Telah dipertahankan di depan Penguji Skripsi pada tanggal 8 Oktober 2026
 dan diterima sebagai salah satu persyaratan untuk memperoleh gelar sarjana.
 
 \vspace{1em}
@@ -128,7 +128,7 @@ Dosen Penguji Kedua    & : & Rifqi Anugrah, S.Kom., M.Kom. \\
 
 \noindent
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
-Pontianak, Oktober 2026 \\
+Pontianak, 8 Oktober 2026 \\
 Dekan, & Pembimbing Utama, \\[4em]
 Dr.-Ing. Ir. Slamet Widodo, M.T., IPM. & Morteza Muthahhari, S.Kom., M.T.I. \\
 NIP. 196712231992031002 & NIP. 198607092019031008
@@ -157,7 +157,7 @@ Puji syukur kehadirat Allah SWT karena atas pertolongan-Nya, penulis dapat menye
 \begin{flushright}
 \begin{spacing}{1}
 \begin{tabular}{@{}l@{}}
-Pontianak, Oktober 2026 \\
+Pontianak, 8 Oktober 2026 \\
 Penulis, \\
 \\
 \\
@@ -173,11 +173,25 @@ Dawam Agung Fathoni
 \setlength{\parskip}{0pt}
 \fontsize{10pt}{12pt}\selectfont
 \vspace{10pt}
-Lembaga Sertifikasi Profesi (LSP) Universitas Tanjungpura (UNTAN) didirikan untuk menyelenggarakan proses sertifikasi guna meningkatkan daya saing mahasiswa di dunia kerja. Pada pelaksanaannya, proses pendaftaran sertifikasi masih belum terintegrasi secara terpusat, mengandalkan pengisian formulir pihak ketiga (Google Form), serta melibatkan pengelolaan dokumen fisik yang rentan terhadap risiko kehilangan dan inefisiensi waktu. Penelitian ini bertujuan untuk merancang dan membangun Aplikasi LSP UNTAN yang dapat memfasilitasi keseluruhan proses pendaftaran, verifikasi berkas, asesmen, hingga pengumuman pengambilan sertifikat secara daring. Aplikasi ini dikembangkan menggunakan pendekatan \textit{System Development Life Cycle} (SDLC) dengan model \textit{Waterfall}, menggunakan kerangka kerja Laravel sebagai antarmuka belakang (\textit{backend}) dan Vue.js yang diintegrasikan melalui Inertia.js sebagai antarmuka depan (\textit{frontend}). Penelitian ini turut mengimplementasikan teknologi \textit{Progressive Web App} (PWA) agar aplikasi web mampu memberikan pengalaman menyerupai aplikasi \textit{native}, dengan memanfaatkan fitur \textit{Add to Home Screen} dan \textit{Push Notification} melalui \textit{Firebase Cloud Messaging} (FCM). Pengujian dilakukan menggunakan tiga metode, yaitu \textit{Black Box Testing} terhadap 34 skenario fungsional pada peran admin, asesor, dan asesi, \textit{Lighthouse Testing} untuk mengaudit kualitas aplikasi, serta validasi kriteria PWA melalui \textit{Developer Tools}. Hasil pengujian \textit{Black Box Testing} menunjukkan seluruh fungsionalitas aplikasi telah berjalan dengan baik dan sesuai kebutuhan yang diharapkan (status "Sesuai"). Hasil \textit{Lighthouse Testing} menunjukkan skor sempurna (100) pada kategori \textit{Accessibility, Best Practices}, dan SEO, serta skor 97 (kategori Cukup) pada \textit{Performance}. Validasi PWA membuktikan bahwa \textit{Service Worker} berjalan aktif, \textit{Web App Manifest} lengkap, aplikasi dapat dipasang ke layar utama perangkat, dan tetap dapat diakses dalam kondisi \textit{offline}. Aplikasi ini berhasil mengotomatisasi alur kerja pendaftaran sertifikasi, meningkatkan efisiensi kerja admin dan asesor, serta memberikan kemudahan akses bagi asesi tanpa perlu mengunduh aplikasi melalui \textit{app store}.
+Lembaga Sertifikasi Profesi (LSP) Universitas Tanjungpura (UNTAN) didirikan untuk menyelenggarakan proses sertifikasi guna meningkatkan daya saing mahasiswa di dunia kerja. Pada pelaksanaannya, proses pendaftaran sertifikasi masih belum terintegrasi secara terpusat, mengandalkan pengisian formulir pihak ketiga (Google Form), serta melibatkan pengelolaan dokumen fisik yang rentan terhadap risiko kehilangan dan inefisiensi waktu. Penelitian ini bertujuan untuk merancang dan membangun Aplikasi LSP UNTAN yang dapat memfasilitasi keseluruhan proses pendaftaran, verifikasi berkas, asesmen, hingga pengumuman pengambilan sertifikat secara daring. Aplikasi ini dikembangkan menggunakan pendekatan \textit{System Development Life Cycle} (SDLC) dengan model \textit{Waterfall}, menggunakan kerangka kerja Laravel sebagai antarmuka belakang (\textit{backend}) dan Vue.js yang diintegrasikan melalui Inertia.js sebagai antarmuka depan (\textit{frontend}). Penelitian ini turut mengimplementasikan teknologi \textit{Progressive Web App} (PWA) agar aplikasi web mampu memberikan pengalaman menyerupai aplikasi \textit{native}, dengan memanfaatkan fitur \textit{Add to Home Screen} dan \textit{Push Notification} melalui Firebase Cloud Messaging (FCM). Pengujian dilakukan menggunakan tiga metode, yaitu \textit{Black Box Testing} terhadap 34 skenario fungsional pada peran admin, asesor, dan asesi, \textit{Lighthouse Testing} untuk mengaudit kualitas aplikasi, serta validasi kriteria PWA melalui \textit{Developer Tools}. Hasil pengujian \textit{Black Box Testing} menunjukkan seluruh fungsionalitas aplikasi telah berjalan dengan baik dan sesuai kebutuhan yang diharapkan (status Sesuai). Hasil \textit{Lighthouse Testing} menunjukkan skor sempurna (100) pada kategori \textit{Accessibility, Best Practices}, dan SEO, serta skor 97 (kategori Baik) pada \textit{Performance}. Validasi PWA membuktikan bahwa \textit{Service Worker} berjalan aktif, \textit{Web App Manifest} lengkap, aplikasi dapat dipasang ke layar utama perangkat, dan tetap dapat diakses dalam kondisi \textit{offline}. Aplikasi ini berhasil mengotomatisasi alur kerja pendaftaran sertifikasi, meningkatkan efisiensi kerja admin dan asesor, serta memberikan kemudahan akses bagi asesi tanpa perlu mengunduh aplikasi melalui \textit{app store}.
 \vspace{10pt}
 
-\noindent\textbf{Kata Kunci}: \textit{Aplikasi Sertifikasi, Lembaga Sertifikasi Profesi, Progressive Web App, Laravel, Black Box Testing.}
+\noindent Kata Kunci: Aplikasi Sertifikasi, Lembaga Sertifikasi Profesi, \textit{Progressive Web App}, Laravel, \textit{Black Box Testing}.
 \end{spacing}
+\newpage
+
+# ABSTRACT {-}
+
+\begin{spacing}{1}
+\setlength{\parskip}{0pt}
+\fontsize{10pt}{12pt}\selectfont
+\vspace{10pt}
+LSP Universitas Tanjungpura (UNTAN) was established to administer competency certification and improve students' competitiveness in the workforce. However, the certification registration process is still decentralized, relying on a third-party form (Google Form) and physical document management that is prone to loss and inefficiency. This study aims to design and build the LSP UNTAN application to facilitate the entire process of registration, document verification, assessment, and digital certificate issuance online. The system was developed using the Waterfall System Development Life Cycle (SDLC) model, with Laravel as the backend framework and Vue.js integrated through Inertia.js as the frontend. Progressive Web App (PWA) technology was implemented so that the application delivers a native-like experience through Add to Home Screen and Push Notification features powered by Firebase Cloud Messaging (FCM). Testing was conducted using Black Box Testing on 31 functional scenarios across the Admin, Assessor, and Assessee roles, along with Lighthouse Testing and PWA criteria validation via Developer Tools. The results show that all functionalities ran as expected, with Lighthouse scores of 100 for Accessibility, Best Practices, and SEO, and 97 for Performance. PWA validation confirmed that the Service Worker was active, the Web App Manifest was complete, the application was installable, and it remained accessible offline. The application successfully automated the certification workflow, improved the working efficiency of admins and assessors, and simplified access for assessees without requiring an app-store download.
+\vspace{10pt}
+
+\noindent Keyword: Black Box Testing; Certification Application; Laravel; LSP UNTAN; Progressive Web App.
+\end{spacing}
+
 \normalsize
 \newpage
 
